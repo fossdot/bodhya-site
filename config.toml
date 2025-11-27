@@ -1,0 +1,11 @@
+base_url = "https://bodhya.net"
+title = "Bodhya"
+description = "Creating Tech Opportunities for Bihar Students"
+generate_feeds = true
+compile_sass = true
+
+
+taxonomies = [
+    {name = "tags"},
+    {name = "categories"}
+]
