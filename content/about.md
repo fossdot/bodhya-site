@@ -35,4 +35,4 @@ We will soon list the names of active volunteers here.
 
 Whether you're a student, educator, industry professional, or just someone who believes in Bihar's potential—[there's a place for you here](/get-involved).
 
-**Contact:** [iamvishalarya@gmail.com](mailto:iamvishalarya@gmail.com)
+**Contact:** [vishal@bodhya.net](mailto:vishal@bodhya.net)

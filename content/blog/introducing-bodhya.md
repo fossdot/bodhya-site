@@ -36,7 +36,7 @@ Bodhya is aiming to sustain itself through tech consultancy services, and indust
 
 ### Connect
 
-If you want to get in touch or volunteer for this initiative, please write to me at [iamvishalarya@gmail.com](mailto:iamvishalarya@gmail.com).
+If you want to get in touch or volunteer for this initiative, please write to me at [vishal@bodhya.net](mailto:vishal@bodhya.net).
 
 Vishal Arya<br>
 Bettiah, West Champaran<br>

@@ -50,7 +50,7 @@ Fill this [volunteer form](https://ee.kobotoolbox.org/x/WVN2Y2fa) to get started
 
 No matter which category you fall into, we'd love to hear from you.
 
-**Email:** [iamvishalarya@gmail.com](mailto:iamvishalarya@gmail.com)  
+**Email:** [vishal@bodhya.net](mailto:vishal@bodhya.net)  
 **Announcement:** [Blog post](/blog/introducing-bodhya/)
 
 
