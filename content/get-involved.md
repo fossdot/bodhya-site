@@ -11,14 +11,14 @@ There are many ways to contribute to Bodhya's mission—whether you're a student
 1. Join our [Whatsapp community](https://chat.whatsapp.com/J3ZRgDd7iFR0blGMIsae4Q)
 2. Attend an upcoming workshop or session. Check upcoming workshop [here](https://fossunited.org/c/bihar)
 3. Ask for help and find peer group that matches your interests
-4. Start a FOSS club or dev community
+4. Start a FOSS Club
 
 ## For Educators & College Partners
 
 **Build FOSS Culture on Campus**
 - Bring workshops and guest talks to your college
-- Connect your students with internships
 - Get curriculum guidance for tech courses
+- Connect your students with internships
 
 We'll work with you to design a partnership that fits your college's needs.
 
@@ -52,7 +52,7 @@ No matter which category you fall into, we'd love to hear from you.
 
 **Email:** [iamvishalarya@gmail.com](mailto:iamvishalarya@gmail.com)  
 **LinkedIn:** [Bodhya](https://www.linkedin.com/company/bodhya)  
-**Blog:** [foss.bearblog.dev](https://foss.bearblog.dev)
+**Announcement:** [foss.bearblog.dev](https://foss.bearblog.dev/introducing-bodhya/)
 
 
-*Bodhya launches in January 2026. Be part of something that matters.*
+*Be part of something that matters.*

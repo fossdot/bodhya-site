@@ -17,34 +17,15 @@ Starting January 2026, I'm leaving my full-time, Program Director role at FOSS U
 
 ## Who's Behind This?
 
-**Bodhya is my full-time effort**, but it's powered by an incredible ecosystem:
+Bodhya is powered by an incredible ecosystem:
 
-- **FOSS United team & community**: Mentorship, resources, and institutional support as I continue volunteering for FOSS United and community events like IndiaFOSS
+- [**FOSS United team & community**](https://fossunited.org): Mentorship, resources, and institutional support as I continue volunteering for FOSS United and community events like IndiaFOSS
 - **Industry mentors & volunteers**: Professionals across India who believe in Bihar's potential and contribute their time and expertise
 - **Community builders & educators**: People passionate about tech democratization and regional growth
 
 This isn't a one-person show—it's a community built on shared belief that Bihar deserves world-class tech opportunities.
 
-I will soon the active volunteers name here.
-
-## Our Approach
-
-**For Students:**
-- Mentorship from industry professionals
-- FOSS project contributions and real-world experience
-- Internship and job placement support
-- Peer learning communities
-
-**For Colleges:**
-- FOSS workshops and curriculum guidance
-- Campus ambassador programs
-- Industry speaker sessions
-- Technical infrastructure support
-
-**For Industry & Mentors:**
-- Talent pipeline of motivated Bihar students
-- Community engagement opportunities
-- Skill assessment and matching
+We will soon list the names of active volunteers here.
 
 ## The Name
 
