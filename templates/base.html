@@ -11,6 +11,18 @@
             box-sizing: border-box; 
         }
         
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--terracotta);
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            transition: opacity 0.3s;}  
+        .logo:hover {
+            opacity: 0.85;
+        }
+
+
         html {
             scroll-behavior: smooth;
         }
@@ -278,15 +290,16 @@
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <div class="logo">Bodhya</div>
-            <nav>
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/get-involved">Get Involved</a>
-            </nav>
-        </div>
+    <div class="header-container">
+        <a href="/" class="logo">Bodhya</a>
+        <nav>
+            <a href="/about">About</a>
+            <a href="/blog">Blog</a>
+            <a href="/get-involved">Get Involved</a>
+        </nav>
+    </div>
     </header>
+
     
     {% block content %}{% endblock %}
     
