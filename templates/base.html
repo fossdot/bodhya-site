@@ -295,22 +295,50 @@
         <nav>
             <a href="/about">About</a>
             <a href="/blog">Blog</a>
+            <a href="/explore">Explore</a>
             <a href="/get-involved">Get Involved</a>
+            <a href="/login">Login</a>
         </nav>
     </div>
     </header>
 
     
     {% block content %}{% endblock %}
-    
     <footer>
-        <div class="footer-content">
-            <ul style="display: flex; gap: 1rem; justify-content: center; list-style: none; flex-wrap: wrap;">
-                <li><a href="mailto:vishal@bodhya.net">vishal@bodhya.net</a></li>
-                <li><a href="https://www.linkedin.com/company/bodhya" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                <li><a href="https://www.instagram.com/joinbodhya" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                <li><a href="https://github.com/fossdot/bodhya-site" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            </ul>
+        <div className="source-code-link">
+            <a href="https://github.com/fossdot/bodhya-site">
+              <i class="ti-ti-brand-github"></i>
+                View Source Code
+            </a>
+        </div>
+        <br>
+        <div className="social-media-credits">
+            <div className="social-category-items">
+                <a
+                aria-label="Visit our Linkedin page"
+                className="footer-link"
+                href="https://linkedin.com/company/bodhya"
+                >
+                <img alt="Linkedin" src="LinkedIn (1).svg" />
+                </a>
+                <a
+                aria-label="Visit our Twitter/X page"
+                className="footer-link"
+                href="https://x.com/bodhya"
+                >
+                <img alt="Linkedin" src="Twitter (1).svg" />
+                </a>
+                <a
+                aria-label="Visit our Instagram page"
+                className="footer-link"
+                href="https://instagram.com/joinbodhya"
+                >
+                <img alt="Instagram" src="instagram.svg" />
+                </a>
+            </div>
+            <a href="mailto:vishal@bodhya.net">Email: vishal@bodhya.net</a>
+            <br>
+            <br>
             <p>Built using <a href="https://www.getzola.org/" target="_blank" rel="noopener noreferrer">Zola</a></p>
         </div>
     </footer>
