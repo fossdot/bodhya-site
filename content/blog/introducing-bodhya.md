@@ -2,7 +2,7 @@
 title = "Introducing Bodhya"
 date = 2025-11-28
 description = "Why Bodhya exists and what we’re building for Bihar students"
-tags = ["bodhya", "bihar", "foss"]
+tags = ["bodhya", "bihar", "technology"]
 +++
 
 For years, I've watched countless youth from Bihar, like myself, leave our homes in search of better opportunities. Even now, most students look at migration as the only way to realize their potential. But what if that could change?
@@ -42,6 +42,6 @@ To volunteer for Bodhya, kindly fill [this form](https://ee.kobotoolbox.org/x/WV
 
 Vishal Arya<br>
 Bettiah, West Champaran<br>
-Bihar 845450<br>
+Bihar - 845438<br>
 
 
