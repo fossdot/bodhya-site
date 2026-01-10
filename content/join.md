@@ -1,6 +1,6 @@
 +++
-title = "Get Involved"
-path = "/get-involved"
+title = "Join Bodhya"
+path = "/join"
 +++
 
 There are many ways to contribute to Bodhya's mission—whether you're a student, educator, industry professional, or just someone who believes in Bihar's potential.

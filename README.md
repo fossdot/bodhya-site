@@ -74,7 +74,7 @@ bodhya-site/
 
 Reach out through any of these:
 
-- **Email:** [iamvishalarya@gmail.com](mailto:iamvishalarya@gmail.com)
+- **Email:** [vishal@bodhya.net](mailto:vishal@bodhya.net)
 - **GitHub Issues:** [Open an issue](https://github.com/fossdot/bodhya-site/issues)
 - **GitHub Discussions:** [Join the discussion](https://github.com/fossdot/bodhya-site/discussions)
 
