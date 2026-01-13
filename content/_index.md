@@ -29,4 +29,4 @@ We're changing that story. Starting January 2026.
 
 Whether you're a student looking to level up, a college wanting to build tech culture, or a professional who wants to mentor—**there's a place for you in Bodhya.**
 
-**[Get Involved](/get-involved)** | **[Learn More](/about)**
+**[Get Involved](/join)** | **[Learn More](/about)**
