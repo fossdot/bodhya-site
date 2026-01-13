@@ -3,7 +3,7 @@ path = "/projects"
 +++
 
 # Projects | Bodhya.net
-#### Open source projects built and maintained at Bodhya.
+## Open source projects built and maintained at Bodhya.
 
 ## Apps
 High-impact Frappe applications designed for community growth and management.
