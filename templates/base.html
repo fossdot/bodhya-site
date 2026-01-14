@@ -18,6 +18,13 @@
             padding: 0; 
             box-sizing: border-box; 
         }
+
+        .logo img {
+        width: auto;
+        display: block;
+        height: 3rem;
+        transform: scale(1.5);
+        }
         
         .logo {
             font-size: 1.5rem;
@@ -29,7 +36,6 @@
         .logo:hover {
             opacity: 0.85;
         }
-
 
         html {
             scroll-behavior: smooth;
@@ -258,7 +264,31 @@
             max-width: 1000px;
             margin: 0 auto;
         }
+
+        .fa-brands, .fab {
+        font-weight: 400;
+        transform: scale(1.4);
+        }
         
+        /* Policies */
+
+        .footer_parent_label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        font-weight: var(--fw-medium);
+        }
+
+        .footer_parent_label p {
+        margin: 0;
+        color: hsl(var(--clr-libre-white-600));
+        }
+
+        .footer_parent_label > a {
+        font-weight: var(--fw-medium);
+        margin: 0;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -304,12 +334,14 @@
 <body>
     <header>
     <div class="header-container">
-        <a href="/" class="logo">Bodhya
+        <a href="/" class="logo">
+            <img src="/bodhya-brown.svg" alt="Bodhya">
         </a>
         <nav>
             <a href="/about">About</a>
             <a href="/join">Join</a>
             <a href="/consulting">Consulting</a>
+            <a href="/projects">Projects</a>
         </nav>
     </div>
     </header>
@@ -346,7 +378,16 @@
             <li><a href="/blog">Blog</a></li>
             <li><a href="mailto:vishal@bodhya.net">vishal@bodhya.net</a></li>
         </ul>
-        
+        <div class="footer_parent_label">
+            <p>Policies</p>
+
+            <div class="footer-category-items">
+            <a class="footer-link" href="/privacy-policy">Privacy Policy</a> <br>
+            <a class="footer-link" href="/code-of-conduct">Code of Conduct</a> <br>
+            <a class="footer-link" href="/terms-of-service">Terms of Service</a> <br>
+            </div>
+        </div>
+        <br>
         <p>Built using <a href="https://www.getzola.org/">Zola</a></p>
         </div>
     </footer>
