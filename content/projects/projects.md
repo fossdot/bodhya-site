@@ -15,7 +15,7 @@ A platform designed to foster mentorship opportunities for the students. It conn
 ## Services & Tools
 Internal utilities and specialized services for organization efficiency.
 
-## [Listbrew ☕](https://github.com/pritkr/listbrew/tree/develop/listbrew)
+## [Listbrew](https://github.com/pritkr/listbrew/tree/develop/listbrew)
 **Realtime Auto sync from Frappe to Listmonk.**   
 No more manual CSV exports and newsletter list always stays up-to-date to any frappe app data.  
 **License:** MIT
