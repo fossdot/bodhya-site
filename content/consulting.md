@@ -6,6 +6,7 @@ description = "Modern, reliable systems for teams that care."
 hide_title = true
 +++
 
+<title>Bodhya Consulting</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500&display=swap" rel="stylesheet">
@@ -13,9 +14,8 @@ hide_title = true
 <style>
 
 :root {
-    /* BRANDING GUIDELINES */
-    --c-bg: #FFF8F3;           /* Floral White */
-    --c-accent: #AD544B;       /* Faded Red */
+    --c-bg: #FFF8F3;
+    --c-accent: #AD544B;
     --c-accent-hover: #8e433c;
     --c-text-main: #2D2424;
     --c-text-muted: #6D5F5F;
@@ -210,7 +210,6 @@ hide_title = true
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .cons-header {
     text-align: center;
     margin-bottom: 40px;
@@ -225,15 +224,12 @@ hide_title = true
     letter-spacing: -1px;
     margin-bottom: 1rem;
     margin-top: -10px;
-
 }
-
 .cons-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
-
 .cons-card {
     background: white;
     border: 1px solid var(--c-border);
@@ -258,15 +254,12 @@ hide_title = true
     background: rgba(173, 84, 75, 0.08);
     padding: 4px 12px;
     border-radius: 4px;
-    
 }
-
 .cons-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     margin-top: 0;
 }
-
 .cons-card ul {
     list-style: none;
     padding: 0;
@@ -328,11 +321,11 @@ hide_title = true
 }
 
 /* impact and form */
-
 .impact-section {
     padding: 80px 60px;
     max-width: 1400px;
     margin: 0 auto;
+    align-items: center;
 }
 
 .cons-impact-box {
@@ -343,6 +336,7 @@ hide_title = true
     display: flex;
     gap: 60px;
     align-items: center;
+    font-size: 30px;
 }
 
 .cons-form-box {
@@ -353,7 +347,6 @@ hide_title = true
     border: 1px solid var(--c-border);
     margin-bottom: 1rem;
     margin-top: -50px;
-
 }
 .cons-input {
     width: 100%;
@@ -362,7 +355,7 @@ hide_title = true
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     background: var(--c-bg);
-    font-family: inherit;
+    font-family:'Funnel Display', sans-serif;
 }
 .cons-input:focus {
     outline: none;
@@ -372,76 +365,217 @@ hide_title = true
 /* Impact Section */
 .impact-section {
     padding: 80px 60px;
-    max-width: 1274px;
+    max-width: 1400px;
     margin: 0 auto;
 }
-
 .impact-card {
-    background-color: white;
-    border: 1px solid var(--color-border);
+    background-color: var(--c-section-bg);
     border-radius: 12px;
-    padding: 40px;
+    padding: 48px;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    gap: 30px;
+    gap: 60px;
     align-items: center;
-    box-shadow: 0 4px 12px var(--color-shadow);
+    box-shadow: 0 4px 12px var(--c-shadow);
 }
-
 .impact-card h2 {
-    font-family: var(--font-display);
-    font-size: 32px;
+    font-family: var(--font-brand);
+    font-size: 34px;
     font-weight: 700;
-    color: #8c413a;
-    margin-bottom: 16px;
+    color: var(--c-accent);
+    margin-bottom: 10px;
     letter-spacing: -1px;
+    align-items:center;
+    margin-top: 0rem;
 }
-
 .impact-card p {
-    font-size: 15px;
-    color: var(--color-text-light);
+    font-size: 18px;
+    color: var(--c-text-muted);
     line-height: 1.8;
-    margin-bottom: 24px;
+    margin-bottom: 0;
 }
 
 .stats {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-top: 0;
+    width: 100%;
+    align-items: stretch !important;
+
 }
 
 .stat-badge {
-    background-color: #FFF8F3;
-    border: 1px solid var(--color-border);
+    background-color: rgba(173, 84, 75, 0.08);
+    border: 1px solid var(--c-border);
     border-radius: 8px;
     padding: 16px 20px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
-    color: #8c413a;
+    color: var(--c-accent);
     text-align: center;
+    font-family:'Funnel Display', sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Mobile Responsive */
+
 @media (max-width: 768px) {
-    .cons-hero, .cons-impact-box, .cons-timeline {
-        grid-template-columns: 1fr;
+    .consulting-page-wrapper {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        left: auto !important;
+        right: auto !important;
+        padding: 0 !important;
+        overflow-x: hidden;
+    }
+
+    .cons-hero {
+        display: flex;
         flex-direction: column;
         text-align: center;
+        padding: 40px 24px;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .cons-hero > div:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cons-hero h1 {
+        font-size: 2rem;
+        line-height: 1.25;
+        margin-bottom: 1.5rem;
+    }
+    
+    .cons-hero p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+    
+    /* Buttons */
+    .cons-hero > div:first-child > div:last-child {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+    }
+
+    .cons-btn-primary { 
+        width: 100%;
+        text-align: center;
+    }
+    
+    .cons-btn-secondary { 
+        display: block; 
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Visual Stack */
+    .cons-stack {
+        width: 100%;
+        gap: 12px;
+    }
+    
+    .cons-card-visual {
+        width: 100%;
+    }
+    /* Clients */
+    .clients-section {
+        padding: 40px 24px;
+    }
+    
+    .clients-strip {
+        display: grid !important; 
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px 20px;
+        width: 100%;
+        align-items: center;
+        justify-items: center;
+    }
+    
+    .client-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        grid-column: span 1 !important;
+    }
+    
+    .client-logo-img {
+        max-width: 100%;
+        height: auto;
+        max-height: 45px;
+        object-fit: contain;
+    }
+
+    /* Section Headers */
+    .cons-header h2 {
+        font-size: 2rem;
+        padding: 0 10px;
+        align-items:center;
+    }
+
+    /* Grid */
+    .cons-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .cons-section {
+        padding: 60px 24px;
+    }
+
+    /* Timeline */
+    .cons-timeline {
+        flex-direction: column;
+        gap: 40px;
     }
     .cons-timeline::before { display: none; }
-    .cons-step { margin-bottom: 30px; }
-    .cons-btn-secondary { display: block; margin: 15px 0 0 0; }
-    .cons-impact-box { padding: 30px; }
+    .cons-step { 
+        margin-bottom: 0; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     
+    .impact-section {
+        padding: 40px 24px;
+    }
+
+    .impact-card {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 32px 24px;
+        text-align: center;
+    }
+
+    .impact-card h2 {
+        font-size: 28px;
+    }
+
+    .stats {
+        align-items: center;
+    }
 }
+
 </style>
 
 <div class="consulting-page-wrapper">
     <section class="cons-hero">
         <div>
-            <span class="cons-eyebrow">Tech consulting for your organisation</span>
+            <span class="cons-eyebrow">Tech consulting for your organization</span>
             <h1>Modern, reliable systems for teams that care.</h1>
-            <p>We help non-profits, education organizations, and lean teams move to simple, maintainable systems for program data and operations that built on open-source stacks you can actually own.</p>
+            <p>We help organizations, and lean teams move to simple, maintainable systems and operations that built on open-source stacks you can actually own.</p>
             <div>
                 <a href="#contact" class="cons-btn-primary">Schedule a call</a>
                 <a href="#approach" class="cons-btn-secondary">See how we work</a>
@@ -541,9 +675,9 @@ hide_title = true
                 <p>Consulting revenue directly supports workshops, mentorship programs, and local internship opportunities for students in underserved communities. When you work with us, you&apos;re investing in the next generation of tech leaders.</p>
             </div>
             <div class="stats">
-                <div class="stat-badge">500+ students mentored</div>
-                <div class="stat-badge">50+ open-source contributions</div>
-                <div class="stat-badge">8+ hackathons organized</div>
+                <div class="stat-badge">50+ students mentored</div>
+                <div class="stat-badge">5+ open-source projects</div>
+                <div class="stat-badge">6+ events organized</div>
             </div>
         </div>
     </section>
