@@ -19,16 +19,32 @@ jobs:
       (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')))
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      pull-requests: read
-      issues: read
+      contents: write
+      pull-requests: write
+      issues: write
       id-token: write
-      actions: read # Required for Claude to read CI results on PRs
+      actions: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+
+      - name: Install Zola
+        run: |
+          curl -sL https://github.com/getzola/zola/releases/download/v0.21.0/zola-v0.21.0-x86_64-unknown-linux-gnu.tar.gz | tar xz -C /usr/local/bin
+
+      - name: Start Zola dev server
+        run: zola serve --interface 0.0.0.0 --port 1111 &
+        env:
+          RUST_LOG: warn
+
+      - name: Wait for server
+        run: |
+          for i in $(seq 1 10); do
+            curl -sf http://localhost:1111 && break
+            sleep 2
+          done
 
       - name: Run Claude Code
         id: claude
@@ -36,15 +52,74 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
 
-          # This is an optional setting that allows Claude to read CI results on PRs
           additional_permissions: |
             actions: read
 
-          # Optional: Give a custom prompt to Claude. If this is not specified, Claude will perform the instructions specified in the comment that tagged it.
-          # prompt: 'Update the pull request description to include a summary of changes.'
+          custom_instructions: |
+            This is the Bodhya website — a static site built with Zola v0.21.0 (Rust-based SSG), deployed on Netlify.
 
-          # Optional: Add claude_args to customize behavior and configuration
-          # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
-          # or https://code.claude.com/docs/en/cli-reference for available options
-          # claude_args: '--allowed-tools Bash(gh pr:*)'
+            ## Project conventions
+            - NO npm, package.json, or Node dependencies. Zola is the only build tool.
+            - All CSS lives in the <style> block inside templates/base.html. Do NOT create separate CSS files.
+            - Brand: primary colour #AD544B (terracotta), background #FFF8F3 (floral white), font: Funnel Display.
+            - Mobile breakpoint: 768px.
+            - Raw HTML in markdown files must have NO blank lines within HTML blocks (CommonMark type-6 blocks end at blank lines).
 
+            ## Environment
+            - Zola dev server is already running at http://localhost:1111 with live reload.
+            - Run `zola build` to verify changes compile before marking a task done. Build output goes to public/ — do NOT edit files there.
+            - Use `mcp__playwright` tools to visually inspect the site in a browser.
+
+            ## Key files
+            - templates/base.html — master layout, sticky header, all global CSS
+            - templates/index.html — homepage
+            - content/consulting.md — consulting page (inline HTML + CSS)
+            - content/join.md — join page (inline HTML + CSS)
+            - content/about.md — about page (inline HTML + CSS)
+            - config.toml — Zola config (base URL, taxonomies, feed)
+            - netlify.toml — deploy config
+
+            ## What NOT to do
+            - Do not add npm/package.json
+            - Do not create separate CSS files
+            - Do not use Tailwind, Bootstrap, or any CSS framework
+            - Do not modify files in public/ (build output)
+            - Always run `zola build` to verify changes before finishing
+
+          mcp_config: |
+            {
+              "mcpServers": {
+                "playwright": {
+                  "command": "npx",
+                  "args": [
+                    "@playwright/mcp@latest",
+                    "--allowed-origins",
+                    "localhost:1111"
+                  ]
+                }
+              }
+            }
+
+          allowed_tools: >-
+            Bash(zola build:*),
+            Bash(zola build),
+            Bash(curl:*),
+            Bash(git status),
+            Bash(git diff:*),
+            Bash(git log:*),
+            Bash(git add:*),
+            Bash(git commit:*),
+            Bash(git push:*),
+            Bash(gh pr:*),
+            Bash(gh issue:*),
+            Bash(gh api:*),
+            mcp__playwright__browser_navigate,
+            mcp__playwright__browser_snapshot,
+            mcp__playwright__browser_take_screenshot,
+            mcp__playwright__browser_click,
+            mcp__playwright__browser_resize,
+            mcp__playwright__browser_evaluate,
+            mcp__playwright__browser_hover,
+            mcp__playwright__browser_wait_for,
+            mcp__playwright__browser_console_messages,
+            mcp__playwright__browser_network_requests
