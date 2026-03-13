@@ -169,6 +169,9 @@ hide_title = true
     display: block;
     margin: 0 auto 16px;
 }
+.about-supported a {
+    display: block;
+}
 .about-supported a:hover img {
     opacity: 1;
 }
