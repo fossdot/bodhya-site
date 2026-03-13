@@ -3,9 +3,112 @@
 {% block title %}Page Not Found{% endblock %}
 
 {% block content %}
-    <main style="text-align: center; padding: 4rem 2rem;">
-        <h1>404</h1>
-        <p style="font-size: 1.1rem; margin-bottom: 2rem;">We couldn't find that page.</p>
-        <a href="/" class="btn btn-primary">Back to Home</a>
-    </main>
+<style>
+  /* Pull base.html's main out of the way for the 404 page */
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .page-404 {
+    background: #FFF8F3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* fill viewport minus header (~72px) and footer (~0, footer is outside main) */
+    min-height: calc(100vh - 72px);
+    width: 100%;
+    padding: 2rem 4rem 3rem;
+    box-sizing: border-box;
+  }
+
+  .page-404__inner {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .page-404__art {
+    width: 100%;
+    /* Fixed height so text + button always visible below without scrolling */
+    max-height: calc(100vh - 72px - 10rem); /* viewport minus header minus text+btn area */
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 12px;
+  }
+
+  .page-404__tagline {
+    font-family: 'Funnel Display', sans-serif;
+    font-size: 1.05rem;
+    color: #6B4C43;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  .page-404__sub {
+    font-size: 0.88rem;
+    color: #9B7B72;
+    margin: 0;
+  }
+
+  .page-404__btn {
+    display: inline-block;
+    background: #AD544B;
+    color: #FFF8F3;
+    font-family: 'Funnel Display', sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 0.6rem 1.6rem;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: background 0.2s ease;
+    margin-bottom: 1rem;
+  }
+  .page-404__btn:hover { background: #8E3D35; }
+
+  /* Tablet */
+  @media (max-width: 1024px) and (min-width: 481px) {
+    .page-404 {
+      padding: 2rem 2rem 3rem;
+      min-height: calc(100vh - 72px);
+    }
+    .page-404__art {
+      max-height: calc(100vh - 72px - 12rem);
+      width: 100%;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .page-404 {
+      padding: 2rem 1rem 3rem;
+      min-height: calc(100vh - 72px);
+    }
+    .page-404__art {
+      max-height: none;
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="page-404">
+  <div class="page-404__inner">
+    <img
+      src="/bodhya_404_mithila_art.svg"
+      alt="Mithila art illustration of a person at a forked path, holding a lamp — symbolising the journey of finding your way"
+      class="page-404__art"
+    />
+    <p class="page-404__tagline">यह पृष्ठ नहीं मिला — but every path leads somewhere.</p>
+    <p class="page-404__sub">The page you were looking for doesn't exist or may have moved.</p>
+    <a href="/" class="page-404__btn">← Back to Home</a>
+  </div>
+</div>
 {% endblock %}
