@@ -97,6 +97,13 @@ These commands are defined in `.claude/commands/` and can be invoked with `/comm
 - Checks Open Graph meta tags
 - Reports on mobile friendliness
 
+**`/commit-and-push`** — Stage, commit, and push changes to GitHub
+- Shows changed files for confirmation
+- Asks for commit message
+- Runs `git add`, `git commit`, and `git push` automatically
+- Reports success with GitHub commit link
+- Ensures only intentional changes are pushed
+
 ### Typical Workflow
 
 1. **For a new feature or change:**
@@ -104,6 +111,7 @@ These commands are defined in `.claude/commands/` and can be invoked with `/comm
    /build-check          # Make sure it compiles
    /visual-check         # See how it looks across devices
    /optimize             # Comprehensive review before pushing
+   /commit-and-push      # Stage, commit, and push to GitHub
    ```
 
 2. **For a new blog post:**
@@ -112,6 +120,7 @@ These commands are defined in `.claude/commands/` and can be invoked with `/comm
    /build-check          # Verify it compiles
    /seo-check            # Check SEO optimization
    /visual-check         # Preview appearance
+   /commit-and-push      # Stage, commit, and push to GitHub
    ```
 
 3. **For pushing to production:**
@@ -119,6 +128,8 @@ These commands are defined in `.claude/commands/` and can be invoked with `/comm
    /build-check          # Verify clean build
    /seo-check            # Final SEO review
    /visual-check         # Final visual check
+   /optimize             # Comprehensive audit
+   /commit-and-push      # Stage, commit, and push to GitHub
    ```
 
 ### Running with `/clear`

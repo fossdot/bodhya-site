@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIVACY POLICIES - Bodhya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="/bodhyafavi.svg" type="image/svg+xml">
+
+    <style>
+        :root {
+            /* Bodhya brand assets */
+            --bg-floral: #FFF8F3;
+            --accent-red: #AD544B;
+            --accent-red-dark: #8f3e2e;
+            --text-main: #2d2d2d;
+            --nav-text: #4a4a4a;
+            --font-display: 'Funnel Display', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 1 rem;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .logo img {
+            width: auto;
+            display: block;
+            height: 3rem;
+            transform: scale(1.5);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--terracotta);
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-family: var(--font-display);
+        }
+
+        .logo:hover {
+            opacity: 0.85;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px; 
+        }
+        /* Header */
+        header {
+            background: #AD544B;
+            border-bottom: 1px solid #f0f0f0;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--terracotta);
+            letter-spacing: -0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Terracotta theme variables (if using CSS variables or Sass) */
+        :root {
+            --terracotta: #AD544B;
+            --terracotta-dark: #8f3e2e;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #fff7f4 0%, #faf3f0 100%);
+            font-family: var(--font-display);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            font-family: var(--font-display);
+            
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: var(--font-body);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--terracotta);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--terracotta);
+            border: 1.5px solid var(--terracotta);
+        }
+
+        .btn-secondary:hover {
+            background: #fff4f0;
+        }
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            font-family: var(--font-display);
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            font-family: var(--font-display);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        ul,
+        ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            color: #444;
+        }
+
+        a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            transition: opacity 0.3s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        /* feature cards */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 8px;
+            background: #f5f5f5;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: #fff3ef;
+            border: 1px #f3c2b3;
+            transform: translateY(-4px);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+        }
+
+        /* hamburger button */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--terracotta);
+        }
+
+        /* mobile menu */
+        dialog {
+            margin: 0;
+            margin-left: auto;
+            height: 100vh;
+            max-height: 100vh;
+            width: 100%;
+            max-width: 320px;
+            border: none;
+            border-radius: 16px 0 0 16px; /*rounded*/
+            background-color: #AD544B;
+            color: #1a1a1a;
+            box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+            padding: 0;
+            overflow: hidden;
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        /* Animation for opening */
+        dialog[open] {
+            animation: slide-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Backdrop styling */
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            animation: fade-in 0.4s ease forwards;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .mobile-menu-content {
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+            align-self: flex-end;
+            margin-bottom: 2rem;
+            padding: 0.5rem;
+            line-height: 1;
+            transition: color 0.2s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--terracotta);
+        }
+
+        /* mobile nav links */
+        dialog nav {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        dialog nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        dialog nav a:hover {
+            color: #4e0d06;
+            padding-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+
+            /* hide desktop nav */
+            .header-container>nav {
+                display: none;
+            }
+
+            /* show hamburger */
+            .hamburger {
+                display: block;
+            }
+        }
+
+        /* Desktop: Ensure dialog is not visible */
+        @media (min-width: 769px) {
+            #mobile-menu-dialog {
+                display: none;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #ccc;
+        }
+
+        footer a:hover {
+            color: #E2725B;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .fa-brands,
+        .fab {
+            font-weight: 700;
+            transform: scale(1.7);
+            
+        }
+
+        /* Policies */
+        .footer_parent_label {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-weight: var(--fw-medium);
+        }
+
+        .footer_parent_label p {
+            margin: 0;
+            color: hsl(var(--clr-libre-white-600));
+        }
+
+        .footer_parent_label>a {
+            font-weight: var(--fw-medium);
+            margin: 0;
+        }
+
+        .footer-category-items .footer-link,
+        .footer-content ul li a {
+            text-decoration: none;
+            margin-right: 6px;
+        }
+        .footer-category-items .footer-link:hover,
+        .footer-content ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .icon-link i {
+                font-size: 18px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="/bodhya-brown.svg" alt="Bodhya">
+            </a>
+            <nav>   
+                <a href="/about">About</a>
+                <a href="/join">Join</a>
+                <a href="/consulting">Consulting</a>
+                <a href="/projects">Projects</a>
+            </nav>
+            <!-- Hamburger btn for mobile -->
+            <button id="mobile-menu-btn" class="hamburger" aria-label="Open mobile menu">☰</button>
+
+            <!-- Mobile menu dialog hidden default -->
+            <dialog id="mobile-menu-dialog">
+                <div class="mobile-menu-content">
+                    <button id="close-menu-btn" class="close-btn" aria-label="Close menu">×</button>
+                    <nav>
+                        <a href="/about">About</a>
+                        <a href="/join">Join</a>
+                        <a href="/consulting">Consulting</a>
+                        <a href="/projects">Projects</a>
+                    </nav>
+                </div>
+            </dialog>
+        </div>
+    </header>
+
+    
+    <main>
+        
+        <h1 id="privacy-policies">PRIVACY POLICIES</h1>
+<p>The XAANEN CONSULTING (OPC) PRIVATE LIMITED understands the importance of Data Privacy. We respect your privacy and appreciate your confidence in us. This Policy explains how we handle user information collected by us and from other sources. This policy applies to current and prior website visitors, as well as our online customers. You agree to our Privacy Policy by accessing or using our website.</p>
+<h2 id="i-kinds-of-information">I. Kinds of Information</h2>
+<p>Information is collected when you make correspondence with us. We may gather information such as your name, email address, phone number, street, city, state, zip code, country, IP address, and other information you submit on the platform.</p>
+<h4 id="payments-and-invoices">Payments and Invoices</h4>
+<p>When you purchase a ticket, we may gather your billing name, billing address, and payment method. Please note that XAANEN CONSULTING (OPC) PRIVATE LIMITED never gathers your credit card number, expiration date, or any other credit card information. Our online payment partner Razorpay will collect and process credit card information.</p>
+<h4 id="information-shared-by-you">Information Shared by You</h4>
+<p>We collect information you share in a public area of our website or on a XAANEN owned social media site.</p>
+<h4 id="demographic-information">Demographic Information</h4>
+<p>We may gather demographic information about you, events you enjoy, events you plan to attend, tickets you purchase, or any other information you submit when using our website. We may also collect this information as part of a survey.</p>
+<p>Additional information We may gather information about your IP address and the browser you're using whenever you access our website. We may examine the website from which you arrived, the amount of time you spent on our website, the pages you accessed, and the website you visit after you leave us. We may also gather information on the sort of mobile device you're using or the operating system version on your computer or device.</p>
+<h4 id="additional-information">Additional Information</h4>
+<p>We may gather information about your IP address and the browser you're using whenever you access our website. We may examine the website from which you arrived, the amount of time you spent on our website, the pages you accessed, and the website you visit after you leave us. We may also gather information on the sort of mobile device you're using or the operating system version on your computer or device.</p>
+<h2 id="ii-we-collect-information-in-different-ways">II. We Collect Information in Different Ways</h2>
+<ul>
+<li><strong>We obtain information from you directly.</strong> When you register for an event or purchase tickets, we collect information directly from you. We also collect information when you leave a remark on one of our websites or call or email us with a question.</li>
+<li><strong>We passively collect information from you.</strong> We collect information about your use of our website through tracking methods such as Google Analytics, Google Webmaster, browser cookies, and web beacons.</li>
+<li><strong>Third parties provide us with information about you.</strong> For example, if you utilize one of our websites' integrated social media features, we will receive certain information about you from a third-party social media site. Your name and email address may be included.</li>
+</ul>
+<h2 id="iii-how-do-we-use-your-personal-information">III. How Do We Use Your Personal Information?</h2>
+<ul>
+<li><strong>To reply to your requests or questions:</strong> Your information may be used to confirm your registration for an event or contest.</li>
+<li><strong>To contact you:</strong> We may contact you using the information you supply to confirm a transaction made on our website or for other promotional purposes.</li>
+<li><strong>To make our goods and services better:</strong> We may use the information you provide to personalize your experience with us. This could involve showing you content according to your tastes.</li>
+<li><strong>To analyze site trends and client preferences:</strong> We may use the information you provide to improve our website and offerings. We may combine information we collect from you with data we obtain from other parties about you.</li>
+</ul>
+<h2 id="iv-under-what-circumstance-is-your-information-shared-with-a-third-party">IV. Under What Circumstance is Your Information Shared with a Third-Party?</h2>
+<ul>
+<li><strong>To third parties who provide services on our behalf:</strong> We may share data with suppliers who assist us in managing our online registration process, as well as payment processors and transactional message processors. Some merchants may be based in countries other than India.</li>
+<li><strong>Legal obligations:</strong> If we believe it is necessary to comply with the law or protect ourselves, we may share information. In response to a court order or a similar legal obligation, we will release information. If a government agency or investigative body demands it, we may share it. We might also share information if we're looking into a possible fraud.</li>
+<li><strong>Business transfers:</strong> Any successor to all or part of our organization may be given access to information. For example, if a portion of our company is sold, we may hand over our customer list as part of the deal.</li>
+<li><strong>Other reasons:</strong> Your information may be shared for reasons not covered by this policy. Before we do anything, we'll let you know.</li>
+</ul>
+<h2 id="v-unsubscribing-to-marketing-mails">V. Unsubscribing to Marketing Mails</h2>
+<p>You can unsubscribe from our marketing mailings at any time. Please email at <a href="mailto:hello@bodhya.net">hello@bodhya.net</a> to unsubscribe from our promotional emails. Your request may take up to 15 days to be processed. Even if you choose not to receive marketing messages, we will nevertheless send you transactional messages about your transactions by email.</p>
+<h2 id="vi-grievance-officer">VI. Grievance Officer</h2>
+<p>The name and contact information for the Grievance Officer are included below, in compliance with the Information Technology Act of 2000 and its rules:</p>
+<p><strong>Name:</strong> Rohit Kumar<br />
+<strong>Email Address:</strong> <a href="mailto:fossrohit@gmail.com">fossrohit@gmail.com</a></p>
+<p>You can also email <a href="mailto:hello@bodhya.net">hello@bodhya.net</a> at any time to receive a copy of your personal information. Please let us know if your personal information changes or if you discover that our records are out of date.</p>
+<h3 id="modifications">Modifications</h3>
+<p>We may alter our privacy practices from time to time. As required by law, we will notify you of any major changes to this policy. We'll also update the information on our website. Please check our site for updates on a regular basis.</p>
+<h3 id="contact-us">Contact Us</h3>
+<p>You can also email us if you have any questions regarding this Policy or any privacy concerns, at <a href="mailto:hello@bodhya.net">hello@bodhya.net</a>.</p>
+
+    </main>
+
+
+    <footer>
+        <div class="footer-content">
+            <ul style="display: flex; gap: 0.8rem; justify-content: center; list-style: none; flex-wrap: wrap;">
+                <li>
+                    <a href="https://www.linkedin.com/company/bodhya" class="icon-link" aria-label="Bodhya on LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/joinbodhya" class="icon-link" aria-label="Bodhya on Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/joinbodhya" class="icon-link" aria-label="Bodhya on X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/fossdot/bodhya-site" class="icon-link" aria-label="Bodhya on GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <ul style="display: flex; gap: 1rem; justify-content: center; list-style: none; flex-wrap: wrap;">
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="mailto:vishal@bodhya.net">vishal@bodhya.net</a></li>
+            </ul>
+            <div class="footer_parent_label">
+                <p>Policies</p>
+
+                <div class="footer-category-items">
+                    <a class="footer-link" href="/privacy-policy">Privacy Policy</a>
+                    <a class="footer-link" href="/code-of-conduct">Code of Conduct</a>
+                    <a class="footer-link" href="/terms-of-service">Terms of Service</a>
+                </div>
+            </div>
+            <br>
+            <p>Built using <a href="https://www.getzola.org/">Zola</a></p>
+        </div>
+    </footer>
+    <script src='/mobile-menu.js'></script>
+</body>
+</html>

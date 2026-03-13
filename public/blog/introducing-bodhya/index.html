@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing Bodhya - Bodhya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="/bodhyafavi.svg" type="image/svg+xml">
+
+    <style>
+        :root {
+            /* Bodhya brand assets */
+            --bg-floral: #FFF8F3;
+            --accent-red: #AD544B;
+            --accent-red-dark: #8f3e2e;
+            --text-main: #2d2d2d;
+            --nav-text: #4a4a4a;
+            --font-display: 'Funnel Display', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 1 rem;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .logo img {
+            width: auto;
+            display: block;
+            height: 3rem;
+            transform: scale(1.5);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--terracotta);
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-family: var(--font-display);
+        }
+
+        .logo:hover {
+            opacity: 0.85;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px; 
+        }
+        /* Header */
+        header {
+            background: #AD544B;
+            border-bottom: 1px solid #f0f0f0;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--terracotta);
+            letter-spacing: -0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--terracotta);
+        }
+
+        /* Terracotta theme variables (if using CSS variables or Sass) */
+        :root {
+            --terracotta: #AD544B;
+            --terracotta-dark: #8f3e2e;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #fff7f4 0%, #faf3f0 100%);
+            font-family: var(--font-display);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            font-family: var(--font-display);
+            
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: var(--font-body);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--terracotta);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--terracotta);
+            border: 1.5px solid var(--terracotta);
+        }
+
+        .btn-secondary:hover {
+            background: #fff4f0;
+        }
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            font-family: var(--font-display);
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            font-family: var(--font-display);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        ul,
+        ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            color: #444;
+        }
+
+        a {
+            color: var(--terracotta);
+            text-decoration: underline;
+            transition: opacity 0.3s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        /* feature cards */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 8px;
+            background: #f5f5f5;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: #fff3ef;
+            border: 1px #f3c2b3;
+            transform: translateY(-4px);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+        }
+
+        /* hamburger button */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--terracotta);
+        }
+
+        /* mobile menu */
+        dialog {
+            margin: 0;
+            margin-left: auto;
+            height: 100vh;
+            max-height: 100vh;
+            width: 100%;
+            max-width: 320px;
+            border: none;
+            border-radius: 16px 0 0 16px; /*rounded*/
+            background-color: #AD544B;
+            color: #1a1a1a;
+            box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+            padding: 0;
+            overflow: hidden;
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        /* Animation for opening */
+        dialog[open] {
+            animation: slide-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Backdrop styling */
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            animation: fade-in 0.4s ease forwards;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .mobile-menu-content {
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+            align-self: flex-end;
+            margin-bottom: 2rem;
+            padding: 0.5rem;
+            line-height: 1;
+            transition: color 0.2s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--terracotta);
+        }
+
+        /* mobile nav links */
+        dialog nav {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        dialog nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        dialog nav a:hover {
+            color: #4e0d06;
+            padding-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+
+            /* hide desktop nav */
+            .header-container>nav {
+                display: none;
+            }
+
+            /* show hamburger */
+            .hamburger {
+                display: block;
+            }
+        }
+
+        /* Desktop: Ensure dialog is not visible */
+        @media (min-width: 769px) {
+            #mobile-menu-dialog {
+                display: none;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #ccc;
+        }
+
+        footer a:hover {
+            color: #E2725B;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .fa-brands,
+        .fab {
+            font-weight: 700;
+            transform: scale(1.7);
+            
+        }
+
+        /* Policies */
+        .footer_parent_label {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-weight: var(--fw-medium);
+        }
+
+        .footer_parent_label p {
+            margin: 0;
+            color: hsl(var(--clr-libre-white-600));
+        }
+
+        .footer_parent_label>a {
+            font-weight: var(--fw-medium);
+            margin: 0;
+        }
+
+        .footer-category-items .footer-link,
+        .footer-content ul li a {
+            text-decoration: none;
+            margin-right: 6px;
+        }
+        .footer-category-items .footer-link:hover,
+        .footer-content ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .icon-link i {
+                font-size: 18px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="/bodhya-brown.svg" alt="Bodhya">
+            </a>
+            <nav>   
+                <a href="/about">About</a>
+                <a href="/join">Join</a>
+                <a href="/consulting">Consulting</a>
+                <a href="/projects">Projects</a>
+            </nav>
+            <!-- Hamburger btn for mobile -->
+            <button id="mobile-menu-btn" class="hamburger" aria-label="Open mobile menu">☰</button>
+
+            <!-- Mobile menu dialog hidden default -->
+            <dialog id="mobile-menu-dialog">
+                <div class="mobile-menu-content">
+                    <button id="close-menu-btn" class="close-btn" aria-label="Close menu">×</button>
+                    <nav>
+                        <a href="/about">About</a>
+                        <a href="/join">Join</a>
+                        <a href="/consulting">Consulting</a>
+                        <a href="/projects">Projects</a>
+                    </nav>
+                </div>
+            </dialog>
+        </div>
+    </header>
+
+    
+    <main>
+        <article>
+            <h1>Introducing Bodhya</h1>
+            
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">
+                📅 2025-11-28
+                
+            </p>
+            
+            <div style="border-top: 1px solid #f0f0f0; padding-top: 1rem;">
+                <p>For years, I've watched countless youth from Bihar, like myself, leave our homes in search of better opportunities. Even now, most students look at migration as the only way to realize their potential. But what if that could change?</p>
+<h2 id="the-problem">The Problem</h2>
+<p>By 2021, Bihar's government managed to establish engineering colleges in every district. The goal: give students technical education close to home. Yet, the missing piece remains. The actual tech industry, local jobs, and a career path within Bihar are not present. As a result, the cycle continues: students get degrees, but with no companies to join, everyone leaves for cities like Bangalore, Delhi, and Pune.
+During my time at FOSS United, I've witnessed how open source communities can spark change in cities and colleges. But I have struggled to find people ready to lead, learn, and build a vibrant tech scene at home, despite the number of engineering colleges. The interest, and the culture just wasn't there.</p>
+<h2 id="introducing-bodhya">Introducing Bodhya</h2>
+<p>That's where Bodhya comes in. This initiative is my experiment to break the cycle and offer experience &amp; real opportunities, right here. The vision? Train and mentor students, connect them with industry, and help them start their careers while they're still in college without leaving their home.</p>
+<h2 id="the-plan">The Plan</h2>
+<p><strong>Training</strong>: The heart of the program is the training: workshops, mentorship, and practical guidance from industry experts all over India. The plan is to partner with colleges in Bihar, bring in technology leaders from major Indian cities, and connect students with industry to find internship and full-time job opportunities.</p>
+<p><strong>Meetups &amp; Conferences</strong>: Regular events will connect students with industry professionals, organize workshops, and host hackathons. These gatherings helps build real community: students get to network, learn new skills, showcase their work, and get inspiration straight from people who have walked the path before.</p>
+<p><strong>Social Media</strong>: Like it or not, today's youth spend a lot of time on social media platforms like Instagram and YouTube. Bodhya will reach the students wherever they are, sharing stories from workshops, meetups, and conferences to help more students discover new possibilities in tech.</p>
+<p>All of these programs will closely follow <a href="https://fossunited.org/">FOSS United's</a> vision, leveraging benefits from initiatives like FOSS Clubs, City Communities, and Event Grants.</p>
+<p>Starting January 2026, I will begin this experiment full-time, which also means December 2025 will be my last month at FOSS United Foundation as full-time staff. I will remain a volunteer for FOSS United and OASIS, and will connect with the community during major events like IndiaFOSS.</p>
+<p>Today, Bihar is at a crossroads. Government initiatives promise new industries, investment in AI and startups, better infrastructure, and more jobs. But as every young Bihari knows, real change comes from the ground up. Bodhya's strength is its direct connection to students: building skills, creating jobs, and keeping the talent local.</p>
+<h2 id="sustainability">Sustainability</h2>
+<p>Bodhya is aiming to sustain itself through tech consultancy services, and industry collaborations, ensuring this initiative keeps growing and scaling.</p>
+<h3 id="connect">Connect</h3>
+<p>If you want to get in touch or volunteer for this initiative, please write to me at <a href="mailto:vishal@bodhya.net">vishal@bodhya.net</a>.</p>
+<p>To volunteer for Bodhya, kindly fill <a href="https://ee.kobotoolbox.org/x/WVN2Y2fa">this form</a>.</p>
+<p>Vishal Arya<br>
+Bettiah, West Champaran<br>
+Bihar - 845438<br></p>
+
+            </div>
+        </article>
+        
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #f0f0f0;">
+            <p><a href="/blog" style="color: #1a1a1a; font-weight: 600;">← Back to Blog</a></p>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="footer-content">
+            <ul style="display: flex; gap: 0.8rem; justify-content: center; list-style: none; flex-wrap: wrap;">
+                <li>
+                    <a href="https://www.linkedin.com/company/bodhya" class="icon-link" aria-label="Bodhya on LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/joinbodhya" class="icon-link" aria-label="Bodhya on Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/joinbodhya" class="icon-link" aria-label="Bodhya on X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/fossdot/bodhya-site" class="icon-link" aria-label="Bodhya on GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <ul style="display: flex; gap: 1rem; justify-content: center; list-style: none; flex-wrap: wrap;">
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="mailto:vishal@bodhya.net">vishal@bodhya.net</a></li>
+            </ul>
+            <div class="footer_parent_label">
+                <p>Policies</p>
+
+                <div class="footer-category-items">
+                    <a class="footer-link" href="/privacy-policy">Privacy Policy</a>
+                    <a class="footer-link" href="/code-of-conduct">Code of Conduct</a>
+                    <a class="footer-link" href="/terms-of-service">Terms of Service</a>
+                </div>
+            </div>
+            <br>
+            <p>Built using <a href="https://www.getzola.org/">Zola</a></p>
+        </div>
+    </footer>
+    <script src='/mobile-menu.js'></script>
+</body>
+</html>
