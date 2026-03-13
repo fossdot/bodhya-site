@@ -166,6 +166,8 @@ hide_title = true
     width: auto;
     opacity: 0.75;
     transition: opacity 0.2s;
+    display: block;
+    margin: 0 auto 16px;
 }
 .about-supported a:hover img {
     opacity: 1;
