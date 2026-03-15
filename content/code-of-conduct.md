@@ -1,42 +1,91 @@
 +++
-title = "CODE OF CONDUCT"
+title = "Code of Conduct"
 path = "code-of-conduct"
-[extra]
-hide_title = true
 +++
 
-# CODE OF CONDUCT
-## Message from the organisers
+## Our Pledge
 
-We invite you to join events organized by XAANEN our discourse forum, Telegram channels, and other community gatherings in a spirit of curiosity, friendliness, open-mindedness, and respect. XAANEN CONSULTING (OPC) PRIVATE LIMITED is a platform for collaboration, for building free software and open communities, and to ensure the quality of such conversations, there are certain rules that we, and you, are expected to follow. All attendees, speakers, sponsors and volunteers at our events are required to agree with the following code of conduct. We expect cooperation from all participants to help ensure a safe environment for everybody.
+Bodhya is a platform for collaboration, learning, and building free and open communities for students and professionals in Bihar and beyond. We are committed to making participation in all Bodhya spaces — events, online forums, social media, Telegram channels, and GitHub — a welcoming experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices.
 
-## The short version
+We expect all participants to help us maintain a safe, respectful, and productive environment.
 
-XAANEN CONSULTING (OPC) PRIVATE LIMITED is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment of participants, volunteers, sponsors or anyone else associated with the community in any form. Sexual language and imagery is not appropriate for any of our events, including talks, webinars, and other online media. Participants violating these rules may be sanctioned or expelled at the discretion of the foundation.
+---
 
-If you feel uncomfortable or harassed at any of our events or communication channels, please report it to the foundation using the procedures mentioned in the Code of Conduct.
+## Expected Behavior
 
-## The not so short version
+All participants are expected to:
 
-* Harassment includes but is not limited to offensive verbal or non-verbal comments related to gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion, technology choices, sexual images in public spaces, deliberate intimidation, stalking, following, harassing photography or recording, sustained disruption of the event, inappropriate physical contact, and unwelcome sexual attention.
-* Participants asked to stop any such behaviour are expected to comply immediately.
-* If a participant engages in harassing behaviour, the Bodhya team may take any action they deem appropriate, including warning the offender or expulsion from the event.
-* The code of conduct and anti-harassment policies apply to everyone participating in the event including sponsors, judges, mentors, volunteers, organisers, and Bodhya staff.
-* Regardless of the event being a virtual or online-only event, we expect participants to adhere to these rules at all avenues, online and offline alike.
+- Be welcoming, kind, and respectful in all interactions
+- Listen actively and consider perspectives different from your own
+- Give and receive constructive feedback gracefully
+- Show empathy toward other community members
+- Focus on what is best for the community
+- Use inclusive language
 
-## Reporting Code of Conduct Violations
+---
 
-If you are being harassed, notice that someone else is being harassed, or come across a violation of the code of conduct, please contact a volunteer/organiser immediately. Participants can call **8235103450** or email [coc@bodhya.net](mailto:coc@bodhya.net) for any reports or queries.
+## Unacceptable Behavior
 
-All reporters will remain anonymous.
+The following behaviors are not tolerated in any Bodhya space, online or offline:
 
-## Special Incidents
+- Harassment of any kind, including offensive verbal or non-verbal comments related to gender, gender identity, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, or religion
+- Sexual language or imagery in talks, workshops, online media, or other event spaces
+- Deliberate intimidation, stalking, or following
+- Harassing photography or recording without consent
+- Sustained disruption of presentations or discussions
+- Inappropriate physical contact or unwelcome sexual attention
+- Publishing others' private information without consent
 
-If you are uncomfortable reporting your situation to volunteers or need to contact a full time member at the organisation directly in case of emergency, direct contact details are listed below.
+Participants asked to stop unacceptable behavior are expected to comply immediately.
 
-* Vishal Arya - [vishal@bodhya.net](mailto:vishal@bodhya.net)
-* Rohit Kumar - [fossrohit@gmail.com](mailto:fossrohit@gmail.com)
+---
 
-## Credit
+## Scope
 
-Portions of this Code of Conduct are based on the example code of conduct from the MLH policies, created by Major League Hacking, under a Creative Commons attribution-ShareAlike 4.0 International Public License.
+This Code of Conduct applies to all Bodhya-organized or Bodhya-affiliated spaces, including:
+
+- In-person events and workshops
+- Online events and webinars
+- Community forums, and WhatsApp communities
+- Bodhya's GitHub repositories and issue trackers
+- Social media interactions in Bodhya-managed accounts
+
+It applies to all attendees, speakers, sponsors, volunteers, organizers, and Bodhya staff.
+
+---
+
+## Reporting
+
+If you are being harassed, witness harassment, or observe a violation of this Code of Conduct, please report it immediately:
+
+- **Phone:** 8235103450
+- **Email:** [coc@bodhya.net](mailto:coc@bodhya.net)
+
+All reporters will remain anonymous. We will respond to reports within 48 hours.
+
+---
+
+## Enforcement
+
+Bodhya organizers will investigate all reports and take action proportionate to the violation:
+
+1. **Warning** — a private written warning with an explanation of the violation
+2. **Temporary ban** — temporary suspension from Bodhya spaces for a defined period
+3. **Permanent ban** — permanent removal from all Bodhya spaces
+
+The Bodhya team's decisions are final.
+
+---
+
+## Emergency Contacts
+
+If you are uncomfortable reporting to volunteers or need to contact a full-time team member directly:
+
+- Vishal Arya — [vishal@bodhya.net](mailto:vishal@bodhya.net)
+- Rohit Kumar — [fossrohit@gmail.com](mailto:fossrohit@gmail.com)
+
+---
+
+## Attribution
+
+Portions of this Code of Conduct are based on the example policy from [Major League Hacking (MLH)](https://mlh.io/), used under a Creative Commons Attribution-ShareAlike 4.0 International License.

@@ -1,68 +1,96 @@
 +++
-title = "PRIVACY POLICIES"
+title = "Privacy Policy"
 path = "privacy-policy"
-[extra]
-hide_title = true
 +++
-# PRIVACY POLICIES
 
-The XAANEN CONSULTING (OPC) PRIVATE LIMITED understands the importance of Data Privacy. We respect your privacy and appreciate your confidence in us. This Policy explains how we handle user information collected by us and from other sources. This policy applies to current and prior website visitors, as well as our online customers. You agree to our Privacy Policy by accessing or using our website.
+*Last updated: March 2026*
 
-## I. Kinds of Information
+Bodhya is operated by **XAANEN CONSULTING (OPC) PRIVATE LIMITED** ("we", "us", or "our"), the Data Fiduciary for this platform. We are committed to protecting your personal data in accordance with India's **Digital Personal Data Protection Act (DPDPA) 2023** and the Information Technology Act, 2000. By using this website, you agree to the practices described in this Policy.
 
-Information is collected when you make correspondence with us. We may gather information such as your name, email address, phone number, street, city, state, zip code, country, IP address, and other information you submit on the platform.
+**Note on events:** Bodhya events are listed and managed through [FOSS United](https://fossunited.org). Event registrations, ticketing, and associated data (including payment information) are collected and processed by FOSS United Foundation under their own privacy policy. This Policy covers only the data collected directly through bodhya.net.
 
-#### Payments and Invoices
-When you purchase a ticket, we may gather your billing name, billing address, and payment method. Please note that XAANEN CONSULTING (OPC) PRIVATE LIMITED never gathers your credit card number, expiration date, or any other credit card information. Our online payment partner Razorpay will collect and process credit card information.
+**Note on community platforms:** Bodhya operates community spaces on WhatsApp. When you join the community, your phone number and profile information become visible to other members and are governed by WhatsApp's (Meta) privacy policies. Bodhya does not control, access, or process the personal data held by these platforms.
 
-#### Information Shared by You
-We collect information you share in a public area of our website or on a XAANEN owned social media site.
+---
 
-#### Demographic Information
-We may gather demographic information about you, events you enjoy, events you plan to attend, tickets you purchase, or any other information you submit when using our website. We may also collect this information as part of a survey.
+## I. What We Collect
 
+When you interact with our website or services, we may collect:
 
-Additional information We may gather information about your IP address and the browser you're using whenever you access our website. We may examine the website from which you arrived, the amount of time you spent on our website, the pages you accessed, and the website you visit after you leave us. We may also gather information on the sort of mobile device you're using or the operating system version on your computer or device.
+- **Contact information:** name, email address, phone number, mailing address (e.g., when you contact us via a form or email)
+- **Content you submit:** comments, form submissions, or messages you send us
+- **Information shared on public areas:** posts on Bodhya-owned community spaces or social media pages
 
+## II. How We Collect It
 
-#### Additional Information
-We may gather information about your IP address and the browser you're using whenever you access our website. We may examine the website from which you arrived, the amount of time you spent on our website, the pages you accessed, and the website you visit after you leave us. We may also gather information on the sort of mobile device you're using or the operating system version on your computer or device.
+- **Directly from you:** when you submit a form, send us an email, or otherwise contact us through bodhya.net
+- **Automatically:** through tools like Google Analytics, browser cookies, and web beacons — we collect IP addresses, browser type, pages visited, and device/OS information
+- **From third parties:** if you use a social media login or integration on our site, we may receive your name and email from that platform
 
-## II. We Collect Information in Different Ways
+## III. Why We Use It (Purpose Limitation)
 
-* **We obtain information from you directly.** When you register for an event or purchase tickets, we collect information directly from you. We also collect information when you leave a remark on one of our websites or call or email us with a question.
-* **We passively collect information from you.** We collect information about your use of our website through tracking methods such as Google Analytics, Google Webmaster, browser cookies, and web beacons.
-* **Third parties provide us with information about you.** For example, if you utilize one of our websites' integrated social media features, we will receive certain information about you from a third-party social media site. Your name and email address may be included.
+We process your personal data only for the following purposes, as required by DPDPA §4:
 
-## III. How Do We Use Your Personal Information?
+- **To fulfil your requests:** respond to enquiries and messages you send us
+- **To communicate with you:** send transactional messages and, where you have consented, promotional updates
+- **To improve our services:** analyse usage trends and personalise your experience
+- **To meet legal obligations:** respond to lawful government or court orders
 
-* **To reply to your requests or questions:** Your information may be used to confirm your registration for an event or contest.
-* **To contact you:** We may contact you using the information you supply to confirm a transaction made on our website or for other promotional purposes.
-* **To make our goods and services better:** We may use the information you provide to personalize your experience with us. This could involve showing you content according to your tastes.
-* **To analyze site trends and client preferences:** We may use the information you provide to improve our website and offerings. We may combine information we collect from you with data we obtain from other parties about you.
+We will not use your data for purposes incompatible with those listed above without fresh consent.
 
-## IV. Under What Circumstance is Your Information Shared with a Third-Party?
+## IV. How Long We Keep It
 
-* **To third parties who provide services on our behalf:** We may share data with suppliers who assist us in managing our online registration process, as well as payment processors and transactional message processors. Some merchants may be based in countries other than India.
-* **Legal obligations:** If we believe it is necessary to comply with the law or protect ourselves, we may share information. In response to a court order or a similar legal obligation, we will release information. If a government agency or investigative body demands it, we may share it. We might also share information if we're looking into a possible fraud.
-* **Business transfers:** Any successor to all or part of our organization may be given access to information. For example, if a portion of our company is sold, we may hand over our customer list as part of the deal.
-* **Other reasons:** Your information may be shared for reasons not covered by this policy. Before we do anything, we'll let you know.
+We retain personal data only as long as necessary for the purposes stated above or as required by law. You may request erasure at any time (see Your Rights below).
 
-## V. Unsubscribing to Marketing Mails
+## V. Who We Share It With
 
-You can unsubscribe from our marketing mailings at any time. Please email at [hello@bodhya.net](mailto:hello@bodhya.net) to unsubscribe from our promotional emails. Your request may take up to 15 days to be processed. Even if you choose not to receive marketing messages, we will nevertheless send you transactional messages about your transactions by email.
+- **Service providers:** vendors who assist with email delivery and site analytics. Some processors may be based outside India (see Cross-Border Transfers below)
+- **Legal obligations:** when required by a court order, government authority, or applicable law
+- **Business transfers:** if Bodhya's business is acquired or merged, your data may transfer to the successor entity, subject to equivalent protections
 
-## VI. Grievance Officer
+We do not sell your personal data.
 
-The name and contact information for the Grievance Officer are included below, in compliance with the Information Technology Act of 2000 and its rules:
+## VI. Your Rights Under DPDPA 2023
 
-**Name:** Rohit Kumar   
-**Email Address:** [fossrohit@gmail.com](mailto:fossrohit@gmail.com)  
+As a Data Principal, you have the following rights:
 
-You can also email [hello@bodhya.net](mailto:hello@bodhya.net) at any time to receive a copy of your personal information. Please let us know if your personal information changes or if you discover that our records are out of date.
+- **Right to access:** obtain a summary of the personal data we hold about you and how it is being processed
+- **Right to correction and erasure:** request that inaccurate, incomplete, or unnecessary data be corrected or deleted
+- **Right to withdraw consent:** withdraw consent for any processing based on consent, at any time, without affecting prior lawful processing
+- **Right to grievance redressal:** raise a grievance with our Grievance Officer (see below)
+- **Right to nominate:** nominate another individual to exercise your rights in the event of your death or incapacity
 
-### Modifications
-We may alter our privacy practices from time to time. As required by law, we will notify you of any major changes to this policy. We'll also update the information on our website. Please check our site for updates on a regular basis.
+To exercise any of these rights, email [hello@bodhya.net](mailto:hello@bodhya.net).
 
-### Contact Us
-You can also email us if you have any questions regarding this Policy or any privacy concerns, at [hello@bodhya.net](mailto:hello@bodhya.net).
+## VII. Children's Data
+
+We do not knowingly collect personal data from children under 18 years of age without verifiable parental or guardian consent, as required under DPDPA §9. If you believe a child has submitted data to us without consent, contact us immediately and we will delete it.
+
+## VIII. Data Breach Notification
+
+If a personal data breach occurs that is likely to affect your rights or interests, we will notify you and the Data Protection Board of India promptly, in accordance with DPDPA obligations.
+
+## IX. Cross-Border Transfers
+
+Some of our service providers may process data in countries outside India. We take reasonable steps to ensure such transfers are subject to appropriate data protection safeguards.
+
+## X. Unsubscribing from Marketing Emails
+
+To stop receiving marketing emails, write to [hello@bodhya.net](mailto:hello@bodhya.net). Your request will be processed within 10 business days. Transactional messages related to your direct interactions with us will continue regardless.
+
+## XI. Grievance Officer
+
+In compliance with the Information Technology Act, 2000 and the Digital Personal Data Protection Act, 2023:
+
+**Name:** Rohit Kumar
+**Email:** [fossrohit@gmail.com](mailto:fossrohit@gmail.com)
+
+You may also write to [hello@bodhya.net](mailto:hello@bodhya.net) for any privacy concerns or to request a copy of your data.
+
+## XII. Modifications
+
+We may update this Policy from time to time. We will notify you of material changes as required by law and post the updated Policy on this page with a revised "Last updated" date.
+
+## XIII. Contact
+
+For questions about this Policy, email [hello@bodhya.net](mailto:hello@bodhya.net).
