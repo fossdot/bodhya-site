@@ -132,6 +132,13 @@ hide_title = true
     margin-top: 1.5rem;
     padding-top: 1.25rem;
 }
+/* On the programme cards the role block follows the heading directly, with
+   no description above it — so the divider has nothing to divide. */
+.partner-card h2 + .partner-role {
+    border-top: none;
+    margin-top: 1rem;
+    padding-top: 0;
+}
 .partner-role-label {
     font-family: var(--font-brand);
     font-size: 0.7rem;
@@ -210,9 +217,8 @@ hide_title = true
         <div class="partner-card">
             <img src="/hikmat-logo.webp" alt="Hikmat Foundation" class="partner-logo logo-hikmat" width="680" height="199">
             <h2>Hikmat Foundation</h2>
-            <p>Hikmat runs two schools for girls in West Champaran, Bihar, and has educated over 1,000 students since 2015. It is a 12A/80G trust with FCRA registration, and a 501(c)(3) in the United States.</p>
             <div class="partner-role">
-                <span class="partner-role-label">What this means for Bodhya</span>
+                <span class="partner-role-label">What we run together</span>
                 <p>With Hikmat we run <a href="https://www.hikmatfoundation.org/school-to-livelihood" target="_blank" rel="noopener noreferrer">School to Livelihood</a>, a three-year programme for girls who have finished Class 10 in Ramnagar Block. We teach functional English, computer applications, and practical AI tools, then move graduates into paid client work — 20 students in year one, scaling to 75 by year three, with earning starting in year two rather than after.</p>
             </div>
             <a href="https://www.hikmatfoundation.org" target="_blank" rel="noopener noreferrer" class="partner-link">hikmatfoundation.org →</a>
@@ -220,10 +226,9 @@ hide_title = true
         <div class="partner-card">
             <img src="/ydf-logo.png" alt="Youth Dreamers Foundation" class="partner-logo logo-ydf" width="268" height="88">
             <h2>Youth Dreamers Foundation</h2>
-            <p>A Section 8 and FCRA-registered non-profit working on scholarships, mentorship, and career readiness for first-generation learners. Since 2015 it has supported over 55,000 scholars across 15 states, and it works out of Patna.</p>
             <div class="partner-role">
-                <span class="partner-role-label">What this means for Bodhya</span>
-                <p>With YDF we run <strong>FOSS Clubs at Patliputra University</strong>, giving students there a place to learn open source in practice. Their strength is the step we care most about and are weakest at alone: turning skills into actual jobs, through career guidance and employer links they have already built.</p>
+                <span class="partner-role-label">What we run together</span>
+                <p>With Youth Dreamers Foundation we run <strong>FOSS Clubs across colleges in Bihar</strong>, giving students a place to learn open source in practice. Their strength is the step we care most about and are weakest at alone: turning skills into actual jobs, through career guidance and employer links they have already built.</p>
             </div>
             <a href="https://ydfindia.org" target="_blank" rel="noopener noreferrer" class="partner-link">ydfindia.org →</a>
         </div>
