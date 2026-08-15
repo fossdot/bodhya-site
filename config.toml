@@ -2,7 +2,9 @@ base_url = "https://bodhya.net"
 title = "Bodhya"
 description = "Creating Tech Opportunities for Bihar Students"
 generate_feeds = true
-compile_sass = true
+# No .scss sources exist — all styling is inline in templates/base.html and
+# in the <style> blocks of the self-styled content pages.
+compile_sass = false
 
 
 taxonomies = [

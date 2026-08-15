@@ -6,16 +6,16 @@
     <main>
         <h1>{{ section.title }}</h1>
         <p>{{ section.description }}</p>
-        
-        <div style="margin-top: 2rem;">
+
+        <div class="post-list">
             {% for page in section.pages %}
-                <article style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #f0f0f0;">
-                    <h2><a href="{{ page.permalink }}" style="color: #1a1a1a;">{{ page.title }}</a></h2>
-                    <p style="color: #666; font-size: 0.9rem;">📅 {{ page.date }}</p>
+                <article class="post-summary">
+                    <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+                    <p class="post-meta">📅 {{ page.date }}</p>
                     {% if page.description %}
                         <p>{{ page.description }}</p>
                     {% endif %}
-                    <a href="{{ page.permalink }}" style="color: #1a1a1a; font-weight: 600;">Read more →</a>
+                    <a href="{{ page.permalink }}" class="post-more">Read more →</a>
                 </article>
             {% endfor %}
         </div>

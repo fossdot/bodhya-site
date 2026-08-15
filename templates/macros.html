@@ -1,0 +1,18 @@
+{# Single source of truth for site navigation.
+
+   Used three times in base.html: the desktop header nav, the mobile
+   <dialog> nav, and the footer nav. Add or rename a link HERE and all
+   three stay in sync.
+
+   All three navs are `display: flex`, so whitespace between the anchors
+   is not rendered — indentation of this output is cosmetic only.
+
+   "Events" is deliberately an external link to the FOSS United Bihar
+   chapter; there is no local /events page. #}
+
+{% macro primary_links() %}
+    <a href="/about">About</a>
+    <a href="/join">Join</a>
+    <a href="/projects">Projects</a>
+    <a href="https://fossunited.org/c/bihar" target="_blank" rel="noopener noreferrer">Events</a>
+{% endmacro primary_links %}

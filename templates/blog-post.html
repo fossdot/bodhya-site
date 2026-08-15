@@ -4,26 +4,26 @@
 
 {% block content %}
     <main>
-        <article>
+        <article class="post-article">
             <h1>{{ page.title }}</h1>
-            
-            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">
+
+            <p class="post-meta">
                 📅 {{ page.date }}
                 {% if page.taxonomies.tags %}
-                    | Tags: 
+                    | Tags:
                     {% for tag in page.taxonomies.tags %}
-                        <a href="/tags/{{ tag }}" style="text-decoration: none;">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                        <a href="/tags/{{ tag }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
                     {% endfor %}
                 {% endif %}
             </p>
-            
-            <div style="border-top: 1px solid #f0f0f0; padding-top: 1rem;">
+
+            <div class="post-body">
                 {{ page.content | safe }}
             </div>
         </article>
-        
-        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #f0f0f0;">
-            <p><a href="/blog" style="color: #1a1a1a; font-weight: 600;">← Back to Blog</a></p>
+
+        <div class="post-footer">
+            <p><a href="/blog">← Back to Blog</a></p>
         </div>
     </main>
 {% endblock %}
