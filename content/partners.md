@@ -127,32 +127,6 @@ hide_title = true
     transition: border-color 0.2s;
 }
 .partner-card p a:hover { border-bottom-color: var(--c-accent); }
-.partner-role {
-    border-top: 1px solid var(--c-border);
-    margin-top: 1.5rem;
-    padding-top: 1.25rem;
-}
-/* On the programme cards the role block follows the heading directly, with
-   no description above it — so the divider has nothing to divide. */
-.partner-card h2 + .partner-role {
-    border-top: none;
-    margin-top: 1rem;
-    padding-top: 0;
-}
-.partner-role-label {
-    font-family: var(--font-brand);
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--c-accent);
-    display: block;
-    margin-bottom: 0.6rem;
-}
-.partner-role p {
-    font-size: 0.95rem;
-    margin: 0;
-}
 .partner-link {
     font-family: var(--font-brand);
     font-size: 0.85rem;
@@ -217,19 +191,13 @@ hide_title = true
         <div class="partner-card">
             <img src="/hikmat-logo.webp" alt="Hikmat Foundation" class="partner-logo logo-hikmat" width="680" height="199">
             <h2>Hikmat Foundation</h2>
-            <div class="partner-role">
-                <span class="partner-role-label">What we run together</span>
-                <p>With Hikmat we run <a href="https://www.hikmatfoundation.org/school-to-livelihood" target="_blank" rel="noopener noreferrer">School to Livelihood</a>, a three-year programme for girls who have finished Class 10 in Ramnagar Block. We teach functional English, computer applications, and practical AI tools, then move graduates into paid client work — 20 students in year one, scaling to 75 by year three, with earning starting in year two rather than after.</p>
-            </div>
+            <p>With Hikmat we run <a href="https://www.hikmatfoundation.org/school-to-livelihood" target="_blank" rel="noopener noreferrer">School to Livelihood</a>, a three-year programme for girls who have finished Class 10 in Ramnagar Block. We teach functional English, computer applications, and practical AI tools, then move graduates into paid client work — 20 students in year one, scaling to 75 by year three, with earning starting in year two rather than after.</p>
             <a href="https://www.hikmatfoundation.org" target="_blank" rel="noopener noreferrer" class="partner-link">hikmatfoundation.org →</a>
         </div>
         <div class="partner-card">
             <img src="/ydf-logo.png" alt="Youth Dreamers Foundation" class="partner-logo logo-ydf" width="268" height="88">
             <h2>Youth Dreamers Foundation</h2>
-            <div class="partner-role">
-                <span class="partner-role-label">What we run together</span>
-                <p>With Youth Dreamers Foundation we run <strong>FOSS Clubs across colleges in Bihar</strong>, giving students a place to learn open source in practice. Their strength is the step we care most about and are weakest at alone: turning skills into actual jobs, through career guidance and employer links they have already built.</p>
-            </div>
+            <p>With Youth Dreamers Foundation we run <strong>FOSS Clubs across colleges in Bihar</strong>, giving students a place to learn open source in practice. Their strength is the step we care most about and are weakest at alone: turning skills into actual jobs, through career guidance and employer links they have already built.</p>
             <a href="https://ydfindia.org" target="_blank" rel="noopener noreferrer" class="partner-link">ydfindia.org →</a>
         </div>
     </div>
