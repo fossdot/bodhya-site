@@ -14,7 +14,7 @@ Payments on this site are processed by **Razorpay Software Private Limited**. We
 
 ## What You Are Paying For
 
-Bodhya does not sell goods, and does not charge for access to this website or its content. Payments accepted through this site are **voluntary contributions** that fund community programmes for students in Bihar — workshops, mentorship, travel support, and the running costs of the projects listed on our [Projects](/projects) page.
+Bodhya does not sell goods, and does not charge for access to this website or its content. Payments accepted through this site are **voluntary contributions** that fund community programmes for students in Bihar — workshops, mentorship, travel support, and the running costs of the programmes described on our [About](/about) page.
 
 Because a contribution is a voluntary gift rather than a purchase, no goods are shipped and there is no product to return.
 

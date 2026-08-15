@@ -34,7 +34,7 @@ The single most important thing to understand: **styling is split between a shar
 --font-display: 'Funnel Display'   --font-body: system stack
 ```
 
-**Tier 2 — self-styled content pages.** `about.md`, `join.md`, and `projects.md` are not plain markdown. Each is a full HTML document embedded in a `.md` file, carrying its own `<style>` block and its own redefined `:root` under *different* variable names (`--c-bg`, `--c-accent`, `--c-accent-hover`, `--c-text-main`). They opt out of the shell's layout via:
+**Tier 2 — self-styled content pages.** `about.md`, `join.md`, and `partners.md` are not plain markdown. Each is a full HTML document embedded in a `.md` file, carrying its own `<style>` block and its own redefined `:root` under *different* variable names (`--c-bg`, `--c-accent`, `--c-accent-hover`, `--c-text-main`). They opt out of the shell's layout via:
 
 ```toml
 [extra]
@@ -44,8 +44,9 @@ hide_title = true
 which makes `templates/page.html` drop the `<h1>` and strip `main`'s padding/max-width so the page renders full-bleed. `templates/404.html` does the same thing with `main { ... !important }` overrides inside its content block.
 
 Consequences to internalize:
-- Editing brand colors in `base.html` will **not** change about/join/projects. Those hex values are duplicated per page and must be updated in each file.
+- Editing brand colors in `base.html` will **not** change about/join/partners. Those hex values are duplicated per page and must be updated in each file.
 - To restyle one of those pages, edit the `<style>` block inside its `.md` file, not `base.html`.
+- **Never leave a blank line inside the HTML body of one of these pages.** A blank line closes the CommonMark HTML block; the following indented `<div>` is then parsed as an indented code block and the rest of the page renders as visible source text. The existing pages are deliberately written as one unbroken run of markup after `</style>`.
 - Don't re-import Google Fonts inside a page — `base.html` already loads Funnel Display 300–800 (with preconnects), which covers every weight.
 
 ### Templates

@@ -146,6 +146,70 @@ hide_title = true
     color: var(--c-text-main);
     font-weight: 600;
 }
+.about-founder {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+}
+.about-founder-label {
+    font-family: var(--font-brand);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--c-accent);
+    display: block;
+    margin-bottom: 20px;
+}
+.about-founder-card {
+    background: var(--c-card-bg);
+    border: 1px solid var(--c-border);
+    border-radius: 8px;
+    padding: 32px;
+}
+.about-founder-card h3 {
+    font-size: 1.35rem;
+    color: var(--c-text-main);
+    margin-bottom: 0.25rem;
+}
+.about-founder-role {
+    font-family: var(--font-brand);
+    font-size: 0.9rem;
+    color: var(--c-accent);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 1.25rem;
+}
+.about-founder-card p {
+    font-size: 1rem;
+    color: var(--c-text-muted);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+.about-founder-card p:last-of-type { margin-bottom: 1.5rem; }
+.about-founder-card p a {
+    color: var(--c-accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--c-border);
+    transition: border-color 0.2s;
+}
+.about-founder-card p a:hover { border-bottom-color: var(--c-accent); }
+.about-founder-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--c-border);
+    padding-top: 1.25rem;
+}
+.about-founder-links a {
+    font-family: var(--font-brand);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--c-accent);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.about-founder-links a:hover { color: var(--c-accent-hover); }
 .about-supported {
     text-align: center;
     padding: 40px 24px;
@@ -282,6 +346,22 @@ hide_title = true
         <div class="about-name-block">
             <h2>The Name</h2>
             <p><em>Bodhya</em> means "worthy of knowledge" or "capable of being awakened" in Sanskrit. It reflects our belief that every student has potential — they just need the right spark and opportunity.</p>
+        </div>
+    </div>
+    <div class="about-founder">
+        <span class="about-founder-label">Founder</span>
+        <div class="about-founder-card">
+            <h3>Vishal Arya</h3>
+            <span class="about-founder-role">Founder, Bodhya</span>
+            <p>Vishal is using technology to chip away at a few social problems in Bihar. He is also a director on the board at <a href="https://fossunited.org" target="_blank" rel="noopener noreferrer">FOSS United</a>, which he has been part of since its early days — experience that shapes how Bodhya is built: in the open, with communities rather than for them.</p>
+            <p>Alongside Bodhya he works on <a href="https://www.hikmatfoundation.org/school-to-livelihood" target="_blank" rel="noopener noreferrer">School to Livelihood</a>, training under-privileged girls in West Champaran, and runs <a href="https://fossunited.org/c/bihar" target="_blank" rel="noopener noreferrer">FOSS United Bihar</a>, which brings free and open source software to engineering colleges across the state.</p>
+            <p>His software work includes the <a href="https://yojana.bodhya.net" target="_blank" rel="noopener noreferrer">Bihar Scheme Tracker</a>, which follows the state's education money from released to drawn down to verified as reaching a school, and <a href="https://learn.bodhya.net/play" target="_blank" rel="noopener noreferrer">Hikmat Games</a>, browser games that teach English and programming to Hindi speakers.</p>
+            <div class="about-founder-links">
+                <a href="https://fossdot.in" target="_blank" rel="noopener noreferrer">fossdot.in</a>
+                <a href="https://www.linkedin.com/in/fossdot/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/fossdot" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:vishal@bodhya.net">vishal@bodhya.net</a>
+            </div>
         </div>
     </div>
     <div class="about-supported">
