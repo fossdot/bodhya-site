@@ -52,6 +52,8 @@ This Code of Conduct applies to all Bodhya-organized or Bodhya-affiliated spaces
 
 It applies to all attendees, speakers, sponsors, volunteers, organizers, and Bodhya staff.
 
+Because our events are hosted under FOSS United, the [FOSS United Code of Conduct](https://fossunited.org/code-of-conduct) applies at them as well. Where both apply, whichever is stricter governs — neither reduces your protections under the other.
+
 ---
 
 ## Reporting
@@ -62,6 +64,22 @@ If you are being harassed, witness harassment, or observe a violation of this Co
 - **Email:** [coc@bodhya.net](mailto:coc@bodhya.net)
 
 All reporters will remain anonymous. We will respond to reports within 48 hours.
+
+### Reporting at events
+
+Bodhya's events are organised and hosted under [FOSS United](https://fossunited.org), so the [FOSS United Code of Conduct](https://fossunited.org/code-of-conduct) applies at them in addition to this one. You may report to either team — or both — and you do not have to decide which is "correct" before speaking up.
+
+FOSS United's reporting contacts:
+
+- **Phone:** 9900982939 — reaches full-time FOSS United staff
+- **Email:** [coc@fossunited.org](mailto:coc@fossunited.org)
+
+To escalate directly to FOSS United leadership:
+
+- **Sai Rahul Poruri**, CEO — [rahul@fossunited.org](mailto:rahul@fossunited.org), +91-9014997293
+- **Siddharth Shivkumar**, Senior Program Manager — [siddharth@fossunited.org](mailto:siddharth@fossunited.org), +91-8086601278
+
+Reports to FOSS United remain anonymous on request. Where an incident occurs at a FOSS United event, their team may take any action they consider appropriate, including a formal warning or expulsion from the event.
 
 ---
 

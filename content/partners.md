@@ -83,6 +83,7 @@ hide_title = true
 }
 .partner-logo.logo-fossunited { height: 44px; }
 .partner-logo.logo-samagata { height: 30px; }
+.partner-logo.logo-hikmat { height: 46px; }
 .partner-card h2 {
     font-size: 1.4rem;
     color: var(--c-text-main);
@@ -191,11 +192,10 @@ hide_title = true
             <img src="/fossunited-logo.svg" alt="FOSS United" class="partner-logo logo-fossunited">
             <h2>FOSS United</h2>
             <span class="partner-kind">Non-profit foundation · Ecosystem partner</span>
-            <p>FOSS United is a non-profit foundation working to promote and strengthen the Free and Open Source Software ecosystem in India. Its work runs along three lines: promoting the spirit of hacking and tinkering, building quality open source software for public benefit, and pushing FOSS adoption across sectors that have been slow to it.</p>
-            <p>It does this through city communities and student FOSS Clubs, the OASIS Coalition for open source in the social sector, the annual <strong>IndiaFOSS</strong> conference, and <strong>FOSS Hack</strong>, its flagship hackathon.</p>
+            <p>A non-profit foundation strengthening the Free and Open Source Software ecosystem in India — through city communities, student FOSS Clubs, the annual <strong>IndiaFOSS</strong> conference, and the <strong>FOSS Hack</strong> hackathon.</p>
             <div class="partner-role">
                 <span class="partner-role-label">What this means for Bodhya</span>
-                <p>Bodhya's events are listed and run through the <a href="https://fossunited.org/c/bihar" target="_blank" rel="noopener noreferrer">FOSS United Bihar</a> chapter, which handles registration and ticketing under its own policies. The FOSS Clubs model is how we reach engineering colleges across the state, and FOSS United's mentor network is what lets a student in Bihar get feedback from someone building software anywhere in India.</p>
+                <p>Our events run through the <a href="https://fossunited.org/c/bihar" target="_blank" rel="noopener noreferrer">FOSS United Bihar</a> chapter. The FOSS Clubs model is how we reach engineering colleges across the state, and the mentor network is what lets a student in Bihar get feedback from someone building software anywhere in India.</p>
             </div>
             <a href="https://fossunited.org" target="_blank" rel="noopener noreferrer" class="partner-link">fossunited.org →</a>
         </div>
@@ -203,13 +203,24 @@ hide_title = true
             <img src="/samagata-logo.svg" alt="Samagata" class="partner-logo logo-samagata">
             <h2>Samagata Foundation</h2>
             <span class="partner-kind">Section 8 non-profit · Supporting partner</span>
-            <p>Samagata Foundation is a registered Section 8 non-profit based in Bengaluru. Its name means <em>"those which have come together"</em> across several Indian languages, and that is close to its method: bringing intent, skills, and resources into the same room and seeing what results.</p>
-            <p>It supports work across science, culture, art, technology, education, and research, with a particular interest in establishing public commons, institutions, and community spaces — the kind of infrastructure that lets collaboration happen at all. The foundation describes its approach through the butterfly effect: small, well-placed interventions that can produce outsized outcomes.</p>
+            <p>A registered Section 8 non-profit in Bengaluru, backing work across science, culture, technology, education, and research — with a particular interest in public commons and community spaces. Its name means <em>"those which have come together."</em></p>
             <div class="partner-role">
                 <span class="partner-role-label">What this means for Bodhya</span>
-                <p>Samagata backs the community-space and public-commons side of our work — the unglamorous groundwork of giving students in Bihar somewhere to gather, learn, and build together. It is also a long-standing supporter of FOSS United.</p>
+                <p>Samagata backs the community-space side of our work: the groundwork of giving students in Bihar somewhere to gather, learn, and build together.</p>
             </div>
             <a href="https://samagata.org" target="_blank" rel="noopener noreferrer" class="partner-link">samagata.org →</a>
+        </div>
+        <div class="partner-card">
+            <img src="/hikmat-logo.webp" alt="Hikmat Foundation" class="partner-logo logo-hikmat" width="680" height="199">
+            <h2>Hikmat Foundation</h2>
+            <span class="partner-kind">Charitable trust · Programme partner</span>
+            <p>Hikmat runs two schools for girls in West Champaran, Bihar, and has educated over 1,000 students since 2015. It is registered as a 12A/80G trust in India, holds FCRA registration, and operates as a 501(c)(3) in the United States.</p>
+            <div class="partner-role">
+                <span class="partner-role-label">What this means for Bodhya</span>
+                <p>With Hikmat we run <a href="https://www.hikmatfoundation.org/school-to-livelihood" target="_blank" rel="noopener noreferrer">School to Livelihood</a>, a three-year programme for girls who have finished Class 10 in Ramnagar Block — where finishing school at all is the hard part. We teach functional English, computer applications, and practical AI tools, then move graduates into paid client work in digitisation, data processing, and support.</p>
+                <p>It starts deliberately small: 20 students in year one, 50 in year two, 75 in year three — 145 graduates across three cohorts, with earning starting in year two rather than after.</p>
+            </div>
+            <a href="https://www.hikmatfoundation.org" target="_blank" rel="noopener noreferrer" class="partner-link">hikmatfoundation.org →</a>
         </div>
     </div>
     <div class="partners-cta">
