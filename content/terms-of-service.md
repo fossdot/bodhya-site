@@ -3,9 +3,9 @@ title = "Terms of Service"
 path = "terms-of-service"
 +++
 
-*Effective: March 2026*
+*Effective: August 2026*
 
-These Terms of Service govern your access to and use of the Bodhya website (bodhya.net), operated by **XAANEN CONSULTING (OPC) PRIVATE LIMITED** ("Bodhya", "we", "us", or "our"). By using this site, you agree to these terms. If you do not agree, please do not use the site.
+These Terms of Service govern your access to and use of the Bodhya website (bodhya.net), operated by **Vishal Arya** ("Bodhya", "we", "us", or "our"). By using this site, you agree to these terms. If you do not agree, please do not use the site.
 
 ---
 
@@ -17,7 +17,7 @@ Content on this site is published under a **Creative Commons Attribution-ShareAl
 
 ## Intellectual Property
 
-The Bodhya name, logo, and brand assets are proprietary to XAANEN CONSULTING (OPC) PRIVATE LIMITED and are not covered by the CC BY-SA license. You are not granted any license to use Bodhya's trademarks without prior written permission.
+The Bodhya name, logo, and brand assets are proprietary to Vishal Arya and are not covered by the CC BY-SA license. You are not granted any license to use Bodhya's trademarks without prior written permission.
 
 Third-party trademarks, logos, or content referenced on this site remain the property of their respective owners.
 
@@ -26,6 +26,20 @@ Third-party trademarks, logos, or content referenced on this site remain the pro
 ## User Submissions
 
 When you submit content to this site (such as comments, event feedback, or messages), you retain ownership of that content. By submitting, you grant Bodhya a limited, non-exclusive, royalty-free license to display and use your submission solely in connection with operating the site and our services. We will handle any personal data in your submission in accordance with our [Privacy Policy](/privacy-policy).
+
+---
+
+## Contributions and Payments
+
+Bodhya does not sell goods or charge for access to this site. Any payment accepted through bodhya.net is a **voluntary contribution** toward our community programmes.
+
+- Payments are processed by **Razorpay Software Private Limited**. We do not receive or store your card, UPI, or bank details.
+- You confirm that you are using a payment instrument you are legally entitled to use, and that the funds are from a lawful source.
+- Contributions are made in **Indian Rupees (INR)**.
+- Contributions are generally non-refundable. Duplicate, incorrect, and unauthorised transactions are refundable on the terms and timelines in our [Refund & Cancellation Policy](/refund-policy).
+- A contribution does not create any service obligation, entitlement, membership, or guarantee of any outcome, and does not make you a partner, employee, or agent of Bodhya.
+- Bodhya is **not** a registered charitable trust or Section 8 company. Contributions are **not** eligible for tax deduction under Section 80G of the Income Tax Act, and we do not issue 80G receipts.
+- We may decline or return any contribution at our discretion.
 
 ---
 
@@ -74,4 +88,4 @@ These Terms are governed by the laws of India. Any disputes arising from your us
 
 ## Contact
 
-For questions about these Terms, email [hello@bodhya.net](mailto:hello@bodhya.net).
+For questions about these Terms, email [vishal@bodhya.net](mailto:vishal@bodhya.net). For complaints, see our [Contact & Grievance Redressal](/contact) page, which names the officer responsible and the timelines we work to.

@@ -3,9 +3,11 @@ title = "Privacy Policy"
 path = "privacy-policy"
 +++
 
-*Last updated: March 2026*
+*Last updated: August 2026*
 
-Bodhya is operated by **XAANEN CONSULTING (OPC) PRIVATE LIMITED** ("we", "us", or "our"), the Data Fiduciary for this platform. We are committed to protecting your personal data in accordance with India's **Digital Personal Data Protection Act (DPDPA) 2023** and the Information Technology Act, 2000. By using this website, you agree to the practices described in this Policy.
+Bodhya is operated by **Vishal Arya** ("we", "us", or "our"), the Data Fiduciary for this platform. We are committed to protecting your personal data in accordance with India's **Digital Personal Data Protection Act (DPDPA) 2023** and the Information Technology Act, 2000. By using this website, you agree to the practices described in this Policy.
+
+**Note on contributions:** Voluntary contributions made through bodhya.net are processed by **Razorpay Software Private Limited**. Your card, UPI, and bank details are collected and processed by Razorpay under their own privacy policy — we never receive or store them. We retain only the transaction reference, amount, date, and the name and email you provide. See our [Refund & Cancellation Policy](/refund-policy) for how contributions are handled.
 
 **Note on events:** Bodhya events are listed and managed through [FOSS United](https://fossunited.org). Event registrations, ticketing, and associated data (including payment information) are collected and processed by FOSS United Foundation under their own privacy policy. This Policy covers only the data collected directly through bodhya.net.
 
@@ -60,7 +62,7 @@ As a Data Principal, you have the following rights:
 - **Right to grievance redressal:** raise a grievance with our Grievance Officer (see below)
 - **Right to nominate:** nominate another individual to exercise your rights in the event of your death or incapacity
 
-To exercise any of these rights, email [hello@bodhya.net](mailto:hello@bodhya.net).
+To exercise any of these rights, email [vishal@bodhya.net](mailto:vishal@bodhya.net).
 
 ## VII. Children's Data
 
@@ -76,16 +78,20 @@ Some of our service providers may process data in countries outside India. We ta
 
 ## X. Unsubscribing from Marketing Emails
 
-To stop receiving marketing emails, write to [hello@bodhya.net](mailto:hello@bodhya.net). Your request will be processed within 10 business days. Transactional messages related to your direct interactions with us will continue regardless.
+To stop receiving marketing emails, write to [vishal@bodhya.net](mailto:vishal@bodhya.net). Your request will be processed within 10 business days. Transactional messages related to your direct interactions with us will continue regardless.
 
 ## XI. Grievance Officer
 
 In compliance with the Information Technology Act, 2000 and the Digital Personal Data Protection Act, 2023:
 
-**Name:** Rohit Kumar
-**Email:** [fossrohit@gmail.com](mailto:fossrohit@gmail.com)
+**Name:** Vishal Arya
+**Designation:** Grievance Officer
+**Email:** [vishal@bodhya.net](mailto:vishal@bodhya.net)
+**Location:** Patna, Bihar 800001, India
 
-You may also write to [hello@bodhya.net](mailto:hello@bodhya.net) for any privacy concerns or to request a copy of your data.
+We will acknowledge your grievance within **5 business days** and communicate an outcome within **30 days**. Full escalation details are on our [Contact & Grievance Redressal](/contact) page.
+
+You may also write to [vishal@bodhya.net](mailto:vishal@bodhya.net) for any privacy concerns or to request a copy of your data.
 
 ## XII. Modifications
 
@@ -93,4 +99,4 @@ We may update this Policy from time to time. We will notify you of material chan
 
 ## XIII. Contact
 
-For questions about this Policy, email [hello@bodhya.net](mailto:hello@bodhya.net).
+For questions about this Policy, email [vishal@bodhya.net](mailto:vishal@bodhya.net).
