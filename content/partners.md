@@ -100,16 +100,20 @@ hide_title = true
     color: var(--c-text-main);
     margin-bottom: 0.4rem;
 }
-.partner-kind {
+.partners-group-label {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px;
     font-family: var(--font-brand);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.5px;
     color: var(--c-accent);
     display: block;
-    margin-bottom: 1.25rem;
+    margin-bottom: 16px;
 }
+.partners-group-label + .partners-list { padding-bottom: 40px; }
 .partner-card p {
     font-size: 1rem;
     color: var(--c-text-muted);
@@ -201,11 +205,11 @@ hide_title = true
         <h1>We don't build this alone.</h1>
         <p class="partners-lead">Bodhya is a small initiative doing work that needs reach. These are the organisations whose ecosystems, funding, and hard-won experience make that possible.</p>
     </div>
+    <span class="partners-group-label">Programme Partners</span>
     <div class="partners-list">
         <div class="partner-card">
             <img src="/hikmat-logo.webp" alt="Hikmat Foundation" class="partner-logo logo-hikmat" width="680" height="199">
             <h2>Hikmat Foundation</h2>
-            <span class="partner-kind">Charitable trust · Programme partner</span>
             <p>Hikmat runs two schools for girls in West Champaran, Bihar, and has educated over 1,000 students since 2015. It is a 12A/80G trust with FCRA registration, and a 501(c)(3) in the United States.</p>
             <div class="partner-role">
                 <span class="partner-role-label">What this means for Bodhya</span>
@@ -216,7 +220,6 @@ hide_title = true
         <div class="partner-card">
             <img src="/ydf-logo.png" alt="Youth Dreamers Foundation" class="partner-logo logo-ydf" width="268" height="88">
             <h2>Youth Dreamers Foundation</h2>
-            <span class="partner-kind">Section 8 non-profit · Programme partner</span>
             <p>A Section 8 and FCRA-registered non-profit working on scholarships, mentorship, and career readiness for first-generation learners. Since 2015 it has supported over 55,000 scholars across 15 states, and it works out of Patna.</p>
             <div class="partner-role">
                 <span class="partner-role-label">What this means for Bodhya</span>
@@ -224,26 +227,19 @@ hide_title = true
             </div>
             <a href="https://ydfindia.org" target="_blank" rel="noopener noreferrer" class="partner-link">ydfindia.org →</a>
         </div>
+    </div>
+    <span class="partners-group-label">Founding Partners</span>
+    <div class="partners-list">
         <div class="partner-card">
             <img src="/fossunited-logo.svg" alt="FOSS United" class="partner-logo logo-fossunited">
             <h2>FOSS United</h2>
-            <span class="partner-kind">Non-profit foundation · Ecosystem partner</span>
-            <p>A non-profit foundation strengthening the Free and Open Source Software ecosystem in India — through city communities, student FOSS Clubs, the annual <strong>IndiaFOSS</strong> conference, and the <strong>FOSS Hack</strong> hackathon.</p>
-            <div class="partner-role">
-                <span class="partner-role-label">What this means for Bodhya</span>
-                <p>Our events run through the <a href="https://fossunited.org/c/bihar" target="_blank" rel="noopener noreferrer">FOSS United Bihar</a> chapter. The FOSS Clubs model is how we reach engineering colleges across the state, and the mentor network is what lets a student in Bihar get feedback from someone building software anywhere in India.</p>
-            </div>
+            <p>A non-profit foundation working to promote and strengthen the Free and Open Source Software ecosystem in India. It runs city communities and student FOSS Clubs, the annual <strong>IndiaFOSS</strong> conference, and the <strong>FOSS Hack</strong> hackathon, and works to grow FOSS adoption across sectors that have been slow to it.</p>
             <a href="https://fossunited.org" target="_blank" rel="noopener noreferrer" class="partner-link">fossunited.org →</a>
         </div>
         <div class="partner-card">
             <img src="/samagata-logo.svg" alt="Samagata" class="partner-logo logo-samagata">
             <h2>Samagata Foundation</h2>
-            <span class="partner-kind">Section 8 non-profit · Supporting partner</span>
-            <p>A registered Section 8 non-profit in Bengaluru, backing work across science, culture, technology, education, and research — with a particular interest in public commons and community spaces. Its name means <em>"those which have come together."</em></p>
-            <div class="partner-role">
-                <span class="partner-role-label">What this means for Bodhya</span>
-                <p>Samagata backs the community-space side of our work: the groundwork of giving students in Bihar somewhere to gather, learn, and build together.</p>
-            </div>
+            <p>A registered Section 8 non-profit based in Bengaluru, supporting work across science, culture, art, technology, education, and research — with a particular interest in establishing public commons, institutions, and community spaces. Its name means <em>"those which have come together."</em></p>
             <a href="https://samagata.org" target="_blank" rel="noopener noreferrer" class="partner-link">samagata.org →</a>
         </div>
     </div>
