@@ -63,27 +63,38 @@ hide_title = true
     margin: 0;
 }
 .partners-list {
-    max-width: 760px;
+    max-width: 1040px;
     margin: 0 auto;
     padding: 0 24px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
 }
 .partner-card {
     background: var(--c-card-bg);
     border: 1px solid var(--c-border);
     border-radius: 8px;
-    padding: 36px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
 }
+/* Pushes the outbound link to the bottom so it lines up across a row
+   even when the two cards carry different amounts of copy. */
+.partner-card .partner-link { margin-top: auto; }
 .partner-logo {
     display: block;
     width: auto;
     margin-bottom: 24px;
+    /* The card is a flex column, so a bare width:auto would stretch the image
+       to the full column and distort it. Shrink to the natural aspect. */
+    align-self: flex-start;
+    max-width: 100%;
+    object-fit: contain;
 }
 .partner-logo.logo-fossunited { height: 44px; }
 .partner-logo.logo-samagata { height: 30px; }
 .partner-logo.logo-hikmat { height: 46px; }
+.partner-logo.logo-ydf { height: 42px; }
 .partner-card h2 {
     font-size: 1.4rem;
     color: var(--c-text-main);
@@ -175,6 +186,9 @@ hide_title = true
     color: #fff;
     text-decoration: none;
 }
+@media (max-width: 900px) {
+    .partners-list { grid-template-columns: 1fr; max-width: 640px; }
+}
 @media (max-width: 768px) {
     .partners-hero { padding: 48px 20px 40px; }
     .partners-list { padding-left: 16px; padding-right: 16px; }
@@ -188,6 +202,28 @@ hide_title = true
         <p class="partners-lead">Bodhya is a small initiative doing work that needs reach. These are the organisations whose ecosystems, funding, and hard-won experience make that possible.</p>
     </div>
     <div class="partners-list">
+        <div class="partner-card">
+            <img src="/hikmat-logo.webp" alt="Hikmat Foundation" class="partner-logo logo-hikmat" width="680" height="199">
+            <h2>Hikmat Foundation</h2>
+            <span class="partner-kind">Charitable trust · Programme partner</span>
+            <p>Hikmat runs two schools for girls in West Champaran, Bihar, and has educated over 1,000 students since 2015. It is a 12A/80G trust with FCRA registration, and a 501(c)(3) in the United States.</p>
+            <div class="partner-role">
+                <span class="partner-role-label">What this means for Bodhya</span>
+                <p>With Hikmat we run <a href="https://www.hikmatfoundation.org/school-to-livelihood" target="_blank" rel="noopener noreferrer">School to Livelihood</a>, a three-year programme for girls who have finished Class 10 in Ramnagar Block. We teach functional English, computer applications, and practical AI tools, then move graduates into paid client work — 20 students in year one, scaling to 75 by year three, with earning starting in year two rather than after.</p>
+            </div>
+            <a href="https://www.hikmatfoundation.org" target="_blank" rel="noopener noreferrer" class="partner-link">hikmatfoundation.org →</a>
+        </div>
+        <div class="partner-card">
+            <img src="/ydf-logo.png" alt="Youth Dreamers Foundation" class="partner-logo logo-ydf" width="268" height="88">
+            <h2>Youth Dreamers Foundation</h2>
+            <span class="partner-kind">Section 8 non-profit · Programme partner</span>
+            <p>A Section 8 and FCRA-registered non-profit working on scholarships, mentorship, and career readiness for first-generation learners. Since 2015 it has supported over 55,000 scholars across 15 states, and it works out of Patna.</p>
+            <div class="partner-role">
+                <span class="partner-role-label">What this means for Bodhya</span>
+                <p>With YDF we run <strong>FOSS Clubs at Patliputra University</strong>, giving students there a place to learn open source in practice. Their strength is the step we care most about and are weakest at alone: turning skills into actual jobs, through career guidance and employer links they have already built.</p>
+            </div>
+            <a href="https://ydfindia.org" target="_blank" rel="noopener noreferrer" class="partner-link">ydfindia.org →</a>
+        </div>
         <div class="partner-card">
             <img src="/fossunited-logo.svg" alt="FOSS United" class="partner-logo logo-fossunited">
             <h2>FOSS United</h2>
@@ -209,18 +245,6 @@ hide_title = true
                 <p>Samagata backs the community-space side of our work: the groundwork of giving students in Bihar somewhere to gather, learn, and build together.</p>
             </div>
             <a href="https://samagata.org" target="_blank" rel="noopener noreferrer" class="partner-link">samagata.org →</a>
-        </div>
-        <div class="partner-card">
-            <img src="/hikmat-logo.webp" alt="Hikmat Foundation" class="partner-logo logo-hikmat" width="680" height="199">
-            <h2>Hikmat Foundation</h2>
-            <span class="partner-kind">Charitable trust · Programme partner</span>
-            <p>Hikmat runs two schools for girls in West Champaran, Bihar, and has educated over 1,000 students since 2015. It is registered as a 12A/80G trust in India, holds FCRA registration, and operates as a 501(c)(3) in the United States.</p>
-            <div class="partner-role">
-                <span class="partner-role-label">What this means for Bodhya</span>
-                <p>With Hikmat we run <a href="https://www.hikmatfoundation.org/school-to-livelihood" target="_blank" rel="noopener noreferrer">School to Livelihood</a>, a three-year programme for girls who have finished Class 10 in Ramnagar Block — where finishing school at all is the hard part. We teach functional English, computer applications, and practical AI tools, then move graduates into paid client work in digitisation, data processing, and support.</p>
-                <p>It starts deliberately small: 20 students in year one, 50 in year two, 75 in year three — 145 graduates across three cohorts, with earning starting in year two rather than after.</p>
-            </div>
-            <a href="https://www.hikmatfoundation.org" target="_blank" rel="noopener noreferrer" class="partner-link">hikmatfoundation.org →</a>
         </div>
     </div>
     <div class="partners-cta">
