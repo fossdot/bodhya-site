@@ -170,6 +170,9 @@ hide_title = true
 .about-founder-card h3 {
     font-size: 1.35rem;
     color: var(--c-text-main);
+    /* base.html gives h3 a 24px top margin, which pushes the name off the
+       card's own 32px padding. Reset it. */
+    margin-top: 0;
     margin-bottom: 0.25rem;
 }
 .about-founder-role {

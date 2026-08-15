@@ -98,7 +98,11 @@ hide_title = true
 .partner-card h2 {
     font-size: 1.4rem;
     color: var(--c-text-main);
-    margin-bottom: 0.4rem;
+    /* base.html gives every h2 a 40px top margin. The card is a flex
+       container, so that margin does not collapse with the logo's 24px
+       below it — leaving a 64px gap. Reset it. */
+    margin-top: 0;
+    margin-bottom: 0.6rem;
 }
 .partners-group-label {
     max-width: 1040px;
@@ -217,8 +221,8 @@ hide_title = true
         </div>
     </div>
     <div class="partners-cta">
-        <h2>Want to support this work?</h2>
-        <p>If your organisation wants to help build Bihar's tech ecosystem, we would like to hear from you.</p>
-        <a href="/contact" class="partners-btn">Get in touch</a>
+        <h2>Partner with us.</h2>
+        <p>If your organisation works on education, skilling, or open source in Bihar, there is likely something here worth building together.</p>
+        <a href="/contact" class="partners-btn">Start a conversation</a>
     </div>
 </div>
