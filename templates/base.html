@@ -110,6 +110,37 @@
             color: var(--terracotta);
         }
 
+        /* Donate is the one nav item that is an action rather than a
+           destination, so it reads as a button in the header and the mobile
+           menu. In the footer it stays a plain link like its neighbours. */
+        .header-container > nav .nav-donate {
+            background: var(--terracotta);
+            color: #fff;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            margin-left: 0.25rem;
+            transition: background 0.2s ease;
+        }
+        .header-container > nav .nav-donate:hover {
+            background: var(--terracotta-dark);
+            color: #fff;
+        }
+        dialog nav .nav-donate {
+            background: #fff;
+            color: var(--terracotta);
+            text-align: center;
+            border-bottom: none;
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            margin-top: 0.5rem;
+        }
+        dialog nav .nav-donate:hover {
+            background: #fff;
+            color: var(--terracotta-dark);
+            padding-left: 1rem;
+        }
+
         /* Terracotta theme variables (if using CSS variables or Sass) */
         :root {
             --terracotta: #AD544B;
@@ -504,6 +535,38 @@
             color: #fff;
             text-decoration: none;
         }
+        /* Support strip — the donation ask, kept deliberately quieter than
+           the community CTA above it so it does not compete for the click. */
+        .home-support {
+            background: #FFF8F3;
+            text-align: center;
+            padding: 8px 24px 40px;
+        }
+        .home-support p {
+            font-size: 1rem;
+            color: #6D5F5F;
+            max-width: 540px;
+            margin: 0 auto 1.25rem;
+            line-height: 1.7;
+        }
+        .home-support-btn {
+            display: inline-block;
+            color: #AD544B;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 22px;
+            border-radius: 6px;
+            border: 1.5px solid #AD544B;
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .home-support-btn:hover {
+            background: #AD544B;
+            color: #fff;
+            text-decoration: none;
+        }
+
         /* Supported By Strip */
         .supported-by {
             background: #FFF8F3;
