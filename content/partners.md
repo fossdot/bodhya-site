@@ -94,6 +94,8 @@ hide_title = true
 .partner-logo.logo-fossunited { height: 44px; }
 .partner-logo.logo-samagata { height: 30px; }
 .partner-logo.logo-hikmat { height: 46px; }
+/* Youth Dreamers Foundation is held back until the MoU is signed. Rule and
+   /ydf-logo.png are kept so restoring the card is just re-adding its markup. */
 .partner-logo.logo-ydf { height: 42px; }
 .partner-card h2 {
     font-size: 1.4rem;
@@ -197,12 +199,6 @@ hide_title = true
             <h2>Hikmat Foundation</h2>
             <p>With Hikmat we run <a href="https://www.hikmatfoundation.org/school-to-livelihood" target="_blank" rel="noopener noreferrer">School to Livelihood</a>, a three-year programme for girls who have finished Class 10 in Ramnagar Block. We teach functional English, computer applications, and practical AI tools, then move graduates into paid client work — 20 students in year one, scaling to 75 by year three, with earning starting in year two rather than after.</p>
             <a href="https://www.hikmatfoundation.org" target="_blank" rel="noopener noreferrer" class="partner-link">hikmatfoundation.org →</a>
-        </div>
-        <div class="partner-card">
-            <img src="/ydf-logo.png" alt="Youth Dreamers Foundation" class="partner-logo logo-ydf" width="268" height="88">
-            <h2>Youth Dreamers Foundation</h2>
-            <p>With Youth Dreamers Foundation we run <strong>FOSS Clubs across colleges in Bihar</strong>, giving students a place to learn open source in practice. Their strength is the step we care most about and are weakest at alone: turning skills into actual jobs, through career guidance and employer links they have already built.</p>
-            <a href="https://ydfindia.org" target="_blank" rel="noopener noreferrer" class="partner-link">ydfindia.org →</a>
         </div>
     </div>
     <span class="partners-group-label">Founding Partners</span>
