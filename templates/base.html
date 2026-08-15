@@ -110,6 +110,15 @@
             color: var(--terracotta);
         }
 
+        /* The Donate button is taller than the plain links beside it. Without
+           this the flex line stretches and the plain links top-align while the
+           button's text centres, so the row reads as misaligned. Scoped to the
+           header: the dialog nav is a column, where centring would shrink its
+           full-width links. */
+        .header-container > nav {
+            align-items: center;
+        }
+
         /* Donate is the one nav item that is an action rather than a
            destination, so it reads as a button in the header and the mobile
            menu. In the footer it stays a plain link like its neighbours. */
@@ -535,38 +544,6 @@
             color: #fff;
             text-decoration: none;
         }
-        /* Support strip — the donation ask, kept deliberately quieter than
-           the community CTA above it so it does not compete for the click. */
-        .home-support {
-            background: #FFF8F3;
-            text-align: center;
-            padding: 8px 24px 40px;
-        }
-        .home-support p {
-            font-size: 1rem;
-            color: #6D5F5F;
-            max-width: 540px;
-            margin: 0 auto 1.25rem;
-            line-height: 1.7;
-        }
-        .home-support-btn {
-            display: inline-block;
-            color: #AD544B;
-            font-family: var(--font-display);
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 10px 22px;
-            border-radius: 6px;
-            border: 1.5px solid #AD544B;
-            text-decoration: none;
-            transition: background 0.2s ease, color 0.2s ease;
-        }
-        .home-support-btn:hover {
-            background: #AD544B;
-            color: #fff;
-            text-decoration: none;
-        }
-
         /* Supported By Strip */
         .supported-by {
             background: #FFF8F3;
