@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="doc-hero">
+        <div class="shell">
+            <span class="marker marker--split">No. 01<span class="marker-rule"></span>Policies</span>
+            <p class="doc-hero-title">The <em>fine print</em>.</p>
+            <p class="doc-hero-lead">Four documents govern this site and any contribution made through it. They are written to be read, not to be skipped.</p>
+        </div>
+    </section>
+
+    <section class="band">
+        <div class="shell doc-layout">
+            <div class="doc-sidebar">
+                <div class="doc-sidebar-inner">
+                    <span class="doc-sidebar-label">Documents</span>
+                    <nav class="doc-nav">{{ nav::policy_docs(current=current_path | default(value="")) }}</nav>
+                    <a href="/contact" class="doc-sidebar-link">Grievance redressal<span aria-hidden="true"> →</span></a>
+                </div>
+            </div>
+
+            <div class="doc-main">
+                <div class="doc-head">
+                    <h1>{{ page.title }}</h1>
+                    {% if page.extra.updated %}
+                    <span>{{ page.extra.updated }}</span>
+                    {% endif %}
+                </div>
+                <article class="doc-body">
+                    {{ page.content | safe }}
+                </article>
+            </div>
+        </div>
+    </section>
+{% endblock %}

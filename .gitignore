@@ -3,3 +3,4 @@ public/
 .claude/settings.local.json
 /*.png
 .playwright-mcp/
+_design/

@@ -1,0 +1,252 @@
+// Branding — content/branding.md
+//
+// A small press kit: the marks with download links, the type system, and the
+// palette. Built from the shared vocabulary; nothing here is bespoke except
+// the asset tiles and the swatches.
+
+.page-hero--branding h1 { max-width: 20ch; }
+
+// ------------------------------------------------------------ asset tiles
+
+.asset-grid {
+  @include hairline-grid(2, 40px, 34px, 40px);
+  border-top: 1px solid $rule;
+}
+
+// The preview sits on whichever ground the variant is meant for, so a cream
+// mark is shown on ink rather than disappearing into the page.
+.asset-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 34px 30px;
+  margin-bottom: 22px;
+  background: $cream-tint;
+  min-height: 168px;
+
+  img {
+    width: auto;
+    max-width: 100%;
+    display: block;
+  }
+}
+
+.asset-preview--dark { background: $ink; }
+
+.asset-preview .preview-wordmark { height: 46px; }
+.asset-preview .preview-mark     { height: 104px; }
+
+.asset-name {
+  font-family: $display;
+  font-weight: 400;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  color: $ink;
+  margin-bottom: 8px;
+}
+
+.asset-note {
+  @include body-copy(1.02rem, 1.6, $text-muted);
+  margin-bottom: 18px;
+}
+
+// The download row: hairline-separated, mono, with the file type ranged right.
+.asset-files {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid $rule;
+
+  a {
+    font-family: $mono;
+    font-size: 11px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: $teal;
+    padding: 12px 0;
+    border-bottom: 1px solid $rule-light;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+
+    &:hover { color: $terracotta; }
+
+    &:last-child { border-bottom: 0; }
+  }
+
+  .asset-size { color: $label-muted; }
+}
+
+// ---------------------------------------------------------------- type
+
+.type-specimen {
+  border-top: 1px solid $rule;
+  padding: 30px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
+  gap: 24px 40px;
+  align-items: baseline;
+
+  &:last-child { border-bottom: 1px solid $rule; }
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+.type-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.type-name {
+  font-family: $display;
+  font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  color: $ink;
+}
+
+.type-role { @include label(10.5px, 0.15em, $label-muted); }
+
+// Each sample is set in the face it describes.
+.type-sample {
+  color: $ink;
+  overflow-wrap: anywhere;
+}
+
+.sample-archivo-black { font-family: $display; font-size: 2.1rem; letter-spacing: -0.03em; line-height: 1; }
+.sample-newsreader    { font-family: $serif; font-size: 1.3rem; line-height: 1.6; color: $text; }
+.sample-space-mono    { font-family: $mono; font-size: 1rem; letter-spacing: 0.06em; color: $text; }
+.sample-archivo       { font-family: $sans; font-weight: 600; font-size: 1.15rem; color: $text; }
+.sample-rozha         { font-family: $hindi-display; font-size: 2.2rem; line-height: 1.4; }
+.sample-mukta         { font-family: $hindi; font-size: 1.25rem; line-height: 1.85; color: $text; }
+
+// ---------------------------------------------------------------- colour
+
+// Eight swatches over two rows, so the rules are placed by column position
+// rather than by first/last — the row count changes at every breakpoint.
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid $rule;
+
+  > * {
+    border-right: 1px solid $rule;
+    padding: 26px 24px 30px;
+  }
+
+  > *:nth-child(4n + 1) { padding-left: 0; }
+  > *:nth-child(4n) {
+    border-right: 0;
+    padding-right: 0;
+  }
+  > *:nth-child(n + 5) { border-top: 1px solid $rule; }
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    > * {
+      border-right: 1px solid $rule;
+      border-top: 0;
+      padding: 24px 20px 26px;
+    }
+
+    > *:nth-child(2n + 1) { padding-left: 0; }
+    > *:nth-child(2n) {
+      border-right: 0;
+      padding-right: 0;
+    }
+    > *:nth-child(n + 3) { border-top: 1px solid $rule; }
+  }
+
+  @media (max-width: $bp-narrow) {
+    grid-template-columns: 1fr;
+
+    > * {
+      border-right: 0;
+      border-top: 1px solid $rule;
+      padding: 20px 0;
+    }
+
+    > *:first-child { border-top: 0; }
+  }
+}
+
+.swatch {
+  height: 76px;
+  margin-bottom: 16px;
+  // A hairline so cream reads as a swatch rather than a hole in the page.
+  border: 1px solid $rule;
+}
+
+.swatch--terracotta { background: $terracotta; }
+.swatch--teal       { background: $teal; }
+.swatch--mustard    { background: $mustard; }
+.swatch--ink        { background: $ink; }
+.swatch--cream      { background: $cream; }
+.swatch--cream-tint { background: $cream-tint; }
+.swatch--text       { background: $text; }
+.swatch--label      { background: $label-muted; }
+
+.swatch-name {
+  font-family: $display;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: -0.015em;
+  color: $ink;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.swatch-hex {
+  @include label(10.5px, 0.14em, $label-muted);
+  display: block;
+}
+
+.swatch-use {
+  @include body-copy(0.98rem, 1.55, $text-muted);
+  margin-top: 10px;
+}
+
+// ------------------------------------------------------------- guidance
+
+.brand-rules {
+  @include hairline-grid(2, 40px, 34px, 40px);
+  border-top: 1px solid $rule;
+
+  h3 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+    color: $ink;
+    margin-bottom: 12px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  li {
+    @include body-copy(1.04rem, 1.6, $text-muted);
+    padding: 9px 0 9px 24px;
+    position: relative;
+    border-top: 1px solid $rule-light;
+
+    &::before {
+      content: '—';
+      content: '—' / '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      font-family: $mono;
+      font-size: 0.8rem;
+      color: $teal;
+    }
+  }
+}

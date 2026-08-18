@@ -1,0 +1,354 @@
+// Reset, page ground, and the shared type roles every page draws from.
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+main { display: block; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: $cream;
+  color: $ink;
+  font-family: $serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; }
+
+a {
+  color: $terracotta;
+  text-decoration: none;
+}
+
+a:hover { color: $teal; }
+
+::selection {
+  background: $teal;
+  color: $cream;
+}
+
+// Keyboard focus. Hard-edged and teal, like everything else here — and only
+// for keyboard users, so a mouse click doesn't leave a ring behind.
+:focus-visible {
+  outline: 2px solid $teal;
+  outline-offset: 3px;
+}
+
+// On the dark grounds a teal ring would disappear into the background, so it
+// flips to cream.
+.band--teal,
+.cta-band,
+.site-footer,
+.utility-bar {
+  :focus-visible {
+    outline-color: $cream;
+  }
+}
+
+// First thing in the tab order: a link past the chrome to the page content.
+// Off-canvas until focused, then it drops into the top-left corner.
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transform: translateY(-150%);
+  font-family: $display;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  background: $ink;
+  color: $cream;
+  padding: 14px 22px;
+
+  &:focus {
+    transform: translateY(0);
+    color: $cream;
+  }
+
+  // It lands on an ink block over the teal bar, where the teal ring would be
+  // lost — mustard is the tone that reads on both.
+  &:focus-visible {
+    outline-color: $mustard;
+  }
+}
+
+// ---------------------------------------------------------------- Hindi
+
+// Any element marked `lang="hi"` switches to the Devanagari pair. A rule on
+// the element itself always beats the Latin family it would inherit, so this
+// works for a single span inside an English sentence as well as a whole page.
+:lang(hi) { font-family: $hindi; }
+
+h1:lang(hi),
+h2:lang(hi),
+h3:lang(hi),
+.hero h1:lang(hi),
+.cta-title:lang(hi),
+.section-title:lang(hi) {
+  font-family: $hindi-display;
+  letter-spacing: 0;
+}
+
+// Devanagari sits taller than Latin and needs the extra leading, but only
+// where a whole block is Hindi — not for a word inside an English line.
+p:lang(hi),
+li:lang(hi) { line-height: 1.85; }
+
+// ------------------------------------------------------------ type roles
+
+.shell { @include shell; }
+
+// Page h1. The homepage hero runs its own, larger, clamp — see _home.scss.
+.page-title {
+  font-family: $display;
+  font-weight: 400; // the face is already black
+  font-size: clamp(2.5rem, 5.2vw, 4.5rem);
+  line-height: 0.94;
+  letter-spacing: -0.032em;
+  color: $ink;
+
+  @media (max-width: $bp-narrow) {
+    font-size: clamp(1.95rem, 8.2vw, 3rem);
+  }
+}
+
+.section-title {
+  font-family: $display;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2.6vw, 2.15rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: $ink;
+}
+
+.card-title {
+  font-family: $display;
+  font-weight: 400;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  color: $ink;
+}
+
+.standfirst {
+  @include body-copy(1.3rem, 1.6, $text-muted);
+  max-width: $measure-lead;
+}
+
+.body-copy {
+  @include body-copy;
+  max-width: $measure-body;
+}
+
+.label {
+  @include label;
+  display: block;
+}
+
+// "No. 02" — mono, teal, followed by an 84px rule. The section title sits on
+// the NEXT line, never inline with this.
+.marker {
+  @include label(11px, 0.18em, $teal);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 84px;
+    height: 1px;
+    background: $rule;
+    flex-shrink: 0;
+  }
+
+  // On teal or ink grounds the number goes mustard and the rule lightens.
+  &.is-on-dark {
+    color: $mustard;
+
+    &::after {
+      background: $rule-dark;
+      width: 60px;
+    }
+  }
+}
+
+// A marker that carries a trailing phrase ("No. 01 —— The Bridge"): the rule
+// sits between the number and the phrase rather than after both.
+.marker--split {
+  &::after { display: none; }
+
+  .marker-rule {
+    display: block;
+    width: 84px;
+    height: 1px;
+    background: $rule;
+    flex-shrink: 0;
+  }
+
+  &.is-on-dark .marker-rule {
+    width: 60px;
+    background: rgba(255, 248, 243, 0.3);
+  }
+}
+
+// Header block above a section's grid.
+.section-head {
+  padding: 56px 0 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+// Every band on the page carries a bottom hairline; dark bands carry none
+// because their ground change is the divider.
+.band {
+  border-bottom: 1px solid $rule;
+  background: $cream;
+}
+
+.band--tint {
+  background: $cream-tint;
+  border-bottom: 1px solid $rule;
+}
+
+.band--teal {
+  background: $teal;
+  color: $cream;
+  border-bottom: 0;
+}
+
+.band--terracotta {
+  background: $terracotta;
+  color: $cream;
+  border-bottom: 0;
+}
+
+.band--teal .section-title,
+.band--terracotta .section-title { color: $cream; }
+
+// ---------------------------------------------------------------- buttons
+
+%btn {
+  font-family: $display;
+  font-weight: 400;
+  font-size: 12.5px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 17px 30px;
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn {
+  @extend %btn;
+  background: $terracotta;
+  color: $cream;
+
+  &:hover {
+    background: $teal;
+    color: $cream;
+  }
+}
+
+// The homepage hero's primary action sits on cream next to a ghost button,
+// where ink reads as the stronger of the two.
+.btn--ink {
+  background: $ink;
+  color: $cream;
+
+  &:hover {
+    background: $terracotta;
+    color: $cream;
+  }
+}
+
+.btn--ghost {
+  background: transparent;
+  color: $ink;
+  box-shadow: inset 0 0 0 1.5px $ink;
+
+  &:hover {
+    background: $ink;
+    color: $cream;
+  }
+}
+
+// On teal and terracotta grounds the button inverts: cream ground, text in
+// the ground's own colour, hovering to mustard.
+.btn--on-teal {
+  background: $cream;
+  color: $teal;
+
+  &:hover {
+    background: $mustard;
+    color: $ink;
+  }
+}
+
+.btn--on-terracotta {
+  background: $cream;
+  color: $terracotta;
+
+  &:hover {
+    background: $ink;
+    color: $cream;
+  }
+}
+
+.btn--ghost-on-dark {
+  background: transparent;
+  color: $cream;
+  box-shadow: inset 0 0 0 1.5px rgba(255, 248, 243, 0.6);
+
+  &:hover {
+    background: $cream;
+    color: $terracotta;
+  }
+}
+
+// Inverted buttons take the colour of whatever ground they sit on.
+.band--teal .btn--ghost-on-dark:hover { color: $teal; }
+
+.btn-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+// Teal outbound link inside serif body copy.
+.link-body {
+  color: $teal;
+  border-bottom: 1px solid $link-underline;
+
+  &:hover {
+    color: $terracotta;
+    border-bottom-color: $terracotta;
+  }
+}

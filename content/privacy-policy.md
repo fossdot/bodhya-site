@@ -1,17 +1,23 @@
 +++
 title = "Privacy Policy"
 path = "privacy-policy"
+description = "How Bodhya collects, uses, and protects your personal data, written to India's DPDPA 2023."
+template = "policy.html"
+
+[extra]
+updated = "Last updated: August 2026"
 +++
-
-*Last updated: August 2026*
-
 Bodhya is operated by **Vishal Arya** ("we", "us", or "our"), the Data Fiduciary for this platform. We are committed to protecting your personal data in accordance with India's **Digital Personal Data Protection Act (DPDPA) 2023** and the Information Technology Act, 2000. By using this website, you agree to the practices described in this Policy.
+
+<div class="doc-callout">
 
 **Note on contributions:** Voluntary contributions made through bodhya.net are processed by **Razorpay Software Private Limited**. Your card, UPI, and bank details are collected and processed by Razorpay under their own privacy policy — we never receive or store them. We retain only the transaction reference, amount, date, and the name and email you provide. See our [Refund & Cancellation Policy](/refund-policy) for how contributions are handled.
 
 **Note on events:** Bodhya events are listed and managed through [FOSS United](https://fossunited.org). Event registrations, ticketing, and associated data (including payment information) are collected and processed by FOSS United Foundation under their own privacy policy. This Policy covers only the data collected directly through bodhya.net.
 
 **Note on community platforms:** Bodhya operates community spaces on WhatsApp. When you join the community, your phone number and profile information become visible to other members and are governed by WhatsApp's (Meta) privacy policies. Bodhya does not control, access, or process the personal data held by these platforms.
+
+</div>
 
 ---
 

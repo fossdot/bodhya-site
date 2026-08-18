@@ -8,17 +8,37 @@
         return;
     }
 
-    // Open the dialog
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileMenuDialog.showModal();
+    const masthead = document.querySelector('.masthead');
+
+    // The panel hangs off the masthead like a dropdown, but a modal <dialog>
+    // sits in the top layer where it can only be positioned against the
+    // viewport. So measure the masthead at open time. If the page is scrolled
+    // far enough that the masthead is above the fold, pin the panel near the
+    // top instead of letting it run off-screen.
+    const positionPanel = () => {
+        if (!masthead) return;
+        const bottom = masthead.getBoundingClientRect().bottom;
+        mobileMenuDialog.style.top = `${Math.max(10, bottom + 10)}px`;
+    };
+
+    // The button's aria-expanded has to track the panel, and `close` fires for
+    // every route out of the dialog — the close button, Escape, or a click on
+    // the backdrop — so it is the one place that resets the state.
+    mobileMenuDialog.addEventListener('close', () => {
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
     });
 
-    // Close the dialog
+    mobileMenuBtn.addEventListener('click', () => {
+        positionPanel();
+        mobileMenuDialog.showModal();
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    });
+
     closeMenuBtn.addEventListener('click', () => {
         mobileMenuDialog.close();
     });
 
-    // Close when clicking outside the dialog content (backdrop)
+    // Close when clicking outside the panel (the backdrop).
     mobileMenuDialog.addEventListener('click', (event) => {
         const rect = mobileMenuDialog.getBoundingClientRect();
         const isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&

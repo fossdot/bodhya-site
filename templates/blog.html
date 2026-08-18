@@ -1,23 +1,51 @@
 {% extends "base.html" %}
 
-{% block title %}{{ section.title }} - {{ config.title }}{% endblock %}
-
 {% block content %}
-    <main>
-        <h1>{{ section.title }}</h1>
-        <p>{{ section.description }}</p>
-
-        <div class="post-list">
-            {% for page in section.pages %}
-                <article class="post-summary">
-                    <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
-                    <p class="post-meta">📅 {{ page.date }}</p>
-                    {% if page.description %}
-                        <p>{{ page.description }}</p>
-                    {% endif %}
-                    <a href="{{ page.permalink }}" class="post-more">Read more →</a>
-                </article>
-            {% endfor %}
+    <section class="page-hero page-hero--blog">
+        <div class="shell">
+            <span class="marker marker--split">No. 01<span class="marker-rule"></span>Blog</span>
+            <h1>Stories, tips, and <em>updates</em>.</h1>
+            <div class="page-hero-lead">{{ section.content | safe }}</div>
         </div>
-    </main>
+    </section>
+
+    <section class="band">
+        <div class="shell">
+            <div class="archive-head">
+                <span>All posts</span>
+                <span>{% if section.pages | length < 10 %}0{% endif %}{{ section.pages | length }}</span>
+            </div>
+
+            {% for post in section.pages %}
+            <a href="{{ post.permalink }}" class="archive-entry">
+                <div class="archive-meta">
+                    <span class="archive-index">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+                    <span class="archive-date">{{ post.date | date(format="%d %B %Y") }}</span>
+                </div>
+                <div class="archive-body">
+                    <h2 class="archive-title">{{ post.title }}</h2>
+                    {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+                    {% if post.taxonomies.tags %}
+                    <div class="archive-tags">
+                        {% for tag in post.taxonomies.tags %}<span>{{ tag }}</span>{% endfor %}
+                    </div>
+                    {% endif %}
+                    <span class="archive-more">Read the post<span aria-hidden="true"> →</span></span>
+                </div>
+            </a>
+            {% endfor %}
+
+            <div class="archive-end">
+                <span>End of archive</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-band cta-band--teal blog-cta">
+        <div class="shell">
+            <span class="cta-eyebrow">No. 03 — Stay in touch</span>
+            <h2 class="cta-title">New posts land in the community first.</h2>
+            <a href="https://chat.whatsapp.com/J3ZRgDd7iFR0blGMIsae4Q" class="btn btn--on-teal" target="_blank" rel="noopener noreferrer">Join WhatsApp Community</a>
+        </div>
+    </section>
 {% endblock %}

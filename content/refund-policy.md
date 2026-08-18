@@ -2,10 +2,11 @@
 title = "Refund & Cancellation Policy"
 path = "refund-policy"
 description = "How contributions to Bodhya are handled, and how to request a refund."
+template = "policy.html"
+
+[extra]
+updated = "Last updated: August 2026"
 +++
-
-*Last updated: August 2026*
-
 Bodhya is operated by **Vishal Arya** ("Bodhya", "we", "us", or "our"). This Policy explains how voluntary contributions made through bodhya.net are handled, and the timelines that apply if you need a refund.
 
 Payments on this site are processed by **Razorpay Software Private Limited**. We do not store your card, UPI, or bank details at any point.

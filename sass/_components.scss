@@ -1,0 +1,331 @@
+// Blocks that appear on more than one page.
+
+// ------------------------------------------------------------- page hero
+
+// The No. 01 block that opens about, join and partners.
+.page-hero {
+  border-bottom: 1px solid $rule;
+  background: $cream;
+
+  .shell {
+    padding-top: 68px;
+    padding-bottom: 68px;
+  }
+
+  .marker { margin-bottom: 34px; }
+
+  h1 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 5.2vw, 4.5rem);
+    line-height: 0.94;
+    letter-spacing: -0.032em;
+    color: $ink;
+    max-width: 22ch;
+
+    em {
+      font-style: normal;
+      color: $terracotta;
+    }
+
+    @media (max-width: $bp-narrow) {
+      font-size: clamp(1.9rem, 8.2vw, 2.9rem);
+    }
+  }
+}
+
+// Standfirst under a page h1 — ruled off on the left in teal.
+.page-hero-lead {
+  @include body-copy(1.3rem, 1.6, $text-muted);
+  max-width: $measure-lead;
+  margin-top: 32px;
+  border-left: 3px solid $teal;
+  padding-left: 22px;
+}
+
+// A standfirst inside a section header block.
+.section-lead {
+  @include body-copy(1.18rem, 1.65, $text-muted);
+  max-width: 58ch;
+}
+
+// ------------------------------------------------------------- card grid
+
+.card-grid {
+  @include hairline-grid(3, 32px, 34px, 44px);
+  border-top: 1px solid $rule;
+
+  h3 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+    color: $ink;
+    margin-bottom: 12px;
+  }
+
+  p { @include body-copy(1.06rem, 1.65, $text-muted); }
+}
+
+.card-eyebrow {
+  @include label(10.5px, 0.16em, $terracotta);
+  display: block;
+  margin-bottom: 18px;
+}
+
+// Terracotta fails AA on the tinted band, so anywhere a tint band carries
+// terracotta text it steps down to the darker tone. Encoded here so pages
+// can't get it wrong.
+.band--tint {
+  .card-eyebrow,
+  .text-accent { color: $terracotta-dark; }
+}
+
+// -------------------------------------------------- closing CTA (terracotta)
+
+.cta-band {
+  background: $terracotta;
+  color: $cream;
+
+  .shell {
+    padding-top: 76px;
+    padding-bottom: 72px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+  }
+}
+
+.cta-band--teal {
+  background: $teal;
+
+  .cta-eyebrow { color: $mustard; }
+}
+
+.cta-eyebrow {
+  @include label(11px, 0.2em, $cream);
+}
+
+.cta-title {
+  font-family: $display;
+  font-weight: 400;
+  font-size: clamp(2.1rem, 4.6vw, 3.9rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: $cream;
+  max-width: 30ch;
+}
+
+.cta-copy {
+  @include body-copy(1.2rem, 1.62, $cream);
+  max-width: 56ch;
+}
+
+.cta-band .btn-row {
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.cta-footnote {
+  @include label(11px, 0.13em, $cream);
+  margin-top: 4px;
+
+  a {
+    color: $cream;
+    border-bottom: 1px solid rgba(255, 248, 243, 0.6);
+    padding-bottom: 1px;
+
+    &:hover {
+      color: $mustard;
+      border-bottom-color: $mustard;
+    }
+  }
+}
+
+// ------------------------------------------------------------ partner strip
+
+.partner-strip-head {
+  padding: 48px 0 26px;
+
+  span { @include label(10.5px, 0.18em, $label-muted); }
+}
+
+.partner-strip-grid {
+  @include hairline-grid(3, 32px, 30px, 34px);
+  border-top: 1px solid $rule;
+
+  > * {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.partner-logo {
+  height: 44px;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: auto;
+    object-fit: contain;
+  }
+
+  .logo-hikmat     { height: 38px; }
+  .logo-fossunited { height: 36px; }
+  .logo-samagata   { height: 26px; }
+}
+
+.partner-role {
+  @include label(10px, 0.15em, $label-muted);
+}
+
+// ------------------------------------------------- generic markdown page
+
+// Used by page.html for any content page that has not been given its own
+// designed layout — the policies and contact pages until they are ported.
+.prose-page {
+  @include shell;
+  padding-top: 56px;
+  padding-bottom: 76px;
+}
+
+.prose-title {
+  font-family: $display;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: $ink;
+  margin-bottom: 34px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid $rule;
+}
+
+.prose {
+  @include body-copy;
+  max-width: 74ch;
+
+  h2 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: $ink;
+    border-top: 1px solid $rule;
+    padding-top: 22px;
+    margin: 46px 0 16px;
+  }
+
+  h3 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+    color: $ink;
+    margin: 32px 0 12px;
+  }
+
+  p { margin-bottom: 20px; }
+
+  strong {
+    font-family: $sans;
+    font-weight: 600;
+    font-size: 0.96em;
+    color: $ink;
+  }
+
+  em { font-style: italic; }
+
+  a {
+    color: $teal;
+    border-bottom: 1px solid $link-underline;
+
+    &:hover {
+      color: $terracotta;
+      border-bottom-color: $terracotta;
+    }
+  }
+
+  // Em-dash markers in teal, hairlines between items — not bullets.
+  ul {
+    list-style: none;
+    margin: 0 0 24px;
+  }
+
+  ul li {
+    position: relative;
+    padding: 11px 0 11px 26px;
+    border-bottom: 1px solid $rule-light;
+
+    &::before {
+      content: '—';
+      content: '—' / '';
+      position: absolute;
+      left: 0;
+      color: $teal;
+    }
+  }
+
+  ol {
+    margin: 0 0 24px 20px;
+
+    li {
+      padding: 8px 0 8px 6px;
+      border-bottom: 1px solid $rule-light;
+
+      &::marker {
+        font-family: $mono;
+        font-size: 0.85em;
+        color: $teal;
+      }
+    }
+  }
+
+  blockquote {
+    border-left: 3px solid $teal;
+    padding: 4px 0 4px 22px;
+    margin: 28px 0;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.3rem, 2.1vw, 1.6rem);
+    line-height: 1.35;
+    color: $teal;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid $rule;
+    margin: 40px 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 28px;
+    font-size: 1rem;
+
+    th {
+      @include label(10.5px, 0.16em, $label-muted);
+      text-align: left;
+      padding: 10px 12px 10px 0;
+      border-bottom: 1.5px solid $ink;
+    }
+
+    td {
+      padding: 12px 12px 12px 0;
+      border-bottom: 1px solid $rule-light;
+      vertical-align: top;
+    }
+  }
+
+  code {
+    font-family: $mono;
+    font-size: 0.86em;
+    background: $cream-tint;
+    padding: 2px 5px;
+  }
+}

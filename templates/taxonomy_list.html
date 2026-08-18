@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}All tags — Bodhya{% endblock %}
+
+{% block content %}
+    <section class="page-hero page-hero--blog">
+        <div class="shell">
+            <span class="marker marker--split">No. 01<span class="marker-rule"></span>Index</span>
+            <h1>Everything, by <em>tag</em>.</h1>
+        </div>
+    </section>
+
+    <section class="band">
+        <div class="shell">
+            <div class="archive-head">
+                <span>All tags</span>
+                <span>{% if terms | length < 10 %}0{% endif %}{{ terms | length }}</span>
+            </div>
+            {% for term in terms %}
+            <a href="{{ term.permalink }}" class="archive-entry">
+                <div class="archive-meta">
+                    <span class="archive-index">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+                    <span class="archive-date">{{ term.pages | length }} post{% if term.pages | length != 1 %}s{% endif %}</span>
+                </div>
+                <div class="archive-body">
+                    <h2 class="archive-title">{{ term.name }}</h2>
+                    <span class="archive-more">See the posts<span aria-hidden="true"> →</span></span>
+                </div>
+            </a>
+            {% endfor %}
+            <div class="archive-end">
+                <span>End of index</span>
+            </div>
+        </div>
+    </section>
+{% endblock %}

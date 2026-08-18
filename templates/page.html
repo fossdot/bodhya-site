@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}{{ page.title }} - {{ config.title }}{% endblock %}
-
 {% block content %}
-    <main{% if page.extra.hide_title %} style="padding:0;max-width:none;margin:0"{% endif %}>
-        {% if not page.extra.hide_title %}
-        <h1>{{ page.title }}</h1>
-        {% endif %}
+    {# Pages that carry their own full-bleed layout in markup — about, join,
+       partners — set `hide_title` and are emitted bare. Everything else is
+       plain markdown and gets the shared measured column. #}
+    {% if page.extra.hide_title %}
         {{ page.content | safe }}
-    </main>
+    {% else %}
+        <div class="prose-page">
+            <h1 class="prose-title">{{ page.title }}</h1>
+            <div class="prose">{{ page.content | safe }}</div>
+        </div>
+    {% endif %}
 {% endblock %}

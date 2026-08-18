@@ -1,0 +1,20 @@
+// Bodhya — single stylesheet, compiled by Zola to /main.css.
+//
+// Partials are imported in cascade order: tokens first (variables and mixins
+// only, no output), then the shared shell, then the blocks, then per-page
+// layouts. Page partials come last so a page can override a shared block
+// without fighting specificity.
+
+@import "tokens";
+@import "base";
+@import "chrome";
+@import "components";
+@import "home";
+@import "about";
+@import "join";
+@import "partners";
+@import "blog";
+@import "contact";
+@import "doc";
+@import "error";
+@import "branding";

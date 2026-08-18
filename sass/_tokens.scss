@@ -1,0 +1,177 @@
+// Bodhya — design tokens
+//
+// Values are final and come from _design/design_handoff_bodhya_site/README.md.
+// Where a number looks arbitrary (0.94 line-height, -0.032em tracking) it is
+// tuned for that typeface at that size — don't round it off.
+
+// ---------------------------------------------------------------- colour
+
+$ink:             #241E1B;  // body text, footer ground, dark buttons
+$cream:           #FFF8F3;  // page ground, text on dark grounds
+$cream-tint:      #F4EBE3;  // alternating bands, inset notes
+$terracotta:      #AD544B;  // primary accent
+$terracotta-dark: #8e433c;  // ONLY for terracotta text on $cream-tint
+$teal:            #16564F;  // secondary accent
+$mustard:         #E8B84B;  // ONLY on $teal or $ink grounds
+
+$text:            #3A322E;  // long-form body
+$text-muted:      #4A3F3A;  // standfirsts, card copy
+$label-muted:     #6D5F5F;  // mono labels, metadata
+
+$rule:            rgba(36, 30, 27, 0.16);   // every hairline on light
+$rule-light:      rgba(36, 30, 27, 0.1);    // between list items
+$rule-dark:       rgba(255, 248, 243, 0.2); // hairlines on teal
+$rule-ink:        rgba(255, 248, 243, 0.14);// footer divider
+
+$on-dark:         rgba(255, 248, 243, 0.78); // footer link text
+$on-dark-muted:   rgba(255, 248, 243, 0.62); // footer labels, policy links
+$on-teal-muted:   rgba(255, 248, 243, 0.72); // labels on the teal ground
+$link-underline:  rgba(22, 86, 79, 0.35);    // under teal body links
+
+// ------------------------------------------------------------------ type
+
+$display: 'Archivo Black', sans-serif;  // headlines, buttons, numerals
+$serif:   'Newsreader', Georgia, serif; // all body copy
+$mono:    'Space Mono', monospace;      // labels, nav, metadata
+$sans:    'Archivo', sans-serif;        // only <strong> inside serif copy
+
+// Devanagari. None of the Latin faces above carry Devanagari glyphs, so Hindi
+// runs on its own pair. Both are open-licensed and ship with Figma, Canva and
+// Inkscape, so print and social work can use the same type as the site.
+$hindi-display: 'Rozha One', serif;     // Hindi headlines
+$hindi:         'Mukta', sans-serif;    // all other Hindi text
+
+// --------------------------------------------------------------- measure
+
+$container:    1240px;
+$gutter:       32px;
+$measure-body: 70ch;  // long-form columns
+$measure-lead: 46ch;  // standfirsts
+
+// ----------------------------------------------------------- breakpoints
+
+$bp-stack:  900px;  // grids collapse to one column
+$bp-nav:    860px;  // desktop nav → mobile menu
+$bp-narrow: 620px;  // h1 retune, ledger to one column
+
+// ---------------------------------------------------------------- mixins
+
+// Mono label: eyebrows, metadata, nav.
+@mixin label($size: 10.5px, $tracking: 0.16em, $color: $label-muted) {
+  font-family: $mono;
+  font-size: $size;
+  font-weight: 400;
+  letter-spacing: $tracking;
+  text-transform: uppercase;
+  color: $color;
+}
+
+// Page container.
+@mixin shell {
+  max-width: $container;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+
+// Long-form body copy.
+@mixin body-copy($size: 1.16rem, $leading: 1.74, $color: $text) {
+  font-family: $serif;
+  font-size: $size;
+  line-height: $leading;
+  color: $color;
+  text-wrap: pretty;
+}
+
+// Grow a small link's pointer target to the 24px WCAG 2.5.8 minimum without
+// moving anything on screen. Used on the nav, footer and sidebar links, whose
+// type sizes and underline positions are fixed by the design. Body-copy links
+// are exempt from the rule (they're inline in a sentence) and are left alone.
+@mixin hit-area($size: 24px) {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max(100%, #{$size});
+    height: $size;
+  }
+}
+
+// Hairline grid. Cells are divided by border-right with asymmetric padding
+// so the rule sits centred in the gutter — there is no `gap`.
+//
+// The rules are placed by column position, not by first/last child, so the
+// same mixin is correct whether the grid runs to one row or six.
+@mixin hairline-grid($cols: 3, $pad: 32px, $pad-top: 34px, $pad-bottom: 44px) {
+  display: grid;
+  grid-template-columns: repeat($cols, minmax(0, 1fr));
+
+  > * {
+    border-right: 1px solid $rule;
+    padding: $pad-top $pad $pad-bottom;
+  }
+
+  // First cell of each row hugs the left edge, last cell the right.
+  > *:nth-child(#{$cols}n + 1) { padding-left: 0; }
+  > *:nth-child(#{$cols}n) {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  // Every row after the first is divided from the one above.
+  > *:nth-child(n + #{$cols + 1}) { border-top: 1px solid $rule; }
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: 1fr;
+
+    > * {
+      border-right: 0;
+      border-bottom: 1px solid $rule;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    // Matching the selector above, because a media query adds no specificity
+    // and `> *` alone would lose to it.
+    > *:nth-child(n + #{$cols + 1}) { border-top: 0; }
+
+    > *:last-child { border-bottom: 0; }
+  }
+}
+
+// The same grid, for cells sitting on the teal ground.
+@mixin hairline-grid-dark($cols: 2, $pad: 56px, $pad-top: 64px, $pad-bottom: 64px) {
+  display: grid;
+  grid-template-columns: repeat($cols, minmax(0, 1fr));
+
+  > * {
+    border-right: 1px solid $rule-dark;
+    padding: $pad-top $pad $pad-bottom;
+  }
+
+  > *:nth-child(#{$cols}n + 1) { padding-left: 0; }
+  > *:nth-child(#{$cols}n) {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  > *:nth-child(n + #{$cols + 1}) { border-top: 1px solid $rule-dark; }
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: 1fr;
+
+    > * {
+      border-right: 0;
+      border-bottom: 1px solid $rule-dark;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    > *:nth-child(n + #{$cols + 1}) { border-top: 0; }
+
+    > *:last-child { border-bottom: 0; }
+  }
+}

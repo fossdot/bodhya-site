@@ -1,10 +1,12 @@
 base_url = "https://bodhya.net"
 title = "Bodhya"
 description = "Creating Tech Opportunities for Bihar Students"
+# Feed author. Without this Zola writes "Unknown" into every atom entry.
+author = "Vishal Arya"
 generate_feeds = true
-# No .scss sources exist — all styling is inline in templates/base.html and
-# in the <style> blocks of the self-styled content pages.
-compile_sass = false
+# sass/main.scss → public/main.css. All styling lives there; templates and
+# content files carry no <style> blocks.
+compile_sass = true
 
 
 taxonomies = [

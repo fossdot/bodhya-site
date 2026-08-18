@@ -2,6 +2,8 @@
 title = "Bodhya for NPOs"
 date = 2026-01-13
 description = "How Bodhya can work with Non-profit organisations to build a modern tech infra for them."
+
+[taxonomies]
 tags = ["bodhya", "npo", "technology"]
 +++
 

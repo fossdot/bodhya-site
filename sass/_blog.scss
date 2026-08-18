@@ -1,0 +1,429 @@
+// Blog — templates/blog.html and templates/blog-post.html
+
+// ------------------------------------------------------------ blog index
+
+.page-hero--blog h1 { max-width: 20ch; }
+
+.archive-head {
+  padding: 48px 0 26px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  span { @include label(10.5px, 0.18em, $label-muted); }
+}
+
+// One post per row: index and date on the left of the hairline, everything
+// else on the right. The whole row is the link.
+.archive-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  border-top: 1px solid $rule;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+
+    .archive-title { color: $terracotta; }
+  }
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.archive-meta {
+  padding: 34px 32px 40px 0;
+  border-right: 1px solid $rule;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+
+  @media (max-width: $bp-stack) {
+    border-right: 0;
+    border-bottom: 1px solid $rule;
+    padding: 34px 0 14px;
+  }
+}
+
+.archive-index {
+  font-family: $display;
+  font-weight: 400;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  color: $teal;
+}
+
+.archive-date { @include label(10.5px, 0.14em, $label-muted); }
+
+.archive-body {
+  padding: 34px 0 40px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+
+  p {
+    @include body-copy(1.16rem, 1.65, $text-muted);
+    max-width: 56ch;
+  }
+
+  @media (max-width: $bp-stack) { padding: 24px 0 40px; }
+}
+
+.archive-title {
+  font-family: $display;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: $ink;
+  max-width: 24ch;
+}
+
+.archive-tags {
+  display: flex;
+  gap: 10px 20px;
+  flex-wrap: wrap;
+  @include label(10px, 0.15em, $terracotta-dark);
+  margin-top: 4px;
+}
+
+.archive-more {
+  @include label(11px, 0.13em, $teal);
+  margin-top: 8px;
+}
+
+.archive-end {
+  border-top: 1px solid $rule;
+  padding: 34px 0 60px;
+
+  span { @include label(10.5px, 0.15em, $label-muted); }
+}
+
+.blog-cta {
+  .shell {
+    padding-top: 68px;
+    padding-bottom: 72px;
+    gap: 18px;
+  }
+
+  .cta-title {
+    font-size: clamp(1.9rem, 4vw, 3.2rem);
+    max-width: 26ch;
+  }
+
+  .btn { margin-top: 12px; }
+}
+
+// ------------------------------------------------------------- blog post
+
+.post-header {
+  border-bottom: 1px solid $rule;
+
+  .shell {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  h1 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: clamp(2.4rem, 5.4vw, 4.4rem);
+    line-height: 0.94;
+    letter-spacing: -0.032em;
+    color: $ink;
+    max-width: 20ch;
+
+    @media (max-width: $bp-narrow) {
+      font-size: clamp(1.85rem, 8vw, 2.8rem);
+    }
+  }
+}
+
+.post-back {
+  @include label(11px, 0.14em, $teal);
+  @include hit-area;
+  display: inline-block;
+  margin-bottom: 40px;
+
+  &:hover { color: $terracotta-dark; }
+}
+
+.post-standfirst {
+  @include body-copy(1.28rem, 1.55, $text-muted);
+  max-width: $measure-lead;
+  margin-top: 26px;
+}
+
+.post-byline {
+  display: flex;
+  gap: 14px 36px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-top: 34px;
+  padding-top: 22px;
+  border-top: 1px solid $rule;
+  font-family: $mono;
+  font-size: 10.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  .post-author { color: $ink; }
+  .post-date   { color: $label-muted; }
+  .post-tags   { color: $terracotta-dark; }
+}
+
+.post-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2.7fr) minmax(0, 1fr);
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// The article body is markdown output, so everything here is element-scoped.
+.post-body {
+  padding: 48px 64px 64px 0;
+  border-right: 1px solid $rule;
+
+  p {
+    @include body-copy(1.16rem, 1.76);
+    margin-bottom: 24px;
+  }
+
+  // The opening paragraph sets larger, with a drop cap.
+  > p:first-child {
+    font-size: 1.24rem;
+    line-height: 1.74;
+
+    &::first-letter {
+      font-family: $display;
+      font-size: 3.6rem;
+      line-height: 0.76;
+      color: $terracotta;
+      float: left;
+      padding: 6px 13px 0 0;
+    }
+  }
+
+  h2 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: clamp(1.3rem, 2.1vw, 1.65rem);
+    line-height: 1.1;
+    letter-spacing: -0.026em;
+    color: $ink;
+    margin: 40px 0 24px;
+    padding-top: 22px;
+    border-top: 1px solid $rule;
+  }
+
+  h3 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: 1.15rem;
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+    color: $ink;
+    margin: 40px 0 24px;
+  }
+
+  strong {
+    font-family: $sans;
+    font-weight: 700;
+    font-size: 1.04rem;
+    letter-spacing: 0.01em;
+    color: $ink;
+  }
+
+  em { font-style: italic; }
+
+  a {
+    color: $teal;
+    border-bottom: 1px solid $link-underline;
+
+    &:hover {
+      color: $terracotta;
+      border-bottom-color: $terracotta;
+    }
+  }
+
+  blockquote {
+    border-left: 3px solid $teal;
+    padding: 4px 0 4px 24px;
+    margin: 10px 0 34px;
+
+    p {
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.3rem, 2.1vw, 1.6rem);
+      line-height: 1.4;
+      letter-spacing: -0.012em;
+      color: $teal;
+      margin-bottom: 0;
+    }
+  }
+
+  ul,
+  ol { margin: 0 0 24px 22px; }
+
+  li {
+    @include body-copy(1.16rem, 1.76);
+    margin-bottom: 8px;
+  }
+
+  img {
+    display: block;
+    height: auto;
+    margin-bottom: 24px;
+  }
+
+  // The sign-off address block. Matched on the hard line breaks that only a
+  // sign-off carries, so an ordinary closing paragraph is left alone.
+  > p:last-child:has(br) {
+    border-top: 1px solid $rule;
+    padding-top: 24px;
+    margin-top: 12px;
+    font-family: $mono;
+    font-size: 11px;
+    line-height: 1.9;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $label-muted;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $bp-stack) {
+    border-right: 0;
+    border-bottom: 1px solid $rule;
+    padding: 40px 0 48px;
+  }
+}
+
+.post-rail {
+  padding: 48px 0 64px 40px;
+
+  @media (max-width: $bp-stack) { padding: 34px 0 48px; }
+}
+
+.post-rail-inner {
+  position: sticky;
+  top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  align-items: flex-start;
+
+  @media (max-width: $bp-stack) { position: static; }
+}
+
+.post-rail-label { @include label(10px, 0.18em, $label-muted); }
+
+.post-rail-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid $rule;
+
+  a {
+    font-family: $mono;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $ink;
+    padding: 12px 0;
+    border-bottom: 1px solid $rule;
+
+    &:hover { color: $terracotta; }
+
+    &:last-child { border-bottom: 0; }
+  }
+}
+
+.post-rail-cta {
+  font-family: $display;
+  font-weight: 400;
+  font-size: 11.5px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  background: $ink;
+  color: $cream;
+  padding: 14px 22px;
+  display: block;
+
+  &:hover {
+    background: $terracotta;
+    color: $cream;
+  }
+}
+
+// ------------------------------------------------------------- next post
+
+.next-post-head {
+  padding: 44px 0 24px;
+
+  span { @include label(10.5px, 0.18em, $label-muted); }
+}
+
+.next-post {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  border-top: 1px solid $rule;
+  color: inherit;
+  padding-bottom: 52px;
+
+  &:hover {
+    color: inherit;
+
+    h2 { color: $terracotta-dark; }
+  }
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.next-post-meta {
+  padding: 30px 32px 30px 0;
+  border-right: 1px solid $rule;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  @include label(10.5px, 0.14em, $label-muted);
+
+  @media (max-width: $bp-stack) {
+    border-right: 0;
+    border-bottom: 1px solid $rule;
+    padding: 30px 0 14px;
+  }
+}
+
+.next-post-body {
+  padding: 30px 0 30px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+
+  h2 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    line-height: 1.04;
+    letter-spacing: -0.028em;
+    color: $ink;
+  }
+
+  p {
+    @include body-copy(1.1rem, 1.62, $text-muted);
+    max-width: 52ch;
+  }
+
+  @media (max-width: $bp-stack) { padding: 24px 0 30px; }
+}

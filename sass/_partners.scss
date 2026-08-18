@@ -1,0 +1,203 @@
+// Partners — content/partners.md
+
+// The headline is shorter than about's and the standfirst longer, so both
+// measures are tuned away from the shared defaults.
+.page-hero--partners {
+  h1 { max-width: 20ch; }
+  .page-hero-lead { max-width: 48ch; }
+}
+
+// ------------------------------------------------ No. 02 programme partner
+
+.flagship {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.75fr);
+  border-top: 1px solid $rule;
+  padding-bottom: 60px;
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: 1fr;
+    padding-bottom: 48px;
+  }
+}
+
+.flagship-id {
+  padding: 34px 40px 34px 0;
+  border-right: 1px solid $rule;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: $bp-stack) {
+    border-right: 0;
+    border-bottom: 1px solid $rule;
+    padding: 34px 0;
+  }
+}
+
+.flagship-body {
+  padding: 34px 0 0 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+
+  p { @include body-copy(1.15rem, 1.72); }
+
+  @media (max-width: $bp-stack) { padding: 34px 0 0; }
+}
+
+// Shared by the flagship and the founding partners below.
+.partner-mark {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 22px;
+
+  img {
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .mark-hikmat     { height: 46px; }
+  .mark-fossunited { height: 44px; }
+  .mark-samagata   { height: 30px; }
+}
+
+.partner-name {
+  font-family: $display;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.1vw, 1.8rem);
+  line-height: 1.04;
+  letter-spacing: -0.026em;
+  color: $ink;
+  margin-bottom: 12px;
+}
+
+.partner-programme {
+  @include label(10.5px, 0.15em, $terracotta-dark);
+  display: block;
+  margin-bottom: 26px;
+}
+
+// The outbound link is ruled off and pushed to the foot of the cell so two
+// partners line up regardless of how long their descriptions run.
+.partner-link {
+  font-family: $mono;
+  font-size: 11px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: $teal;
+  border-top: 1px solid $rule;
+  padding-top: 20px;
+  width: 100%;
+  display: block;
+
+  &:hover { color: $terracotta-dark; }
+}
+
+// The cohort ledger, in teal on light rather than the homepage's mustard.
+.cohort-ledger {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid $rule;
+
+  > * { padding: 22px 20px 0; }
+  > *:first-child { padding-left: 0; }
+  > *:last-child { padding-right: 0; }
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: 1fr;
+
+    > * { padding: 16px 0; }
+    > * + * { border-top: 1px solid $rule; }
+  }
+}
+
+.cohort-label {
+  @include label(10px, 0.15em, $label-muted);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.cohort-figure {
+  font-family: $display;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: $teal;
+  display: block;
+}
+
+// ------------------------------------------------ No. 03 founding partners
+
+.founding-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid $rule;
+  padding-bottom: 60px;
+
+  > * {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 34px 48px 40px 0;
+  }
+
+  > *:first-child { border-right: 1px solid $rule; }
+
+  > *:last-child {
+    padding-left: 48px;
+    padding-right: 0;
+  }
+
+  p {
+    @include body-copy(1.1rem, 1.7);
+    flex: 1;
+    margin-bottom: 26px;
+  }
+
+  strong {
+    font-family: $sans;
+    font-weight: 600;
+    color: $ink;
+  }
+
+  em {
+    font-style: italic;
+    color: $ink;
+  }
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: 1fr;
+    padding-bottom: 48px;
+
+    > * {
+      border-right: 0;
+      border-bottom: 1px solid $rule;
+      padding: 34px 0 40px;
+    }
+
+    > *:last-child {
+      border-bottom: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+// -------------------------------------------------------------- No. 04 CTA
+
+.partners-cta {
+  .shell {
+    padding-bottom: 80px;
+    gap: 20px;
+  }
+
+  .cta-title {
+    font-size: clamp(2.1rem, 4.4vw, 3.6rem);
+    max-width: 24ch;
+  }
+
+  .btn { margin-top: 12px; }
+}

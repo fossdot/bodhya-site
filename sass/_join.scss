@@ -1,0 +1,144 @@
+// Join — content/join.md
+
+.page-hero--join h1 { max-width: 24ch; }
+
+// ------------------------------------------------------ No. 02 four ways in
+
+// A 2×2 hairline grid: the rule sits centred in the gutter, so the left cell
+// of each row pads right and the right cell pads left. The route blocks carry
+// no buttons — deliberately; the two doors below are the only calls to action.
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid $rule;
+
+  > * {
+    display: flex;
+    flex-direction: column;
+    padding: 34px 44px 40px 0;
+  }
+
+  > *:nth-child(odd) { border-right: 1px solid $rule; }
+
+  > *:nth-child(even) {
+    padding-left: 44px;
+    padding-right: 0;
+  }
+
+  // Every cell but those on the last row.
+  > *:nth-child(-n + 2) { border-bottom: 1px solid $rule; }
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: 1fr;
+
+    > * {
+      border-right: 0;
+      border-bottom: 1px solid $rule;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    > *:last-child { border-bottom: 0; }
+  }
+}
+
+.route-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.route-index {
+  font-family: $display;
+  font-weight: 400;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  color: $teal;
+}
+
+.route-tag { @include label(10.5px, 0.16em, $terracotta); }
+
+.route-title {
+  font-family: $display;
+  font-weight: 400;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: $ink;
+  margin-bottom: 22px;
+  max-width: 22ch;
+}
+
+.route-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  li {
+    @include body-copy(1.06rem, 1.6, $text-muted);
+    padding: 10px 0 10px 26px;
+    position: relative;
+    border-top: 1px solid $rule-light;
+
+    &::before {
+      content: '→';
+      content: '→' / '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      font-family: $mono;
+      font-size: 0.85rem;
+      color: $teal;
+    }
+  }
+}
+
+// ------------------------------------------------ No. 03 two ways to reach us
+
+.door-grid {
+  @include hairline-grid-dark(2, 48px, 46px, 48px);
+  border-top: 1px solid $rule-dark;
+
+  > * {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.door-eyebrow {
+  @include label(10.5px, 0.16em, $mustard);
+  display: block;
+  margin-bottom: 18px;
+}
+
+.door-title {
+  font-family: $display;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  color: $cream;
+  margin-bottom: 16px;
+  max-width: 20ch;
+}
+
+.door-copy {
+  @include body-copy(1.12rem, 1.66, $cream);
+  max-width: 40ch;
+  flex: 1;
+  margin-bottom: 28px;
+}
+
+.join-footnote {
+  font-family: $serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: $cream;
+  padding: 30px 0 60px;
+  border-top: 1px solid $rule-dark;
+  max-width: 52ch;
+}

@@ -1,10 +1,12 @@
 +++
 title = "Terms of Service"
 path = "terms-of-service"
+description = "The terms that govern your use of bodhya.net, including contributions and user submissions."
+template = "policy.html"
+
+[extra]
+updated = "Effective: August 2026"
 +++
-
-*Effective: August 2026*
-
 These Terms of Service govern your access to and use of the Bodhya website (bodhya.net), operated by **Vishal Arya** ("Bodhya", "we", "us", or "our"). By using this site, you agree to these terms. If you do not agree, please do not use the site.
 
 ---

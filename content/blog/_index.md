@@ -1,6 +1,6 @@
 +++
 title = "Blog"
-description = "Stories, tips, and updates from Bodhya"
+description = "Notes from building Bodhya in Bihar — what we are running, what we are learning, and what is opening up for students in the state."
 sort_by = "date"
 template = "blog.html"
 page_template = "blog-post.html"

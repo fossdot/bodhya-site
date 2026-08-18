@@ -1,0 +1,302 @@
+// Contact & grievance redressal — content/contact.md
+
+.page-hero--contact {
+  h1 {
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    max-width: 22ch;
+  }
+}
+
+.page-hero-updated {
+  @include label(11px, 0.15em, $label-muted);
+  margin-top: 34px;
+  padding-top: 20px;
+  border-top: 1px solid $rule;
+}
+
+// -------------------------------------------- operator / grievance officer
+
+.contact-pair {
+  @include hairline-grid(2, 48px, 48px, 48px);
+
+  > * {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h2 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+    line-height: 1.04;
+    letter-spacing: -0.026em;
+    color: $ink;
+    margin-bottom: 16px;
+  }
+
+  > * > p { @include body-copy(1.1rem, 1.7); }
+}
+
+.contact-role {
+  @include label(10.5px, 0.16em, $terracotta-dark);
+  display: block;
+  margin-bottom: 18px;
+}
+
+.contact-note {
+  @include body-copy(1.02rem, 1.65, $text-muted);
+  margin-top: 22px;
+}
+
+// A hairline key/value table — mono both sides, value ranged right.
+.kv-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid $rule;
+  margin-top: 24px;
+
+  > div {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 12px 0;
+    border-bottom: 1px solid $rule;
+    font-family: $mono;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    &:last-child { border-bottom: 0; }
+  }
+
+  .kv-key   { color: $label-muted; }
+  .kv-value { color: $ink; }
+
+  a {
+    color: $teal;
+
+    &:hover { color: $terracotta-dark; }
+  }
+}
+
+// ------------------------------------------------- No. 02 general enquiries
+
+.contact-enquiry {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  border-top: 1px solid $rule;
+  padding-bottom: 56px;
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: 1fr;
+    padding-bottom: 44px;
+  }
+}
+
+.contact-enquiry-copy {
+  padding: 34px 48px 0 0;
+  border-right: 1px solid $rule;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  p { @include body-copy; max-width: none; }
+
+  @media (max-width: $bp-stack) {
+    border-right: 0;
+    border-bottom: 1px solid $rule;
+    padding: 34px 0;
+  }
+}
+
+.contact-enquiry-actions {
+  padding: 34px 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+
+  .btn {
+    background: $ink;
+    color: $cream;
+    padding: 15px 26px;
+    font-size: 12px;
+
+    &:hover { background: $terracotta; }
+  }
+
+  @media (max-width: $bp-stack) { padding: 34px 0 0; }
+}
+
+.contact-inline-link {
+  @include label(11px, 0.12em, $teal);
+  @include hit-area;
+  border-bottom: 1px solid $link-underline;
+  padding-bottom: 2px;
+
+  &:hover { color: $terracotta-dark; }
+}
+
+// -------------------------------------------------- No. 03 complaint steps
+
+.steps-grid {
+  @include hairline-grid(3, 32px, 34px, 40px);
+  border-top: 1px solid $rule;
+
+  h3 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: 1.25rem;
+    letter-spacing: -0.022em;
+    color: $ink;
+    margin-bottom: 12px;
+  }
+
+  p { @include body-copy(1.06rem, 1.68); }
+}
+
+.step-index {
+  font-family: $display;
+  font-weight: 400;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  color: $teal;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.escalation {
+  border-top: 1px solid $rule;
+  padding: 40px 0 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+
+  h3 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: 1.2rem;
+    letter-spacing: -0.022em;
+    color: $ink;
+  }
+
+  > p {
+    @include body-copy(1.1rem, 1.7);
+    max-width: 62ch;
+  }
+}
+
+.escalation-routes {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 860px;
+  border-top: 1px solid $rule;
+
+  > div {
+    padding: 16px 0;
+    border-bottom: 1px solid $rule;
+    display: flex;
+    gap: 12px 28px;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    &:last-child { border-bottom: 0; }
+  }
+}
+
+.escalation-label {
+  @include label(10.5px, 0.14em, $terracotta-dark);
+  min-width: 15ch;
+}
+
+.escalation-copy {
+  @include body-copy(1.08rem, 1.6);
+  flex: 1;
+  min-width: 24ch;
+}
+
+// ------------------------------------------------ No. 04 payment complaints
+
+.contact-payments {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+
+  @media (max-width: $bp-stack) { grid-template-columns: 1fr; }
+}
+
+.contact-payments-copy {
+  padding: 56px 48px 56px 0;
+  border-right: 1px solid $rule;
+
+  .marker { margin-bottom: 18px; }
+
+  h2 { margin-bottom: 24px; }
+
+  p {
+    @include body-copy;
+    max-width: 62ch;
+  }
+
+  @media (max-width: $bp-stack) {
+    border-right: 0;
+    border-bottom: 1px solid $rule;
+    padding: 48px 0;
+  }
+}
+
+.contact-payments-related {
+  padding: 56px 0 56px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: $bp-stack) { padding: 40px 0 48px; }
+}
+
+.related-label {
+  @include label(10.5px, 0.16em, $label-muted);
+  display: block;
+  margin-bottom: 20px;
+}
+
+// A stack of mono links divided by hairlines.
+.link-stack {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid $rule;
+
+  a {
+    font-family: $mono;
+    font-size: 11px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: $ink;
+    padding: 14px 0;
+    border-bottom: 1px solid $rule;
+    display: block;
+
+    &:hover { color: $terracotta-dark; }
+
+    &:last-child { border-bottom: 0; }
+  }
+}
+
+// <strong> inside serif body copy switches to the sans face.
+.contact-pair,
+.contact-enquiry,
+.steps-grid,
+.escalation,
+.contact-payments {
+  strong {
+    font-family: $sans;
+    font-weight: 600;
+    font-size: 0.96em;
+    color: $ink;
+  }
+}

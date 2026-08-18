@@ -1,0 +1,296 @@
+// Policy documents — templates/policy.html
+//
+// The four documents (privacy, terms, refunds, code of conduct) stay four
+// URLs sharing this one layout. Everything below `.doc-body` is styled by
+// element because the copy is plain markdown.
+
+.doc-hero {
+  border-bottom: 1px solid $rule;
+  background: $cream;
+
+  .shell {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .marker { margin-bottom: 30px; }
+
+  // Not a heading: the four documents share this banner, and the <h1> that
+  // identifies the page is the document's own title below.
+  .doc-hero-title {
+    font-family: $display;
+    font-weight: 400;
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    line-height: 0.94;
+    letter-spacing: -0.032em;
+    color: $ink;
+    max-width: 18ch;
+
+    em {
+      font-style: normal;
+      color: $terracotta;
+    }
+
+    @media (max-width: $bp-narrow) {
+      font-size: clamp(1.85rem, 8vw, 2.8rem);
+    }
+  }
+
+  .doc-hero-lead {
+    @include body-copy(1.24rem, 1.6, $text-muted);
+    max-width: 48ch;
+    margin-top: 28px;
+    border-left: 3px solid $teal;
+    padding-left: 22px;
+  }
+}
+
+.doc-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+
+  @media (max-width: $bp-stack) { grid-template-columns: 1fr; }
+}
+
+.doc-sidebar {
+  padding: 44px 40px 48px 0;
+  border-right: 1px solid $rule;
+
+  @media (max-width: $bp-stack) {
+    border-right: 0;
+    border-bottom: 1px solid $rule;
+    padding: 34px 0;
+  }
+}
+
+.doc-sidebar-inner {
+  position: sticky;
+  top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+
+  @media (max-width: $bp-stack) { position: static; }
+}
+
+.doc-sidebar-label { @include label(10px, 0.18em, $label-muted); }
+
+// The document switcher. The arrow is present on every row but only shown on
+// the current one, so the rows don't shift width as you move between them.
+.doc-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid $rule;
+
+  a {
+    font-family: $mono;
+    font-size: 11px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: $ink;
+    padding: 14px 0;
+    border-bottom: 1px solid $rule;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    &:hover { color: $terracotta-dark; }
+
+    span { opacity: 0; }
+
+    &.is-active {
+      color: $terracotta;
+
+      span { opacity: 1; }
+    }
+  }
+}
+
+.doc-sidebar-link {
+  @include label(11px, 0.12em, $teal);
+  @include hit-area;
+  border-bottom: 1px solid $link-underline;
+  padding-bottom: 2px;
+
+  &:hover { color: $terracotta-dark; }
+}
+
+.doc-main {
+  padding: 44px 0 64px 48px;
+
+  @media (max-width: $bp-stack) { padding: 34px 0 56px; }
+}
+
+.doc-head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 28px;
+
+  h1 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    color: $ink;
+  }
+
+  span { @include label(10.5px, 0.15em, $label-muted); }
+}
+
+// ------------------------------------------------------------ document body
+
+.doc-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 74ch;
+
+  p {
+    @include body-copy(1.1rem, 1.75);
+    margin: 0;
+    max-width: none;
+  }
+
+  // Markdown h2 is a section head inside the document, so it takes the
+  // design's h3 treatment: a hairline above, then the title.
+  h2 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: 1.22rem;
+    line-height: 1.12;
+    letter-spacing: -0.024em;
+    color: $ink;
+    margin-top: 14px;
+    padding-top: 22px;
+    border-top: 1px solid $rule;
+  }
+
+  h3 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: 1.06rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: $ink;
+    margin-top: 10px;
+  }
+
+  strong {
+    font-family: $sans;
+    font-weight: 600;
+    font-size: 0.96em;
+    color: $ink;
+  }
+
+  em { font-style: italic; }
+
+  a {
+    color: $teal;
+    border-bottom: 1px solid $link-underline;
+
+    &:hover {
+      color: $terracotta;
+      border-bottom-color: $terracotta;
+    }
+  }
+
+  // Em-dash markers in teal with hairlines between items — not bullets.
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  ul li {
+    @include body-copy(1.06rem, 1.68);
+    padding: 9px 0 9px 24px;
+    position: relative;
+    border-top: 1px solid $rule-light;
+
+    &::before {
+      content: '—';
+      content: '—' / '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      font-family: $mono;
+      font-size: 0.8rem;
+      color: $teal;
+    }
+  }
+
+  ol {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 22px;
+
+    li {
+      @include body-copy(1.06rem, 1.68);
+      padding: 9px 0 9px 6px;
+      border-top: 1px solid $rule-light;
+
+      &::marker {
+        font-family: $mono;
+        font-size: 0.82rem;
+        color: $teal;
+      }
+    }
+  }
+
+  // The section hairlines above each h2 already divide the document, so the
+  // markdown source's `---` separators would only double them up.
+  hr { display: none; }
+
+  // The refund timeline. A real table: mono header over a 1.5px ink rule,
+  // hairlines between rows.
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      @include label(10.5px, 0.15em, $label-muted);
+      text-align: left;
+      padding: 0 20px 12px 0;
+      border-bottom: 1.5px solid $ink;
+
+      &:last-child { padding-right: 0; }
+      &:first-child { width: 66%; }
+    }
+
+    td {
+      @include body-copy(1.04rem, 1.6);
+      padding: 14px 20px 14px 0;
+      border-bottom: 1px solid $rule-light;
+      vertical-align: top;
+
+      &:last-child { padding-right: 0; }
+    }
+
+    tr:last-child td { border-bottom: 0; }
+  }
+}
+
+// An inset note. Teal rule for information, terracotta where the note is a
+// reporting contact people need to find in a hurry.
+.doc-callout {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: $cream-tint;
+  padding: 24px 26px;
+  border-left: 3px solid $teal;
+
+  p,
+  li { font-size: 1.04rem; line-height: 1.7; }
+}
+
+.doc-callout--report {
+  border-left-color: $terracotta;
+}
+
+.doc-body .doc-callout p { max-width: none; }

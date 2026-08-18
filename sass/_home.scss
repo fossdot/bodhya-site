@@ -1,0 +1,285 @@
+// Homepage — templates/index.html
+
+// ------------------------------------------------------------- No. 01 hero
+
+.hero {
+  .shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1.72fr) minmax(0, 1fr);
+    align-items: center;
+
+    @media (max-width: $bp-stack) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.hero-text {
+  padding: 68px 56px 68px 0;
+  border-right: 1px solid $rule;
+
+  @media (max-width: $bp-stack) {
+    border-right: 0;
+    border-bottom: 1px solid $rule;
+    padding: 56px 0 44px;
+  }
+}
+
+.hero .marker { margin-bottom: 34px; }
+
+.hero h1 {
+  font-family: $display;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 5.4vw, 4.7rem);
+  line-height: 0.93;
+  letter-spacing: -0.032em;
+  color: $ink;
+
+  em {
+    font-style: normal;
+    color: $terracotta;
+  }
+
+  @media (max-width: $bp-narrow) {
+    font-size: clamp(1.95rem, 8.2vw, 3rem);
+  }
+}
+
+.hero-standfirst {
+  @include body-copy(1.32rem, 1.55, $text-muted);
+  max-width: 33ch;
+  margin-top: 30px;
+}
+
+.hero .btn-row { margin-top: 38px; }
+
+.hero-mark {
+  padding: 48px 0 48px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: $bp-stack) {
+    padding: 34px 0 8px;
+    justify-content: flex-start;
+  }
+}
+
+.hero-mark svg {
+  width: clamp(132px, 16vw, 216px);
+  height: auto;
+  display: block;
+
+  @media (max-width: $bp-stack) {
+    width: 104px;
+  }
+}
+
+// The mark is wiped in left to right in three stages: inner circle, then the
+// three inner shapes together, then the outer frame. No fades, no movement —
+// opacity stays at 1 and nothing translates.
+@keyframes sweepX {
+  to { transform: scaleX(1); }
+}
+
+.mark-wipe {
+  transform: scaleX(0);
+  transform-origin: 0px 0px;
+}
+
+.mark-wipe--1 { animation: sweepX 760ms cubic-bezier(0.4, 0, 0.2, 1) 300ms forwards; }
+.mark-wipe--2 { animation: sweepX 900ms cubic-bezier(0.4, 0, 0.2, 1) 1450ms forwards; }
+.mark-wipe--3 { animation: sweepX 2500ms cubic-bezier(0.45, 0.05, 0.3, 1) 2600ms forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mark-wipe {
+    animation: none !important;
+    transform: scaleX(1) !important;
+  }
+}
+
+// ----------------------------------------------------- No. 02 what we do
+
+.home-cards {
+  @include hairline-grid(3, 32px, 34px, 44px);
+  border-top: 1px solid $rule;
+}
+
+.home-card {
+  .home-card-index {
+    @include label(10.5px, 0.16em, $terracotta);
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: 1.45rem;
+    letter-spacing: -0.02em;
+    color: $ink;
+    margin-bottom: 13px;
+  }
+
+  p { @include body-copy(1.08rem, 1.65, $text-muted); }
+}
+
+// ---------------------------------------------------- No. 03 why bodhya
+
+.home-why {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  border-top: 1px solid $rule;
+  padding-bottom: 56px;
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: 1fr;
+    padding-bottom: 44px;
+  }
+}
+
+.home-why-copy {
+  padding: 34px 56px 0 0;
+  border-right: 1px solid $rule;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  p { @include body-copy(1.18rem, 1.72); }
+
+  // Drop cap on the opening paragraph.
+  p:first-child::first-letter {
+    font-family: $display;
+    font-size: 3.5rem;
+    line-height: 0.78;
+    color: $terracotta;
+    float: left;
+    padding: 6px 12px 0 0;
+  }
+
+  // Nested so it outranks the `p` rule above rather than tying with it.
+  .home-why-note {
+    @include label(11px, 0.12em, $label-muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: $bp-stack) {
+    border-right: 0;
+    border-bottom: 1px solid $rule;
+    padding: 34px 0 34px;
+  }
+}
+
+.home-why-quote {
+  padding: 40px 0 0 40px;
+  display: flex;
+  align-items: flex-start;
+
+  blockquote {
+    border-top: 3px solid $teal;
+    padding-top: 22px;
+  }
+
+  p {
+    font-family: $serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    line-height: 1.24;
+    letter-spacing: -0.015em;
+    color: $teal;
+    text-wrap: pretty;
+  }
+
+  @media (max-width: $bp-stack) {
+    padding: 34px 0 0;
+  }
+}
+
+// ----------------------------------------------------- No. 04 programme
+
+.home-programme {
+  .shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+
+    @media (max-width: $bp-stack) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.home-programme-text {
+  padding: 64px 56px 64px 0;
+  border-right: 1px solid $rule-dark;
+
+  .marker { margin-bottom: 28px; }
+
+  h2 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: clamp(2rem, 3.4vw, 2.9rem);
+    line-height: 0.98;
+    letter-spacing: -0.028em;
+    color: $cream;
+    margin-bottom: 24px;
+  }
+
+  p {
+    @include body-copy(1.14rem, 1.7, $cream);
+    margin-bottom: 28px;
+    max-width: 52ch;
+  }
+
+  // Slightly smaller than the standard button — it sits under body copy
+  // rather than closing a section.
+  .btn {
+    padding: 15px 26px;
+    font-size: 12px;
+  }
+
+  @media (max-width: $bp-stack) {
+    border-right: 0;
+    border-bottom: 1px solid $rule-dark;
+    padding: 56px 0 44px;
+  }
+}
+
+.home-cohorts {
+  padding: 64px 0 64px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: $bp-stack) {
+    padding: 40px 0 56px;
+  }
+}
+
+.home-cohort {
+  padding: 26px 0;
+  border-bottom: 1px solid $rule-dark;
+
+  &:first-child { padding-top: 0; }
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  span { display: block; }
+}
+
+.home-cohort-label {
+  @include label(10.5px, 0.16em, $on-teal-muted);
+  margin-bottom: 12px;
+}
+
+.home-cohort-figure {
+  font-family: $display;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 4.6vw, 3.9rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: $mustard;
+}

@@ -2,6 +2,8 @@
 title = "Introducing Bodhya"
 date = 2025-11-28
 description = "Why Bodhya exists and what we’re building for Bihar students"
+
+[taxonomies]
 tags = ["bodhya", "bihar", "technology"]
 +++
 

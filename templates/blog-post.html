@@ -1,29 +1,66 @@
 {% extends "base.html" %}
 
-{% block title %}{{ page.title }} - {{ config.title }}{% endblock %}
+{% block og_type %}article{% endblock %}
 
 {% block content %}
-    <main>
-        <article class="post-article">
+    <section class="post-header">
+        <div class="shell">
+            <a href="/blog" class="post-back"><span aria-hidden="true">← </span>All posts</a>
             <h1>{{ page.title }}</h1>
-
-            <p class="post-meta">
-                📅 {{ page.date }}
+            {% if page.description %}<p class="post-standfirst">{{ page.description }}</p>{% endif %}
+            <div class="post-byline">
+                <span class="post-author">Vishal Arya</span>
+                <span class="post-date">{{ page.date | date(format="%d %B %Y") }}</span>
                 {% if page.taxonomies.tags %}
-                    | Tags:
-                    {% for tag in page.taxonomies.tags %}
-                        <a href="/tags/{{ tag }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-                    {% endfor %}
+                <span class="post-tags">{{ page.taxonomies.tags | join(sep=" · ") }}</span>
                 {% endif %}
-            </p>
-
-            <div class="post-body">
-                {{ page.content | safe }}
             </div>
-        </article>
-
-        <div class="post-footer">
-            <p><a href="/blog">← Back to Blog</a></p>
         </div>
-    </main>
+    </section>
+
+    <section class="band">
+        <div class="shell post-layout">
+            <article class="post-body">
+                {{ page.content | safe }}
+            </article>
+            <div class="post-rail">
+                <div class="post-rail-inner">
+                    {# The contents rail is generated from the post's own h2s. A post
+                       without any simply doesn't get one. #}
+                    {% set headings = page.toc | filter(attribute="level", value=2) %}
+                    {% if headings | length > 0 %}
+                    <span class="post-rail-label">In this post</span>
+                    <nav class="post-rail-nav" aria-label="On this page">
+                        {% for h in headings %}
+                        <a href="#{{ h.id }}">{{ h.title }}</a>
+                        {% endfor %}
+                    </nav>
+                    {% endif %}
+                    <a href="/join" class="post-rail-cta">Get involved</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# `lower` is the next page in the section's date sort — i.e. the post
+       published after this one. Zola 0.21 renamed the old `later`. #}
+    {% if page.lower %}
+    <section class="band--tint">
+        <div class="shell">
+            <div class="next-post-head">
+                <span>Next post</span>
+            </div>
+            <a href="{{ page.lower.permalink }}" class="next-post">
+                <div class="next-post-meta">
+                    <span>{{ page.lower.date | date(format="%d %B %Y") }}</span>
+                </div>
+                <div class="next-post-body">
+                    <h2>{{ page.lower.title }}</h2>
+                    {% if page.lower.description %}<p>{{ page.lower.description }}</p>{% endif %}
+                    <span class="archive-more">Read the post<span aria-hidden="true"> →</span></span>
+                </div>
+            </a>
+        </div>
+    </section>
+    {% endif %}
 {% endblock %}

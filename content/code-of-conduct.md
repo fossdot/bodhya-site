@@ -1,8 +1,9 @@
 +++
 title = "Code of Conduct"
 path = "code-of-conduct"
+description = "The behaviour Bodhya expects in its spaces, how to report a problem, and who will answer."
+template = "policy.html"
 +++
-
 ## Our Pledge
 
 Bodhya is a platform for collaboration, learning, and building free and open communities for students and professionals in Bihar and beyond. We are committed to making participation in all Bodhya spaces — events, online forums, social media, Telegram channels, and GitHub — a welcoming experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices.
@@ -60,8 +61,12 @@ Because our events are hosted under FOSS United, the [FOSS United Code of Conduc
 
 If you are being harassed, witness harassment, or observe a violation of this Code of Conduct, please report it immediately:
 
+<div class="doc-callout doc-callout--report">
+
 - **Phone:** 8235103450
 - **Email:** [coc@bodhya.net](mailto:coc@bodhya.net)
+
+</div>
 
 All reporters will remain anonymous. We will respond to reports within 48 hours.
 

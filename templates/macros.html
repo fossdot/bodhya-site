@@ -1,19 +1,75 @@
 {# Single source of truth for site navigation.
 
-   Used three times in base.html: the desktop header nav, the mobile
-   <dialog> nav, and the footer nav. Add or rename a link HERE and all
-   three stay in sync.
+   `primary_links` is used twice in base.html — the masthead nav and the
+   mobile panel (via `mobile_links`, which appends Donate). `footer_links`
+   is the footer's Site column, which lists Join and Blog as plain links
+   because the footer has no button row.
 
-   All three navs are `display: flex`, so whitespace between the anchors
-   is not rendered — indentation of this output is cosmetic only.
+   Add or rename a link HERE and every nav stays in sync.
 
-   "Events" is deliberately an external link to the FOSS United Bihar
-   chapter; there is no local /events page. #}
+   The masthead deliberately has no "Join" text link — the Join Us button
+   carries it — and no Donate link, which lives in the utility bar.
 
-{% macro primary_links() %}
+   "Events" is an external link to the FOSS United Bihar chapter; there is
+   no local /events page. #}
+
+{# The browser-tab title, shared by <title>, og:title and twitter:title so the
+   three can never drift apart.
+
+   `raw` is the page's, section's or taxonomy term's own title. A title that
+   already says "Bodhya" is left alone rather than being made to say it twice
+   ("About Bodhya — Bodhya"); everything else gets the site suffix; and the
+   homepage, whose section title is just the brand, gets the full line. #}
+
+{% macro page_title(raw="") %}
+{%- if raw == "" or raw == "Bodhya" -%}
+Bodhya — bridging Bihar’s students and the tech industry
+{%- elif raw is containing("Bodhya") -%}
+{{ raw }}
+{%- else -%}
+{{ raw }} — Bodhya
+{%- endif -%}
+{% endmacro page_title %}
+
+{# Tag pages have no description of their own, and without this several pages
+   would share the site tagline verbatim. #}
+
+{% macro meta_description(fallback="", term="") %}
+{%- if term != "" -%}
+Every Bodhya post tagged “{{ term }}” — the full list, newest first.
+{%- else -%}
+{{ fallback }}
+{%- endif -%}
+{% endmacro meta_description %}
+
+{% macro primary_links(current="") %}
+    <a href="/about" class="nav-link{% if current is starting_with("/about") %} is-active{% endif %}"{% if current is starting_with("/about") %} aria-current="page"{% endif %}>About</a>
+    <a href="/partners" class="nav-link{% if current is starting_with("/partners") %} is-active{% endif %}"{% if current is starting_with("/partners") %} aria-current="page"{% endif %}>Partners</a>
+    <a href="https://fossunited.org/c/bihar" class="nav-link" target="_blank" rel="noopener noreferrer">Events</a>
+    <a href="/join" class="nav-cta">Join Us</a>
+{% endmacro primary_links %}
+
+{% macro mobile_links(current="") %}
+    {{ self::primary_links(current=current) }}
+    <a href="https://rzp.io/rzp/bodhya" class="nav-panel-donate" target="_blank" rel="noopener noreferrer">Donate<span aria-hidden="true"> →</span></a>
+{% endmacro mobile_links %}
+
+{# The policy sidebar's own list. Deliberately not the footer's four policy
+   links: different order, and the sidebar spells the titles out in full.
+   The arrow is rendered on every row but only made visible on the current
+   one, so rows don't change width as you move between documents. #}
+
+{% macro policy_docs(current="") %}
+    <a href="/privacy-policy"{% if current is starting_with("/privacy-policy") %} class="is-active" aria-current="page"{% endif %}>Privacy Policy<span aria-hidden="true">→</span></a>
+    <a href="/terms-of-service"{% if current is starting_with("/terms-of-service") %} class="is-active" aria-current="page"{% endif %}>Terms of Service<span aria-hidden="true">→</span></a>
+    <a href="/refund-policy"{% if current is starting_with("/refund-policy") %} class="is-active" aria-current="page"{% endif %}>Refund &amp; Cancellation<span aria-hidden="true">→</span></a>
+    <a href="/code-of-conduct"{% if current is starting_with("/code-of-conduct") %} class="is-active" aria-current="page"{% endif %}>Code of Conduct<span aria-hidden="true">→</span></a>
+{% endmacro policy_docs %}
+
+{% macro footer_links() %}
     <a href="/about">About</a>
     <a href="/join">Join</a>
     <a href="/partners">Partners</a>
     <a href="https://fossunited.org/c/bihar" target="_blank" rel="noopener noreferrer">Events</a>
-    <a href="https://rzp.io/rzp/bodhya" target="_blank" rel="noopener noreferrer" class="nav-donate">Donate</a>
-{% endmacro primary_links %}
+    <a href="/blog">Blog</a>
+{% endmacro footer_links %}

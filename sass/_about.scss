@@ -1,0 +1,175 @@
+// About — content/about.md
+
+// ------------------------------------------------------ No. 03 the story
+
+.about-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  border-top: 1px solid $rule;
+  padding-bottom: 56px;
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: 1fr;
+    padding-bottom: 44px;
+  }
+}
+
+.about-story-copy {
+  padding: 34px 56px 0 0;
+  border-right: 1px solid $rule;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  p { @include body-copy(1.18rem, 1.72); }
+
+  p:first-child::first-letter {
+    font-family: $display;
+    font-size: 3.5rem;
+    line-height: 0.78;
+    color: $terracotta;
+    float: left;
+    padding: 6px 12px 0 0;
+  }
+
+  // Nested so it outranks the `p` rule above rather than tying with it.
+  .about-story-note { @include label(11px, 0.12em, $label-muted); }
+
+  @media (max-width: $bp-stack) {
+    border-right: 0;
+    border-bottom: 1px solid $rule;
+    padding: 34px 0;
+  }
+}
+
+.about-story-aside {
+  padding: 40px 0 0 40px;
+
+  @media (max-width: $bp-stack) { padding: 34px 0 0; }
+}
+
+// The name, set as a dictionary specimen on teal.
+.name-specimen {
+  background: $teal;
+  color: $cream;
+  padding: 32px 30px 34px;
+
+  .name-specimen-label {
+    @include label(10.5px, 0.18em, $mustard);
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .name-specimen-word {
+    font-family: $serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2.2rem, 3.4vw, 2.9rem);
+    line-height: 1;
+    letter-spacing: -0.015em;
+    color: $cream;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .name-specimen-lang {
+    @include label(10.5px, 0.14em, $on-teal-muted);
+    display: block;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $rule-dark;
+  }
+
+  p { @include body-copy(1.08rem, 1.68, $cream); }
+}
+
+// --------------------------------------------------------- No. 04 founder
+
+.about-founder {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.85fr);
+  border-top: 1px solid $rule;
+  padding-bottom: 60px;
+
+  @media (max-width: $bp-stack) {
+    grid-template-columns: 1fr;
+    padding-bottom: 48px;
+  }
+}
+
+.about-founder-id {
+  padding: 34px 40px 34px 0;
+  border-right: 1px solid $rule;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h3 {
+    font-family: $display;
+    font-weight: 400;
+    font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+    line-height: 1;
+    letter-spacing: -0.028em;
+    color: $ink;
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: $bp-stack) {
+    border-right: 0;
+    border-bottom: 1px solid $rule;
+    padding: 34px 0;
+  }
+}
+
+.about-founder-role {
+  @include label(11px, 0.14em, $terracotta-dark);
+  display: block;
+  margin-bottom: 26px;
+}
+
+.about-founder-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 22px;
+  border-top: 1px solid $rule;
+  width: 100%;
+  font-family: $mono;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  a {
+    @include hit-area;
+    color: $teal;
+
+    &:hover { color: $terracotta; }
+  }
+}
+
+.about-founder-bio {
+  padding: 34px 0 0 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  p { @include body-copy(1.15rem, 1.72); }
+
+  @media (max-width: $bp-stack) { padding: 34px 0 0; }
+}
+
+// ------------------------------------------------------------ No. 05 CTA
+
+.about-cta {
+  .shell {
+    padding-bottom: 80px;
+    gap: 20px;
+  }
+
+  .cta-title {
+    font-size: clamp(2.1rem, 4.4vw, 3.6rem);
+    max-width: 26ch;
+  }
+
+  .cta-copy { max-width: 54ch; }
+}
