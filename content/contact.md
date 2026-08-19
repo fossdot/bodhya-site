@@ -113,6 +113,7 @@ hide_title = true
 <a href="/privacy-policy">Privacy Policy<span aria-hidden="true"> →</span></a>
 <a href="/terms-of-service">Terms of Service<span aria-hidden="true"> →</span></a>
 <a href="/code-of-conduct">Code of Conduct<span aria-hidden="true"> →</span></a>
+<a href="/data-deletion">Data Deletion<span aria-hidden="true"> →</span></a>
 </div>
 </div>
 </div>

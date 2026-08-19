@@ -7,6 +7,12 @@ template = "policy.html"
 [extra]
 updated = "Last updated: August 2026"
 +++
+<div class="doc-callout doc-callout--report">
+
+**This Policy covers the bodhya.net website only.** The **Bodhya Learn** Android app is a separate product with different data practices, and it has its own policy: [bodhya.net/bodhya-learn-privacy](/bodhya-learn-privacy), with its own deletion route at [bodhya.net/data-deletion](/data-deletion). Nothing in this Policy describes the app.
+
+</div>
+
 Bodhya is operated by **Vishal Arya** ("we", "us", or "our"), the Data Fiduciary for this platform. We are committed to protecting your personal data in accordance with India's **Digital Personal Data Protection Act (DPDPA) 2023** and the Information Technology Act, 2000. By using this website, you agree to the practices described in this Policy.
 
 <div class="doc-callout">
@@ -32,7 +38,7 @@ When you interact with our website or services, we may collect:
 ## II. How We Collect It
 
 - **Directly from you:** when you submit a form, send us an email, or otherwise contact us through bodhya.net
-- **Automatically:** through tools like Google Analytics, browser cookies, and web beacons — we collect IP addresses, browser type, pages visited, and device/OS information
+- **Automatically:** through tools like Google Analytics, browser cookies, and web beacons — we collect IP addresses, browser type, pages visited, and device/OS information (this is the website; the Bodhya Learn app contains no third-party analytics or advertising SDKs at all)
 - **From third parties:** if you use a social media login or integration on our site, we may receive your name and email from that platform
 
 ## III. Why We Use It (Purpose Limitation)
@@ -72,7 +78,7 @@ To exercise any of these rights, email [vishal@bodhya.net](mailto:vishal@bodhya.
 
 ## VII. Children's Data
 
-We do not knowingly collect personal data from children under 18 years of age without verifiable parental or guardian consent, as required under DPDPA §9. If you believe a child has submitted data to us without consent, contact us immediately and we will delete it.
+We do not knowingly collect personal data from children under 18 years of age without verifiable parental or guardian consent, as required under DPDPA §9. This describes the website. The **Bodhya Learn** app *is* intended for children and does collect a limited set of learner data with the consent of a parent, guardian, or authorised facilitator — see the [app's own policy](/bodhya-learn-privacy) for exactly what and why. If you believe a child has submitted data to us without consent, contact us immediately and we will delete it.
 
 ## VIII. Data Breach Notification
 

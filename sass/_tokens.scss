@@ -125,7 +125,7 @@ $bp-narrow: 620px;  // h1 retune, ledger to one column
   > *:nth-child(n + #{$cols + 1}) { border-top: 1px solid $rule; }
 
   @media (max-width: $bp-stack) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
 
     > * {
       border-right: 0;
@@ -161,7 +161,7 @@ $bp-narrow: 620px;  // h1 retune, ledger to one column
   > *:nth-child(n + #{$cols + 1}) { border-top: 1px solid $rule-dark; }
 
   @media (max-width: $bp-stack) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
 
     > * {
       border-right: 0;

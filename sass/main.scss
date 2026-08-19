@@ -18,3 +18,6 @@
 @import "doc";
 @import "error";
 @import "branding";
+
+// Last, so Hindi wins the specificity ties described in the partial.
+@import "hindi";

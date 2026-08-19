@@ -1,0 +1,57 @@
+// Hindi typography.
+//
+// Imported last on purpose. `p:lang(hi)` and `.doc-body p` have the same
+// specificity, so unless these rules come last the Latin body face wins the
+// tie and Devanagari falls back to whatever the OS supplies.
+//
+// `:lang(hi)` matches an element whose language is Hindi *including* one that
+// inherits it from an ancestor, so marking a wrapper is enough — and a rule on
+// the element itself always beats the family it would otherwise inherit, which
+// is what makes a single Hindi word inside an English sentence work.
+
+:lang(hi) { font-family: $hindi; }
+
+// Element-level, to outrank the element-scoped Latin rules in _doc.scss,
+// _blog.scss and _components.scss.
+p:lang(hi),
+li:lang(hi),
+td:lang(hi),
+th:lang(hi),
+span:lang(hi),
+strong:lang(hi),
+em:lang(hi) {
+  font-family: $hindi;
+}
+
+// Headlines take the display face. Devanagari carries its own sidebearings, so
+// the negative tracking tuned for Archivo Black is cleared.
+h1:lang(hi),
+h2:lang(hi),
+h3:lang(hi),
+.hero h1:lang(hi),
+.cta-title:lang(hi),
+.section-title:lang(hi),
+.doc-hero-title:lang(hi) {
+  font-family: $hindi-display;
+  letter-spacing: 0;
+}
+
+// List items are reached as `.doc-body ul li`, which outranks a bare
+// `li:lang(hi)` on element count — so match that shape instead of raising
+// specificity with a class.
+ul li:lang(hi),
+ol li:lang(hi) { font-family: $hindi; }
+
+// Devanagari sits taller than Latin and needs the extra leading, but only where
+// a whole block is Hindi — not for a word inside an English line.
+p:lang(hi),
+li:lang(hi),
+ul li:lang(hi),
+ol li:lang(hi) { line-height: 1.85; }
+
+// Rozha One is a high-contrast display face with a large apparent size; at the
+// section-heading scale it reads a shade too big next to Archivo Black.
+.doc-body h2:lang(hi) {
+  font-size: 1.32rem;
+  line-height: 1.5;
+}

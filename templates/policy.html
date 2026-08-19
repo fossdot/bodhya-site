@@ -5,7 +5,7 @@
         <div class="shell">
             <span class="marker marker--split">No. 01<span class="marker-rule"></span>Policies</span>
             <p class="doc-hero-title">The <em>fine print</em>.</p>
-            <p class="doc-hero-lead">Four documents govern this site and any contribution made through it. They are written to be read, not to be skipped.</p>
+            <p class="doc-hero-lead">These documents govern this site, our apps, and any contribution made through them. They are written to be read, not to be skipped.</p>
         </div>
     </section>
 
@@ -14,7 +14,9 @@
             <div class="doc-sidebar">
                 <div class="doc-sidebar-inner">
                     <span class="doc-sidebar-label">Documents</span>
-                    <nav class="doc-nav">{{ nav::policy_docs(current=current_path | default(value="")) }}</nav>
+                    <nav class="doc-nav" aria-label="Site documents">{{ nav::policy_docs(current=current_path | default(value="")) }}</nav>
+                    <span class="doc-sidebar-label">Bodhya Learn app</span>
+                    <nav class="doc-nav" aria-label="Bodhya Learn app documents">{{ nav::app_docs(current=current_path | default(value="")) }}</nav>
                     <a href="/contact" class="doc-sidebar-link">Grievance redressal<span aria-hidden="true"> →</span></a>
                 </div>
             </div>

@@ -96,28 +96,6 @@ a:hover { color: $teal; }
   }
 }
 
-// ---------------------------------------------------------------- Hindi
-
-// Any element marked `lang="hi"` switches to the Devanagari pair. A rule on
-// the element itself always beats the Latin family it would inherit, so this
-// works for a single span inside an English sentence as well as a whole page.
-:lang(hi) { font-family: $hindi; }
-
-h1:lang(hi),
-h2:lang(hi),
-h3:lang(hi),
-.hero h1:lang(hi),
-.cta-title:lang(hi),
-.section-title:lang(hi) {
-  font-family: $hindi-display;
-  letter-spacing: 0;
-}
-
-// Devanagari sits taller than Latin and needs the extra leading, but only
-// where a whole block is Hindi — not for a word inside an English line.
-p:lang(hi),
-li:lang(hi) { line-height: 1.85; }
-
 // ------------------------------------------------------------ type roles
 
 .shell { @include shell; }

@@ -20,7 +20,7 @@ zola build            # production build → public/
 
 Zola is the only build tool. There is no package.json, Makefile, linter, or test suite — "verifying a change" means `zola build` succeeds and the page looks right in the browser.
 
-A clean build reports `11 pages (0 orphan) and 1 sections`. If you ever see an orphan warning, a page has been added under a subdirectory that has no `_index.md` — either add one or move the file up to `content/`.
+A clean build reports `13 pages (0 orphan) and 1 sections`. If you ever see an orphan warning, a page has been added under a subdirectory that has no `_index.md` — either add one or move the file up to `content/`.
 
 **`zola serve` does not always pick up new templates or frontmatter that points at a new template.** If a page renders with the old layout after such a change, restart the server rather than debugging the template.
 
@@ -37,10 +37,11 @@ sass/main.scss        entry point — @imports the partials in cascade order
     _chrome.scss      utility bar, masthead, mobile menu, footer
     _components.scss  blocks used on more than one page + `.prose` fallback
     _home.scss  _about.scss  _join.scss  _partners.scss
-    _blog.scss  _contact.scss  _doc.scss  _error.scss
+    _blog.scss  _contact.scss  _doc.scss  _branding.scss  _error.scss
+    _hindi.scss       Devanagari — imported LAST, see below
 ```
 
-Page partials are imported last so a page can override a shared block without fighting specificity. Tokens are Sass variables, not CSS custom properties — `$ink`, `$cream`, `$terracotta`, `$teal`, `$mustard`, `$rule`, `$display`, `$serif`, `$mono`, `$sans`. Change a colour in `_tokens.scss` and it changes everywhere.
+Page partials are imported last so a page can override a shared block without fighting specificity. `_hindi.scss` is last of all, and that ordering is load-bearing: `p:lang(hi)` and `.doc-body p` have identical specificity, so anywhere earlier and Devanagari loses the tie to the Latin body face. Tokens are Sass variables, not CSS custom properties — `$ink`, `$cream`, `$terracotta`, `$teal`, `$mustard`, `$rule`, `$display`, `$serif`, `$mono`, `$sans`. Change a colour in `_tokens.scss` and it changes everywhere.
 
 Partials use `@import`, not `@use` — Zola compiles with grass, and `@import` is what it handles reliably.
 
@@ -60,7 +61,7 @@ Tera (Jinja2-like) with block inheritance from `base.html`:
 - `base.html` — the whole shell: utility bar (teal, "Est. January 2026", Donate), masthead (logo + nav + mobile menu), footer (three columns over a policy/social row). ~90 lines, no CSS.
 - `index.html` — homepage. The visible copy lives **here in the template**, not in `content/_index.md` (whose body is unused because it sets `template = "index.html"`). Includes the hero logo animation.
 - `page.html` — two branches: `extra.hide_title` pages are emitted bare because they carry their own full-bleed layout; anything else gets `.prose-page` + `.prose`, the styled fallback for a plain markdown page.
-- `policy.html` — shared by the four legal documents. Renders the hero, the sticky sidebar switcher, `page.title` as the document title, `page.extra.updated` beneath it, and the markdown body into `.doc-body`. The hero's "The fine print." is a `<p>`, not a heading: all four documents share it, so the `<h1>` is the document's own title and the markdown `##` sections sit correctly beneath it.
+- `policy.html` — shared by all six legal documents. Renders the hero, the sticky sidebar switcher, `page.title` as the document title, `page.extra.updated` beneath it, and the markdown body into `.doc-body`. The hero's "The fine print." is a `<p>`, not a heading: every document shares it, so the `<h1>` is the document's own title and the markdown `##` sections sit correctly beneath it.
 - `blog.html` / `blog-post.html` — numbered hairline archive, and the article with a sticky contents rail generated from the post's `h2`s via `page.toc`.
 - `taxonomy_list.html` / `taxonomy_single.html` — `/tags` and `/tags/<tag>`. Required: without them, any page with `[taxonomies]` fails the build.
 - `404.html` — keeps the Mithila art, restyled in the design vocabulary.
@@ -76,7 +77,8 @@ Tera has no nested-array or object literals; a list of link/label pairs has to b
 - `primary_links(current)` — masthead: About · Partners · Events · **Join Us** button. Deliberately **no** Join text link (the button carries it) and **no** Donate (that lives in the utility bar).
 - `mobile_links(current)` — calls `primary_links` and appends Donate.
 - `footer_links()` — the footer's Site column: About, Join, Partners, Events, Blog.
-- `policy_docs(current)` — the policy sidebar's four documents, spelled out in full.
+- `policy_docs(current)` — the four site policy documents, spelled out in full, for the policy sidebar's first group.
+- `app_docs(current)` — the two Bodhya Learn app documents, the sidebar's second group.
 
 Each takes `current` (from `current_path`) and marks the active item with `is-active`. "Events" is an external link to `https://fossunited.org/c/bihar` — there is no local events page.
 
@@ -109,6 +111,12 @@ conventions that get it there are easy to break:
 - Small non-inline links use the `hit-area()` mixin, which grows the pointer
   target to the WCAG 2.5.8 minimum of 24px with an invisible `::after` and no
   visual change. Body-copy links are exempt (they're inline in a sentence).
+- A horizontally scrollable box must be keyboard-reachable, or axe's
+  `scrollable-region-focusable` fails: the wide tables in the app policy sit in
+  `<div class="doc-tablewrap" tabindex="0">`. The wrapper also needs
+  `min-width: 0`, and its grid track `minmax(0, 1fr)` rather than `1fr` — both
+  default to a content-based minimum, which makes a wide table widen the whole
+  page instead of scrolling inside its box.
 - `<aside>` is not used inside `<main>`; the contents rail and policy switcher
   are `<div>`s holding a labelled `<nav>`.
 - The mobile menu's trigger carries `aria-haspopup`/`aria-controls` and an
@@ -148,7 +156,50 @@ Markdown in `content/` with **TOML** frontmatter (`+++` delimiters, not YAML). P
 Three kinds of content file:
 
 1. **Designed pages** — `about.md`, `join.md`, `partners.md`, `contact.md`, `branding.md`. These are full HTML layouts embedded in a `.md` file, using classes from `sass/`, with `[extra] hide_title = true`. **Never leave a blank line inside the HTML body**: a blank line closes the CommonMark HTML block, and the following indented `<div>` is then parsed as an indented code block, so the rest of the page renders as visible source text. Write them as one unbroken run of markup.
-2. **Policy documents** — `privacy-policy.md`, `terms-of-service.md`, `refund-policy.md`, `code-of-conduct.md`. Plain markdown with `template = "policy.html"` and `[extra] updated = "Last updated: …"`. Markdown `##` renders as the in-document section head (hairline above); the `---` separators in the source are hidden by CSS because those hairlines already divide the document. To inset a note, wrap it in `<div class="doc-callout">` (or `doc-callout--report` for reporting contacts) **with blank lines around the markdown inside** — the opposite of rule 1, and required here so the body still parses as markdown.
+2. **Policy documents** — six of them, all plain markdown with `template = "policy.html"`. Four govern this site (`privacy-policy.md`, `terms-of-service.md`, `refund-policy.md`, `code-of-conduct.md`) and two govern the **Bodhya Learn** Android app (`bodhya-learn-privacy.md`, `data-deletion.md`). The sidebar lists them as two groups — `policy_docs()` and `app_docs()` in `macros.html` — because the app is a separate product with its own publisher details and its own data practices. Google Play wants an app-specific policy URL and an app-specific deletion URL, and conflating them with the site policy is what produced a contradiction the first time. Keeping that boundary explicit takes **three** edits in `privacy-policy.md`, not one, and all three are deliberate: a scope callout as the very first element of the body; a clause on the "we do not knowingly collect from children under 18" sentence acknowledging that the app *is* for children and does collect with adult consent; and a clause on the Google Analytics bullet noting the app carries no analytics or advertising SDKs. The last two look redundant next to the first — they are not. A Families reviewer can quote a mid-document sentence back at you, and both of those sentences otherwise contradict the app's Data Safety declaration. Don't consolidate them.
+
+   **The two app documents have an upstream, and it is not this repo.** They are
+   copies of, and must stay in sync with:
+
+   ```
+   ~/code/Hikmat Games/playstore/web-page-privacy.html        → content/bodhya-learn-privacy.md
+   ~/code/Hikmat Games/playstore/web-page-data-deletion.html  → content/data-deletion.md
+   ```
+
+   That directory is the Bodhya Learn Android app project, maintained in its own
+   Claude session. Because these are copies rather than links, they **drift every
+   time the app's paperwork is revised** — assume they are stale and diff before
+   trusting them. (`privacy-policy.html` also sits in that folder and is the same
+   document as `web-page-privacy.html` bar a `<title>` tag; the `web-page-*` pair
+   is canonical.)
+
+   They are legal text carrying COPPA / GDPR / DPDPA commitments about children's
+   data that this site's own policies do not. **Port wording verbatim and change
+   only the container** — never paraphrase, never round a number, and never invent
+   a retention period. Re-sync by converting the upstream HTML afresh and
+   re-applying these deliberate deviations, rather than hand-patching:
+
+   - frontmatter, and drop the source's `<title>`, `p.eyebrow` and `nav.toc`
+   - `## 12. Security {#security}` — the source's own `#security` link needs an
+     explicit id, or Zola slugifies the heading to `12-security` and fails the
+     build on the broken anchor
+   - `](/privacy)` → `](/bodhya-learn-privacy)`; that route does not exist here
+   - the publisher block's `<br>` line breaks, lost in conversion
+   - tables wrapped in `<div class="doc-tablewrap" tabindex="0">` — see the
+     accessibility notes for why both the wrapper and the tabindex are needed
+   - `lang` attributes preserved, as an inline `<span lang="hi">` rather than a
+     block tag so the markdown inside still parses. These are load-bearing: they
+     are what puts Hindi on Rozha One and Mukta instead of a system fallback.
+
+   Verify a re-sync by word-parity against the source, not by eye. A legitimate
+   gap is the dropped table of contents; anything else means content was lost.
+
+   **The two routes are frozen.** `/bodhya-learn-privacy` and `/data-deletion` are
+   compiled into the shipping `.aab` as Home-screen footer links, so renaming
+   either one breaks the published app and forces a rebuild and re-sign. Co-ordinate
+   with the Hikmat Games session before touching them.
+
+   All policy documents also set `[extra] updated`, which renders under the document title. Markdown `##` renders as the in-document section head (hairline above); the `---` separators in the source are hidden by CSS because those hairlines already divide the document. To inset a note, wrap it in `<div class="doc-callout">` (or `doc-callout--report` for reporting contacts) **with blank lines around the markdown inside** — the opposite of rule 1, and required here so the body still parses as markdown.
 3. **Blog posts** — `content/blog/`, needing `date` and `description`. Tags must go under a `[taxonomies]` table; a bare top-level `tags = [...]` is silently ignored by Zola and produces no tag pages.
 
 Legal pages name **Vishal Arya** as operator/Data Fiduciary and are written to India's DPDPA 2023. Don't casually reword the legal substance.

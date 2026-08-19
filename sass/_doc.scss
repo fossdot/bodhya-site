@@ -1,8 +1,10 @@
 // Policy documents — templates/policy.html
 //
-// The four documents (privacy, terms, refunds, code of conduct) stay four
-// URLs sharing this one layout. Everything below `.doc-body` is styled by
-// element because the copy is plain markdown.
+// Shared by every policy document: the four site policies (privacy, terms,
+// refunds, code of conduct) and the two Bodhya Learn app documents, which are
+// listed as a separate group in the sidebar because they govern the app rather
+// than this site. Everything below `.doc-body` is styled by element because
+// the copy is plain markdown.
 
 .doc-hero {
   border-bottom: 1px solid $rule;
@@ -49,7 +51,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
 
-  @media (max-width: $bp-stack) { grid-template-columns: 1fr; }
+  @media (max-width: $bp-stack) { grid-template-columns: minmax(0, 1fr); }
 }
 
 .doc-sidebar {
@@ -118,6 +120,7 @@
 }
 
 .doc-main {
+  min-width: 0;
   padding: 44px 0 64px 48px;
 
   @media (max-width: $bp-stack) { padding: 34px 0 56px; }
@@ -246,6 +249,20 @@
   // markdown source's `---` separators would only double them up.
   hr { display: none; }
 
+  // A wide table (the app policy's four-column data inventory) scrolls inside
+  // its own box rather than pushing the page sideways.
+  .doc-tablewrap {
+    overflow-x: auto;
+    // `.doc-body` is a flex column, and a flex item defaults to
+    // `min-width: auto` — without this it refuses to shrink below its content
+    // and the whole page scrolls sideways instead of just the table.
+    min-width: 0;
+    // Room for the scrollbar so it doesn't sit on the last row's hairline.
+    padding-bottom: 4px;
+
+    table { min-width: 34rem; }
+  }
+
   // The refund timeline. A real table: mono header over a 1.5px ink rule,
   // hairlines between rows.
   table {
@@ -259,7 +276,6 @@
       border-bottom: 1.5px solid $ink;
 
       &:last-child { padding-right: 0; }
-      &:first-child { width: 66%; }
     }
 
     td {
@@ -273,6 +289,11 @@
 
     tr:last-child td { border-bottom: 0; }
   }
+
+  // An unwrapped table is a narrow one (the refund timeline), where a fixed
+  // first column reads better. Wide tables live in .doc-tablewrap and size
+  // themselves.
+  > table th:first-child { width: 66%; }
 }
 
 // An inset note. Teal rule for information, terracotta where the note is a
@@ -287,6 +308,14 @@
 
   p,
   li { font-size: 1.04rem; line-height: 1.7; }
+}
+
+// A heading that opens a callout is labelling the box, not starting a new
+// section, so it drops the section rule.
+.doc-callout h2 {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .doc-callout--report {

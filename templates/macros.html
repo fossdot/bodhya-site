@@ -66,6 +66,16 @@ Every Bodhya post tagged “{{ term }}” — the full list, newest first.
     <a href="/code-of-conduct"{% if current is starting_with("/code-of-conduct") %} class="is-active" aria-current="page"{% endif %}>Code of Conduct<span aria-hidden="true">→</span></a>
 {% endmacro policy_docs %}
 
+{# The Bodhya Learn app's own documents. Kept in a separate group because they
+   govern the app, not this site — Play wants an app-specific URL, and mixing
+   them into the site list is what created the contradiction in the first
+   place. #}
+
+{% macro app_docs(current="") %}
+    <a href="/bodhya-learn-privacy"{% if current is starting_with("/bodhya-learn-privacy") %} class="is-active" aria-current="page"{% endif %}>Privacy Policy<span aria-hidden="true">→</span></a>
+    <a href="/data-deletion"{% if current is starting_with("/data-deletion") %} class="is-active" aria-current="page"{% endif %}>Delete Your Data<span aria-hidden="true">→</span></a>
+{% endmacro app_docs %}
+
 {% macro footer_links() %}
     <a href="/about">About</a>
     <a href="/join">Join</a>
