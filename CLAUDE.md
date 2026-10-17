@@ -112,7 +112,7 @@ conventions that get it there are easy to break:
   target to the WCAG 2.5.8 minimum of 24px with an invisible `::after` and no
   visual change. Body-copy links are exempt (they're inline in a sentence).
 - A horizontally scrollable box must be keyboard-reachable, or axe's
-  `scrollable-region-focusable` fails: the wide tables in the app policy sit in
+  `scrollable-region-focusable` fails: a wide table in a policy page sits in
   `<div class="doc-tablewrap" tabindex="0">`. The wrapper also needs
   `min-width: 0`, and its grid track `minmax(0, 1fr)` rather than `1fr` — both
   default to a content-based minimum, which makes a wide table widen the whole
@@ -158,51 +158,44 @@ Three kinds of content file:
 1. **Designed pages** — `about.md`, `join.md`, `partners.md`, `contact.md`, `branding.md`. These are full HTML layouts embedded in a `.md` file, using classes from `sass/`, with `[extra] hide_title = true`. **Never leave a blank line inside the HTML body**: a blank line closes the CommonMark HTML block, and the following indented `<div>` is then parsed as an indented code block, so the rest of the page renders as visible source text. Write them as one unbroken run of markup.
 2. **Policy documents** — six of them, all plain markdown with `template = "policy.html"`. Four govern this site (`privacy-policy.md`, `terms-of-service.md`, `refund-policy.md`, `code-of-conduct.md`) and two govern the **Bodhya Learn** Android app (`bodhya-learn-privacy.md`, `data-deletion.md`). The sidebar lists them as two groups — `policy_docs()` and `app_docs()` in `macros.html` — because the app is a separate product with its own publisher details and its own data practices. Google Play wants an app-specific policy URL and an app-specific deletion URL, and conflating them with the site policy is what produced a contradiction the first time. Keeping that boundary explicit takes **three** edits in `privacy-policy.md`, not one, and all three are deliberate: a scope callout as the very first element of the body; a clause on the "we do not knowingly collect from children under 18" sentence acknowledging that the app *is* for children and does collect with adult consent; and a clause on the Google Analytics bullet noting the app carries no analytics or advertising SDKs. The last two look redundant next to the first — they are not. A Families reviewer can quote a mid-document sentence back at you, and both of those sentences otherwise contradict the app's Data Safety declaration. Don't consolidate them.
 
-   **The two app documents have an upstream, and it is not this repo.** They are
-   copies of, and must stay in sync with:
+   **This repo is the master copy of both app documents** (since 17 October 2026).
+   `content/bodhya-learn-privacy.md` and `content/data-deletion.md` are the
+   source of truth; edit them here. The `web-page-*.html` and
+   `privacy-policy.html` files under `~/code/Hikmat Games/playstore/` are older
+   copies from when the app project held the masters — they are stale, and must
+   not be ported back over these pages.
 
-   ```
-   ~/code/Hikmat Games/playstore/web-page-privacy.html        → content/bodhya-learn-privacy.md
-   ~/code/Hikmat Games/playstore/web-page-data-deletion.html  → content/data-deletion.md
-   ```
+   Both documents describe the **no-accounts Play build** (versionCode 6 onward):
+   no login, no uploads, progress only on the phone, Android Auto Backup
+   disclosed, read-only lesson downloads from learn.bodhya.net, and only two
+   outside links in the app's ☰ menu. Every claim in them is checked against the
+   shipped `.aab`, not against the web app (which still has accounts). When the
+   app changes — especially if sign-in or any upload returns — the policy has to
+   be updated **before** that build ships; the policy itself promises this.
 
-   That directory is the Bodhya Learn Android app project, maintained in its own
-   Claude session. Because these are copies rather than links, they **drift every
-   time the app's paperwork is revised** — assume they are stale and diff before
-   trusting them. (`privacy-policy.html` also sits in that folder and is the same
-   document as `web-page-privacy.html` bar a `<title>` tag; the `web-page-*` pair
-   is canonical.)
+   They are written in plain language a parent can read, and deliberately claim
+   no certification or legal compliance (no COPPA / GDPR / DPDPA statements) —
+   only that the app is built to follow Google Play's Families Policy. Each page
+   carries a full Hindi version in a `<div lang="hi" id="hindi">` after the
+   English, linked from a `<span lang="hi">` line at the top. The `lang`
+   attribute is load-bearing: it is what puts Hindi on Rozha One and Mukta
+   instead of a system fallback. Keep the two languages saying the same thing.
+   The publisher's phone number and postal address are intentionally left out.
 
-   They are legal text carrying COPPA / GDPR / DPDPA commitments about children's
-   data that this site's own policies do not. **Port wording verbatim and change
-   only the container** — never paraphrase, never round a number, and never invent
-   a retention period. Re-sync by converting the upstream HTML afresh and
-   re-applying these deliberate deviations, rather than hand-patching:
-
-   - frontmatter, and drop the source's `<title>`, `p.eyebrow` and `nav.toc`
-   - `## 12. Security {#security}` — the source's own `#security` link needs an
-     explicit id, or Zola slugifies the heading to `12-security` and fails the
-     build on the broken anchor
-   - `](/privacy)` → `](/bodhya-learn-privacy)`; that route does not exist here
-   - the publisher block's `<br>` line breaks, lost in conversion
-   - tables wrapped in `<div class="doc-tablewrap" tabindex="0">` — see the
-     accessibility notes for why both the wrapper and the tabindex are needed
-   - `lang` attributes preserved, as an inline `<span lang="hi">` rather than a
-     block tag so the markdown inside still parses. These are load-bearing: they
-     are what puts Hindi on Rozha One and Mukta instead of a system fallback.
-
-   Verify a re-sync by word-parity against the source, not by eye. A legitimate
-   gap is the dropped table of contents; anything else means content was lost.
+   `privacy-policy.md` (the website policy) still has the clause acknowledging
+   that the app "does collect with adult consent". That is out of date for the
+   no-accounts build, but the website policy was left untouched on purpose;
+   change it only when asked.
 
    **The two routes are frozen.** `/bodhya-learn-privacy` and `/data-deletion` are
-   compiled into the shipping `.aab` as Home-screen footer links, so renaming
+   compiled into the shipping `.aab` as ☰-menu links, so renaming
    either one breaks the published app and forces a rebuild and re-sign. Co-ordinate
    with the Hikmat Games session before touching them.
 
    All policy documents also set `[extra] updated`, which renders under the document title. Markdown `##` renders as the in-document section head (hairline above); the `---` separators in the source are hidden by CSS because those hairlines already divide the document. To inset a note, wrap it in `<div class="doc-callout">` (or `doc-callout--report` for reporting contacts) **with blank lines around the markdown inside** — the opposite of rule 1, and required here so the body still parses as markdown.
 3. **Blog posts** — `content/blog/`, needing `date` and `description`. Tags must go under a `[taxonomies]` table; a bare top-level `tags = [...]` is silently ignored by Zola and produces no tag pages.
 
-Legal pages name **Vishal Arya** as operator/Data Fiduciary and are written to India's DPDPA 2023. Don't casually reword the legal substance.
+The site's own legal pages name **Vishal Arya** as operator/Data Fiduciary and are written to India's DPDPA 2023 (the two app documents name him as developer and make no such claim — see above). Don't casually reword the legal substance.
 
 ### Static assets
 
