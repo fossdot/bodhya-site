@@ -16,6 +16,8 @@ This page explains how to delete the data kept by the **Bodhya Learn** Android a
 
 **There is nothing to request from us.** The app has no accounts and sends us no data about you, so we hold nothing to delete. Everything the app keeps is on your phone, and you can erase it yourself.
 
+If you used an account in an earlier version of the app or in the browser version at learn.bodhya.net/play, email [vishal@bodhya.net](mailto:vishal@bodhya.net) and we will delete your data.
+
 </div>
 
 ## 1. Erase progress from the phone
@@ -47,6 +49,8 @@ See also the [Bodhya Learn Privacy Policy](/bodhya-learn-privacy).
 यह पन्ना बताता है कि **Bodhya Learn** एंड्रॉयड ऐप (पैकेज `net.bodhya.learn`) में रखा डेटा कैसे हटाएँ।
 
 **हमसे कुछ माँगने की ज़रूरत नहीं।** ऐप में कोई खाता नहीं है और यह आपके बारे में हमें कोई जानकारी नहीं भेजता, इसलिए हमारे पास हटाने को कुछ नहीं है। ऐप जो कुछ रखता है, वह आपके फ़ोन में है, और आप उसे ख़ुद मिटा सकते हैं।
+
+अगर आपने ऐप के किसी पुराने संस्करण में, या ब्राउज़र वाले संस्करण (learn.bodhya.net/play) में खाता इस्तेमाल किया था, तो [vishal@bodhya.net](mailto:vishal@bodhya.net) पर ईमेल करें, हम आपका डेटा हटा देंगे।
 
 ### 1. फ़ोन से प्रगति मिटाएँ
 
