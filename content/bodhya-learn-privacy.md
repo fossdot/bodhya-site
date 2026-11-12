@@ -5,7 +5,7 @@ description = "The Bodhya Learn app has no accounts and collects no personal dat
 template = "policy.html"
 
 [extra]
-updated = "Effective 17 October 2026 · Last updated 17 October 2026"
+updated = "Effective 17 October 2026 · Last updated 12 November 2026"
 +++
 
 This policy explains what the **Bodhya Learn** Android app stores and when it uses the internet. It covers the app only; the bodhya.net website has its own [Privacy Policy](/privacy-policy).
@@ -20,7 +20,7 @@ This policy explains what the **Bodhya Learn** Android app stores and when it us
 
 **Contact:** [vishal@bodhya.net](mailto:vishal@bodhya.net)
 
-**Effective date:** 17 October 2026 · **Last updated:** 17 October 2026
+**Effective date:** 17 October 2026 · **Last updated:** 12 November 2026 (a second copy on the phone, Save my progress, and a 7-day undo for Start fresh)
 
 </div>
 
@@ -30,7 +30,7 @@ This policy explains what the **Bodhya Learn** Android app stores and when it us
 
 - **No login, no signup, no accounts.** The app never asks who you are.
 - **We do not collect personal or device data**, and we do not share any with third parties.
-- **Learning progress stays on the phone.** Uninstalling the app removes it from the phone.
+- **Learning progress stays on the phone.** It leaves the phone only in a progress file you send somewhere yourself, in a backup of the phone (such as its Google backup) if that is on, or when you copy the phone's apps and data to a new phone (section 2). Uninstalling the app, or clearing its storage, removes everything the app keeps on the phone, including the copy kept for undo.
 - **No ads, no analytics, no tracking.**
 - **Made for children and adults**, and built to follow Google Play's Families Policy.
 
@@ -40,15 +40,19 @@ This policy explains what the **Bodhya Learn** Android app stores and when it us
 
 As you play, the app saves your progress so you can carry on where you left off: stars and gems, which lessons and tests are done, which questions you have already seen, and your settings (language, sound, theme, chosen guide, and how Hindi addresses you — feminine or masculine wording). It also keeps a copy of the lessons so they work without internet.
 
-All of this is saved **only on the phone**, inside the app's own storage. It is never sent to us. The app does not ask for a name, age, phone number, email address or any other detail about you.
+All of this is saved **only on the phone**, inside the app's own storage. A second copy of your progress and settings is kept there too, so that a fault in the phone's web component cannot wipe them. None of it is ever sent to us. The app does not ask for a name, age, phone number, email address or any other detail about you; the only such choice is an optional setting for whether Hindi addresses you as a girl or a boy.
 
-**To erase it**, open **☰ → My progress → Start fresh** in the app. Uninstalling the app also removes it from the phone.
+**Save my progress.** If you tap **Save my progress**, the app makes a small file holding the progress and settings above, with nothing in it that says who you are (no name, age or phone number), and hands it to the app you choose, such as WhatsApp, Bluetooth or Files. It goes only where you send it, and we never receive it unless you send it to us. The app also keeps the files it made in its own cache, where Android may delete them when the phone runs short of space; Start fresh does not remove them. **Bring my progress** reads such a file back on the phone itself, from the phone's file picker.
+
+Versions of the app before version 8 keep no second copy, have no Save my progress, and erase at once with no undo. If **My progress** shows **Save my progress**, your app works as described here.
+
+**To erase your progress**, open **☰ → My progress → Start fresh** in the app; your settings stay. So that a mistaken tap can be undone, the app keeps a copy of the erased progress on the phone for 7 days after the last Start fresh, and deletes it by itself the first time it is opened after those 7 days. **Uninstalling the app, or clearing its storage** (*Settings → Apps → Bodhya → Storage → Clear data*; on some phones, *Clear storage*), **removes everything the app keeps on the phone at once**, including that copy, the second copy and the Save my progress files in its cache. A file you sent or saved somewhere else stays there. See [Delete your Bodhya Learn data](/data-deletion).
 
 ## 2. Android backup
 
-Android phones can back up app data to the Google account set up on the phone. The app's saved progress may be included in that backup, so it can come back if the app is installed again.
+Android phones can back up app data to the Google account set up on the phone. The app's saved progress and its second copy may be included in that backup, so they can come back if the app is installed again. After Start fresh, the copy kept for undo may be included too, and the backup can keep it after those 7 days, and after the app is uninstalled. The same copies go with the app if you copy this phone's apps and data to a new phone. Files made with Save my progress are not included.
 
-This backup belongs to **your own Google account and is controlled by it, not by us**. We cannot see it, read it or delete it. If you do not want it kept, use **Start fresh** before uninstalling, delete the backup from your Google account, or turn off backup in the phone's settings.
+This backup belongs to **your own Google account and is controlled by it, not by us**. We cannot see it, read it or delete it. If you do not want it kept, turn off backup in the phone's settings, and Google deletes the phone's backup; or delete it from your Google Account. Either way, the whole phone's backup is deleted, not only this app's (see [Delete your Bodhya Learn data](/data-deletion)).
 
 ## 3. When the app uses the internet
 
@@ -66,7 +70,7 @@ The app reads text aloud using the phone's own text-to-speech.
 
 - No ads, and no advertising ID.
 - No analytics, crash reporting or tracking tools of any kind.
-- No location, camera, microphone, contacts, photos or files. The only permission the app asks for is internet access, for the lesson downloads above.
+- No location, camera, microphone, contacts or photos, and no access to your files. The app reads a file only when you pick it yourself in **Bring my progress**, through the phone's own file picker. The only permission the app asks for is internet access, for the lesson downloads above.
 - We do not sell, rent or share any data.
 
 ## 5. Children
@@ -89,29 +93,33 @@ Questions about this policy can go to **Vishal Arya** at [vishal@bodhya.net](mai
 
 **ऐप:** Bodhya Learn (एंड्रॉयड, पैकेज `net.bodhya.learn`) · **डेवलपर:** विशाल आर्य · **संपर्क:** [vishal@bodhya.net](mailto:vishal@bodhya.net)
 
-**लागू होने की तारीख़:** 17 अक्टूबर 2026 · **आख़िरी बदलाव:** 17 अक्टूबर 2026
+**लागू होने की तारीख़:** 17 अक्टूबर 2026 · **आख़िरी बदलाव:** 12 नवंबर 2026 (फ़ोन में प्रगति की दूसरी कॉपी, **अपनी प्रगति सहेजो** बटन, और प्रगति मिटाने के बाद 7 दिन तक उसे वापस लाने की सुविधा)
 
 ### संक्षेप में
 
 - **कोई लॉगिन नहीं, कोई साइन-अप नहीं, कोई खाता नहीं।** ऐप कभी नहीं पूछता कि आप कौन हैं।
 - **हम कोई निजी जानकारी या फ़ोन की जानकारी नहीं लेते**, और किसी दूसरी कंपनी या व्यक्ति को कुछ नहीं देते।
-- **पढ़ाई की प्रगति सिर्फ़ फ़ोन में रहती है।** ऐप हटाने (अनइंस्टॉल करने) पर वह फ़ोन से मिट जाती है।
+- **पढ़ाई की प्रगति फ़ोन में रहती है।** वह फ़ोन से बाहर तभी जाती है जब आप ख़ुद प्रगति की फ़ाइल बनाकर कहीं भेजें, जब फ़ोन का कोई बैकअप (जैसे उसका Google बैकअप) चालू हो, या जब आप फ़ोन के ऐप और डेटा किसी नए फ़ोन में कॉपी करें (भाग 2)। ऐप हटाने (अनइंस्टॉल करने) या उसका स्टोरेज साफ़ करने पर, ऐप फ़ोन में जो कुछ रखता है, वह सब हट जाता है, मिटाई गई प्रगति की कॉपी भी।
 - **कोई विज्ञापन नहीं, कोई एनालिटिक्स नहीं, कोई ट्रैकिंग नहीं।**
 - **यह ऐप बच्चों और बड़ों, दोनों के लिए है**, और Google Play की Families Policy के अनुसार बनाया गया है।
 
 ### 1. ऐप क्या सहेजता है, और कहाँ
 
-खेलते समय ऐप आपकी प्रगति सहेजता है, ताकि आप वहीं से आगे बढ़ सकें: सितारे और जेम्स, कौन-से पाठ और टेस्ट पूरे हुए, कौन-से सवाल पहले देख चुके हैं, और आपकी सेटिंग्स (भाषा, आवाज़, थीम, चुना हुआ साथी, और हिन्दी में ऐप आपसे कैसे बात करे — स्त्रीलिंग या पुल्लिंग शब्दों में)। बिना इंटरनेट के चलाने के लिए ऐप पाठों की एक कॉपी भी रखता है।
+खेलते समय ऐप आपकी प्रगति सहेजता है, ताकि आप वहीं से आगे बढ़ सकें: सितारे और रत्न, कौन-से पाठ और कौन-सी परीक्षाएँ पूरी हुईं, कौन-से सवाल पहले देख चुके हैं, और आपकी सेटिंग्स (भाषा, आवाज़, थीम, चुना हुआ साथी, और हिन्दी में ऐप आपसे कैसे बात करे — स्त्रीलिंग या पुल्लिंग शब्दों में)। बिना इंटरनेट के चलाने के लिए ऐप पाठों की एक कॉपी भी रखता है।
 
-यह सब **सिर्फ़ फ़ोन में**, ऐप की अपनी जगह में रहता है। यह हमें कभी नहीं भेजा जाता। ऐप नाम, उम्र, फ़ोन नंबर, ईमेल या आपके बारे में कोई और जानकारी नहीं माँगता।
+यह सब **सिर्फ़ फ़ोन में**, ऐप की अपनी जगह में रहता है। आपकी प्रगति और सेटिंग्स की एक दूसरी कॉपी भी वहीं रखी जाती है, ताकि फ़ोन के वेब हिस्से में कोई ख़राबी आए, तब भी वे न मिटें। इसमें से कुछ भी हमें कभी नहीं भेजा जाता। ऐप नाम, उम्र, फ़ोन नंबर, ईमेल या आपके बारे में कोई और जानकारी नहीं माँगता; आप चाहें तो बस एक चीज़ चुन सकते हैं: हिन्दी आपको लड़की मानकर बात करे या लड़का मानकर।
 
-**इसे मिटाने के लिए** ऐप में **☰ → मेरी प्रगति → नए सिरे से शुरू करो** दबाएँ। ऐप हटाने पर भी यह फ़ोन से मिट जाता है।
+**"अपनी प्रगति सहेजो" बटन।** अगर आप **अपनी प्रगति सहेजो** दबाएँ, तो ऐप ऊपर बताई प्रगति और सेटिंग्स की एक छोटी फ़ाइल बनाता है। इसमें ऐसा कुछ नहीं होता जिससे पता चले कि आप कौन हैं (न नाम, न उम्र, न फ़ोन नंबर)। ऐप यह फ़ाइल उस ऐप को दे देता है जिसे आप चुनें, जैसे WhatsApp, ब्लूटूथ या Files। वह सिर्फ़ वहीं जाती है जहाँ आप भेजें, और जब तक आप उसे हमें न भेजें, वह हमारे पास कभी नहीं आती। ऐप अपनी बनाई फ़ाइलें अपने कैश (cache) में भी रखता है, जहाँ से फ़ोन में जगह कम होने पर एंड्रॉयड उन्हें मिटा सकता है। **नए सिरे से शुरू करो** से प्रगति मिटाने पर ये फ़ाइलें नहीं हटतीं। **अपनी प्रगति वापस लाओ** दबाकर आप फ़ोन की फ़ाइल चुनने वाली स्क्रीन से ऐसी फ़ाइल चुनते हैं, और ऐप उस फ़ाइल से आपकी प्रगति फ़ोन पर ही वापस ले आता है।
+
+ऐप के संस्करण 8 से पहले के संस्करणों में न प्रगति की दूसरी कॉपी है, न **अपनी प्रगति सहेजो** बटन, और उनमें प्रगति मिटाने पर वह तुरंत मिट जाती है, वापस नहीं आती। अगर **मेरी प्रगति** में **अपनी प्रगति सहेजो** बटन दिखता है, तो आपका ऐप वैसे ही काम करता है जैसा यहाँ लिखा है।
+
+**अपनी प्रगति मिटाने के लिए** ऐप में **☰ → मेरी प्रगति → नए सिरे से शुरू करो** दबाएँ; आपकी सेटिंग्स बनी रहती हैं। प्रगति ग़लती से मिट जाए, तो उसे वापस लाया जा सकता है। इसके लिए ऐप मिटाई गई प्रगति की एक कॉपी 7 दिन तक फ़ोन में रखता है। ये 7 दिन आख़िरी बार प्रगति मिटाने से गिने जाते हैं, और इनके बाद जब ऐप पहली बार खुलता है, तब वह यह कॉपी अपने-आप मिटा देता है। **ऐप हटाने या उसका स्टोरेज साफ़ करने पर** (*Settings → Apps → Bodhya → Storage → Clear data*; कुछ फ़ोन में *Clear storage*) **ऐप फ़ोन में जो कुछ रखता है, वह सब एक साथ हट जाता है**। इसमें मिटाई गई प्रगति की कॉपी, प्रगति की दूसरी कॉपी, और **अपनी प्रगति सहेजो** से बनी वे फ़ाइलें भी शामिल हैं जो ऐप के कैश में हैं। जो फ़ाइल आपने कहीं और भेजी या रखी, वह वहीं रहती है। देखें: [Bodhya Learn का डेटा कैसे हटाएँ](/data-deletion#hindi)।
 
 ### 2. एंड्रॉयड बैकअप
 
-एंड्रॉयड फ़ोन, फ़ोन में जुड़े Google खाते में ऐप का डेटा बैकअप कर सकता है। ऐप की सहेजी हुई प्रगति इस बैकअप में शामिल हो सकती है, ताकि ऐप दोबारा इंस्टॉल करने पर वह वापस आ जाए।
+एंड्रॉयड फ़ोन, फ़ोन में जुड़े Google खाते में ऐप का डेटा बैकअप कर सकता है। ऐप की सहेजी हुई प्रगति और उसकी दूसरी कॉपी इस बैकअप में शामिल हो सकती हैं, ताकि ऐप दोबारा इंस्टॉल करने पर वे वापस आ जाएँ। प्रगति मिटाने के बाद, मिटाई गई प्रगति की कॉपी भी इसमें शामिल हो सकती है, और बैकअप उसे 7 दिन के बाद भी, और ऐप हटाने के बाद भी, रख सकता है। अगर आप इस फ़ोन के ऐप और डेटा किसी नए फ़ोन में कॉपी करें, तो ये कॉपियाँ भी ऐप के साथ जाती हैं। **अपनी प्रगति सहेजो** से बनी फ़ाइलें बैकअप में शामिल नहीं होतीं।
 
-यह बैकअप **आपके अपने Google खाते का है और उसी के नियंत्रण में है, हमारे नहीं**। हम इसे न देख सकते हैं, न पढ़ सकते हैं, न मिटा सकते हैं। अगर आप इसे नहीं रखना चाहते, तो ऐप हटाने से पहले **नए सिरे से शुरू करो** दबाएँ, अपने Google खाते से बैकअप मिटा दें, या फ़ोन की सेटिंग्स में बैकअप बंद कर दें।
+यह बैकअप **आपके अपने Google खाते का है और उसी के नियंत्रण में है, हमारे नहीं**। हम इसे न देख सकते हैं, न पढ़ सकते हैं, न मिटा सकते हैं। अगर आप इसे नहीं रखना चाहते, तो फ़ोन की सेटिंग्स में बैकअप बंद कर दें, तब Google फ़ोन का बैकअप मिटा देता है; या अपने Google खाते से बैकअप मिटा दें। इन दोनों तरीक़ों से पूरे फ़ोन का बैकअप मिट जाता है, सिर्फ़ इस ऐप का नहीं (देखें: [Bodhya Learn का डेटा कैसे हटाएँ](/data-deletion#hindi))।
 
 ### 3. ऐप इंटरनेट का इस्तेमाल कब करता है
 
@@ -129,7 +137,7 @@ Questions about this policy can go to **Vishal Arya** at [vishal@bodhya.net](mai
 
 - कोई विज्ञापन नहीं, और कोई विज्ञापन ID नहीं।
 - कोई एनालिटिक्स, क्रैश रिपोर्टिंग या ट्रैकिंग टूल नहीं।
-- लोकेशन, कैमरा, माइक्रोफ़ोन, कॉन्टैक्ट्स, फ़ोटो या फ़ाइलें नहीं। ऐप सिर्फ़ इंटरनेट की अनुमति माँगता है, ऊपर बताए पाठ डाउनलोड के लिए।
+- लोकेशन, कैमरा, माइक्रोफ़ोन, कॉन्टैक्ट्स या फ़ोटो नहीं, और आपकी फ़ाइलों तक कोई पहुँच नहीं। ऐप कोई फ़ाइल तभी पढ़ता है जब आप **अपनी प्रगति वापस लाओ** दबाकर फ़ोन की अपनी फ़ाइल चुनने वाली स्क्रीन से उसे ख़ुद चुनें। ऐप सिर्फ़ इंटरनेट की अनुमति माँगता है, ऊपर बताए पाठ डाउनलोड के लिए।
 - हम कोई डेटा न बेचते हैं, न किराए पर देते हैं, न किसी के साथ बाँटते हैं।
 
 ### 5. बच्चे
